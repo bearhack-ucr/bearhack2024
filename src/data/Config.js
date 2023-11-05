@@ -6,7 +6,7 @@ export const CONFIG = {
 };
 
 export const MANIFEST = {
-  name: "Hackathon Site",
+  name: "Bearhack 2024",
   short_name: "Hackathon Site",
   description: "Hackathon Site",
   start_url: "/",
