@@ -34,6 +34,21 @@ const Toolbar = ({
   const [toggle, setToggle] = useState(false);
 
   const onClick = (value) => {
+    const notPending = objects.some((obj) => obj.selected && obj.status !== 0);
+
+    if (notPending) {
+      toast("❌ Only pending items can be changed!");
+      setObjects(
+        objects.map((a) => {
+          if (a.selected) {
+            a.selected = false;
+          }
+          return a;
+        })
+      );
+      return;
+    }
+
     const winners = objects.some((obj) => obj.selected && obj.status === 2);
 
     if (winners) {
@@ -198,6 +213,7 @@ const Toolbar = ({
               toast("❌ Select row(s) before pressing the delete button");
               return;
             }
+
             setPopup({
               title: "Delete Confirmation",
               text: "Are you sure you want to delete these row(s)? This action is irreversible.",

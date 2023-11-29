@@ -39,29 +39,20 @@ const CalendarModal = ({ event, setEvent }) => {
           </div>
           <div>
             <Tag
-              text={event.description.split("\n")[1].split(": ")[1]}
-              color={
-                COLORS[
-                  LABELS[
-                    event.description
-                      .split("\n")[1]
-                      .split(": ")[1]
-                      .toLowerCase()
-                  ].color
-                ]
-              }
+              text={event.category}
+              color={COLORS[LABELS[event.category].color]}
             />
           </div>
         </div>
         <div className="flex my-2 items-center">
           <FaLocationDot className="mr-2" />
-          {event.location}
+          {event.location ? event.location : "No Location Specified"}
         </div>
         <div className="flex my-2 items-center">
           <BsPersonFill className="mr-2" />
-          {event.description.split("\n")[0].replace("ASSIGNEE: ", "")}
+          {event.assignee}
         </div>
-        <p className="mb-0">{event.description.split("\n")[2]}</p>
+        <p className="mb-0">{event.description.split("\n")[1]}</p>
       </div>
     </div>
   );
