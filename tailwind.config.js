@@ -48,6 +48,13 @@ module.exports = {
             white: "#fff",
           },
         },
+        bear: {
+          dark: "#031C18",
+          teal: "#4ABFB5",
+          purple: "#B16FF0",
+          light: "#FDF7C7",
+          pink: "#FF60B6",
+        },
       },
     },
   },
