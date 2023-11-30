@@ -9,6 +9,9 @@ module.exports = {
     extend: {
       fontFamily: {
         poppins: ["var(--font-poppins)"],
+        cherry: ["var(--font-cherry-swash)"],
+        chonburi: ["var(--font-chonburi)"],
+        cormorant: ["var(--font-cormorant)"],
       },
       colors: {
         hackathon: {
