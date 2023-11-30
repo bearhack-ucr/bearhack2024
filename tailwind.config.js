@@ -9,6 +9,9 @@ module.exports = {
     extend: {
       fontFamily: {
         poppins: ["var(--font-poppins)"],
+        cherry: ["var(--font-cherry-swash)"],
+        chonburi: ["var(--font-chonburi)"],
+        cormorant: ["var(--font-cormorant)"],
       },
       colors: {
         hackathon: {
@@ -44,6 +47,13 @@ module.exports = {
             "pink-text": "#F583F1",
             white: "#fff",
           },
+        },
+        bear: {
+          dark: "#031C18",
+          teal: "#4ABFB5",
+          purple: "#B16FF0",
+          light: "#FDF7C7",
+          pink: "#FF60B6",
         },
       },
     },
