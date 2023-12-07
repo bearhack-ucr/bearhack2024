@@ -1,5 +1,12 @@
+import HorizontalLine from "./HorizontalLine";
+
 const GetInvolved = () => {
-  return <div>Get Involved</div>;
+  return (
+    <div>
+      Get Invloved
+      <HorizontalLine />
+    </div>
+  );
 };
 
 export default GetInvolved;
