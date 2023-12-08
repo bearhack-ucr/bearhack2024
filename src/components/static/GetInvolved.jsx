@@ -1,13 +1,15 @@
 import butterfly from "../../../public/assets/butterfly.svg";
 import hat from "../../../public/assets/hat.svg";
 import book from "../../../public/assets/book.svg";
+import HorizontalLine from "./HorizontalLine";
 import Link from "./Link.jsx";
 import Image from "next/image.js";
+
 const GetInvolved = () => {
   return (
     <div className="w-full text-white flex flex-col justify-center items-center gap-8">
       <div className="flex-row flex justify-center items-center gap-3 w-5/6 md:w-1/2 ">
-        <div className=" w-24">
+        <div className="w-24">
           <Image src={butterfly} alt={"butterfly"} />
         </div>
         <p className="font-chonburi text-4xl">Get Involved</p>
@@ -21,6 +23,7 @@ const GetInvolved = () => {
           <p className="font-cherry text-2xl md:text-3xl !text-center lg:!text-start">
             Become a Mentor
           </p>
+          <HorizontalLine />
           <p className="font-cherry text-lg md:text-xl !text-center lg:!text-start">
             In cursus turpis massa tincidunt dui ut ornare lectus sit. Viverra
             vitae congue eu consequat ac felis.
@@ -39,6 +42,7 @@ const GetInvolved = () => {
           <p className="font-cherry text-2xl md:text-3xl !text-center lg:!text-start">
             Become a Volunteer
           </p>
+          <HorizontalLine />
           <p className="font-cherry text-lg md:text-xl !text-center lg:!text-start">
             In cursus turpis massa tincidunt dui ut ornare lectus sit. Viverra
             vitae congue eu consequat ac felis.
