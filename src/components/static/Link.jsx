@@ -1,5 +1,5 @@
 import Link from "next/link";
-const CUstomLink = ({ text, link }) => {
+const CustomLink = ({ text, link }) => {
   return (
     <Link
       target="_blank"
@@ -18,4 +18,4 @@ const CUstomLink = ({ text, link }) => {
   );
 };
 
-export default CUstomLink;
+export default CustomLink;
