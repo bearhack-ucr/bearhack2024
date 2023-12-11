@@ -2,31 +2,25 @@ export const FAQdata = [
   {
     question: "What is BearHack?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occae",
+      "Welcome to Bearhack, a medical-technology-focused, in-person, weekend-long event brought to you by BMES (Biomedical Engineering Society). Bearhack invites curious minds to embark on a journey of learning and innovation. This event provides a unique opportunity for participants to choose a project of their liking and dedicate the weekend to exploring and building something new. Whether you're passionate about a specific medical technology or have been meaning to delve into a particular topic, Bearhack is the perfect platform for you. Form a team of up to 4 people to collaborate and create. The event not only fosters individual growth but also offers the chance to forge new friendships with fellow enthusiasts.",
   },
   {
-    question: "Who can attend BearHack?",
-    answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occae",
+    question: "Will it cost money to participate in BearHack?",
+    answer: "Nope! All food and supplies will be paid and provided for.",
   },
   {
-    question: "How do I register?",
+    question: "How long will the event last?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occae",
+      "The event will be on April 27-28th, 2024. It will start on the morning of April 27th and last till the next morning on April 28th.",
   },
   {
-    question: "How do I register?",
+    question: "Where will Bearhack be hosted?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occae",
+      "BearHack will be hosted on the UCR campus. Exact location will be announced as the event gets closer. ",
   },
   {
-    question: "How do I register?",
+    question: "Who can participate in BearHack?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occae",
-  },
-  {
-    question: "How do I register?",
-    answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occae",
+      "This event is open to all undergraduate students attending UCR! You do not need any prior skills or qualifications to attend.",
   },
 ];

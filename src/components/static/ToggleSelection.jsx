@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { useState } from "react";
 import Arrows from "../../../public/faqArrows.svg";
@@ -10,7 +9,7 @@ const ToggleSelection = ({ title, children }) => {
     <div className="bg-bear-dark py-2">
       <button
         onClick={() => setState(!state)}
-        className="flex items-center justify-between w-full py-2 pr-8 text-white font-chonburi text-xl"
+        className="flex items-center justify-between w-full py-2 pr-8 text-white font-chonburi text-sm md:text-xl"
       >
         {title}
         <Image
@@ -26,7 +25,9 @@ const ToggleSelection = ({ title, children }) => {
         </div>
       )}
       {state && (
-        <div className="py-4 text-white text-lg font-cormorant">{children}</div>
+        <div className="py-4 text-white text-xs md:text-lg font-cormorant">
+          {children}
+        </div>
       )}
       {state && (
         <div className="flex flex-row justify-end">
