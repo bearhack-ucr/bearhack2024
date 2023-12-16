@@ -1,13 +1,13 @@
-import butterfly from "../../../public/assets/butterfly.svg";
-import hat from "../../../public/assets/hat.svg";
-import book from "../../../public/assets/book.svg";
+import butterfly from "@/assets/butterfly.svg";
+import hat from "@/assets/hat.svg";
+import book from "@/assets/book.svg";
 import HorizontalLine from "./HorizontalLine";
 import Link from "./Link.jsx";
 import Image from "next/image.js";
 
 const GetInvolved = () => {
   return (
-    <div className="w-full text-white flex flex-col justify-center items-center gap-8">
+    <div className="w-full text-white flex flex-col justify-center items-center gap-14">
       <div className="flex-row flex justify-center items-center gap-3 w-5/6 md:w-1/2 ">
         <div className="w-24">
           <Image src={butterfly} alt={"butterfly"} />
@@ -20,11 +20,11 @@ const GetInvolved = () => {
           <Image src={hat} />
         </div>
         <div className="flex flex-col w-3/4">
-          <p className="font-cherry text-2xl md:text-3xl !text-center lg:!text-start">
+          <p className="font-cherry text-2xl md:text-3xl !text-center lg:!text-start -mb-2">
             Become a Mentor
           </p>
           <HorizontalLine />
-          <p className="font-cherry text-lg md:text-xl !text-center lg:!text-start">
+          <p className="font-cherry text-lg md:text-xl !text-center lg:!text-start mt-2">
             In cursus turpis massa tincidunt dui ut ornare lectus sit. Viverra
             vitae congue eu consequat ac felis.
           </p>
@@ -39,11 +39,11 @@ const GetInvolved = () => {
           <Image src={book} />
         </div>
         <div className="flex flex-col w-3/4">
-          <p className="font-cherry text-2xl md:text-3xl !text-center lg:!text-start">
+          <p className="font-cherry text-2xl md:text-3xl !text-center lg:!text-start -mb-2">
             Become a Volunteer
           </p>
           <HorizontalLine />
-          <p className="font-cherry text-lg md:text-xl !text-center lg:!text-start">
+          <p className="font-cherry text-lg md:text-xl !text-center lg:!text-start mt-2">
             In cursus turpis massa tincidunt dui ut ornare lectus sit. Viverra
             vitae congue eu consequat ac felis.
           </p>
