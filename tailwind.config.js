@@ -12,6 +12,8 @@ module.exports = {
         cherry: ["var(--font-cherry-swash)"],
         chonburi: ["var(--font-chonburi)"],
         cormorant: ["var(--font-cormorant)"],
+        header: ["var(--font-grenze)"],
+        normal: ["var(--titillium-web)"],
       },
       colors: {
         hackathon: {
