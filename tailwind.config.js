@@ -13,7 +13,7 @@ module.exports = {
         chonburi: ["var(--font-chonburi)"],
         cormorant: ["var(--font-cormorant)"],
         header: ["var(--font-grenze)"],
-        normal: ["var(--titillium-web)"],
+        paragraph: ["var(--titillium-web)"],
       },
       colors: {
         hackathon: {
