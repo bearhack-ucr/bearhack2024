@@ -51,8 +51,9 @@ module.exports = {
           },
         },
         bear: {
-          dark: "#031C18",
+          dark: "#000303",
           teal: "#4ABFB5",
+          "teal-100": "#B3FBF7",
           purple: "#B16FF0",
           light: "#FDF7C7",
           pink: "#FF60B6",
