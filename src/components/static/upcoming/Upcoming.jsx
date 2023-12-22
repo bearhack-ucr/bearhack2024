@@ -9,7 +9,7 @@ import Footer from "../Footer";
 
 const Upcoming = () => {
   return (
-    <div>
+    <div className="bg-bear-dark">
       <Navbar />
       <Title />
       <AboutUs />
