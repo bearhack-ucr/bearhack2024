@@ -25,7 +25,7 @@ const Title = () => {
           </div>
         </div>
         <div className="flex gap-4 flex-col lg:flex-row px-8">
-          <Link text={"Register"} link={"/form/register"} />
+          <Link text={"Register"} link={"/form/participant"} />
           <Link text={"Mentor"} link={"/form/mentor"} />
           <Link text={"Volunteer"} link={"/form/volunteer"} />
           <Link text={"Sponsor"} link={"/form/sponsor"} />
