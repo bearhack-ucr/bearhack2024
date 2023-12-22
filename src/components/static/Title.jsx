@@ -13,7 +13,7 @@ const Title = () => {
       </div>
       <div className="flex flex-col z-1 p-8 lg:p-16 gap-2 rounded-lg bg-slate-900 lg:bg-transparent">
         <div className="p-8 flex flex-col items-center lg:items-end gap-2">
-          <div className="text-3xl lg:text-4xl font-header font-bold">
+          <div className="text-3xl lg:text-5xl font-header font-bold">
             BEARHACK 2024
           </div>
           <div className="text-lg lg:text-xl font-paragraph text-bear-teal-100">

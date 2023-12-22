@@ -9,9 +9,6 @@ module.exports = {
     extend: {
       fontFamily: {
         poppins: ["var(--font-poppins)"],
-        cherry: ["var(--font-cherry-swash)"],
-        chonburi: ["var(--font-chonburi)"],
-        cormorant: ["var(--font-cormorant)"],
         header: ["var(--font-grenze)"],
         paragraph: ["var(--font-titillium-web)"],
       },
@@ -27,6 +24,7 @@ module.exports = {
           "gray-100": "#E7E7E7",
           "gray-200": "#9ea4af",
           "gray-300": "#525252",
+          "select-bg": "#3F3F3F",
           page: "#000303" /* bear-dark */,
           tags: {
             "red-bg": "#FFE9E2",
