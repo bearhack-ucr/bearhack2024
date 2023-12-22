@@ -12,7 +12,7 @@ const GetInvolved = () => {
         <div className="w-24">
           <Image src={butterfly} alt={"butterfly"} />
         </div>
-        <p className="font-chonburi text-4xl">Get Involved</p>
+        <p className="font-header text-5xl">Get Involved</p>
       </div>
 
       <div className="flex flex-col lg:flex-row w-5/6 lg:w-2/3 justify-between items-center gap-2">
@@ -20,11 +20,11 @@ const GetInvolved = () => {
           <Image src={hat} />
         </div>
         <div className="flex flex-col w-3/4">
-          <p className="font-cherry text-2xl md:text-3xl !text-center lg:!text-start -mb-2">
+          <p className="font-header text-2xl md:text-4xl !text-center lg:!text-start -mb-2">
             Become a Mentor
           </p>
           <HorizontalLine />
-          <p className="font-cherry text-lg md:text-xl !text-center lg:!text-start mt-2">
+          <p className="font-paragraph text-lg md:text-xl !text-center lg:!text-start mt-2">
             In cursus turpis massa tincidunt dui ut ornare lectus sit. Viverra
             vitae congue eu consequat ac felis.
           </p>
@@ -39,11 +39,11 @@ const GetInvolved = () => {
           <Image src={book} />
         </div>
         <div className="flex flex-col w-3/4">
-          <p className="font-cherry text-2xl md:text-3xl !text-center lg:!text-start -mb-2">
+          <p className="font-header text-2xl md:text-4xl !text-center lg:!text-start -mb-2">
             Become a Volunteer
           </p>
           <HorizontalLine />
-          <p className="font-cherry text-lg md:text-xl !text-center lg:!text-start mt-2">
+          <p className="font-paragraph text-lg md:text-xl !text-center lg:!text-start mt-2">
             In cursus turpis massa tincidunt dui ut ornare lectus sit. Viverra
             vitae congue eu consequat ac felis.
           </p>

@@ -22,7 +22,7 @@ const Form = ({
   return (
     <div className="w-full h-full overflow-scroll-y flex flex-col items-center font-poppins">
       <div className="w-10/12 md:w-1/2 xl:w-1/3 py-5 text-white">
-        <p className="text-xl bg-bear-teal/40 font-header font-semibold px-4 py-3 rounded-t-xl m-0">
+        <p className="text-2xl bg-bear-teal/40 font-header font-semibold px-4 py-3 rounded-t-xl m-0">
           {header}
         </p>
         <div className="rounded-b-xl bg-white/10 p-3 font-paragraph">

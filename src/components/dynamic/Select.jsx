@@ -48,7 +48,7 @@ const Select = ({
     <div className="flex flex-col">
       <p className="mb-1 font-semibold">
         {title}
-        {required && <span className="text-hackathon-green-300">*</span>}
+        {required && <span className="text-red-500">*</span>}
       </p>
       <div className="w-full m-0 relative" data-cy="select" ref={ref}>
         {editable ? (
@@ -61,7 +61,7 @@ const Select = ({
           >
             {user[field] || placeholder}
             <RiArrowDownSLine
-              className={`${show && "rotate-180"} duration-300 text-black`}
+              className={`${show && "rotate-180"} duration-300 text-white`}
               data-cy="select-arrow"
             />
           </button>
@@ -78,7 +78,7 @@ const Select = ({
         )}
         {editable && show && (
           <div
-            className="w-full absolute z-10 !bg-slate-800 !border-none !rounded-none !p-0 overflow-y-auto max-h-[35vh]"
+            className="w-full absolute z-10 !bg-hackathon-select-bg !border-none !rounded-none !p-0 overflow-y-auto max-h-[35vh]"
             data-cy="select-menu"
           >
             {searchable && (
@@ -94,7 +94,7 @@ const Select = ({
               .filter((opt) => !opt.hidden)
               .map((option, index) => (
                 <div
-                  className=" hover:!bg-bear-teal/50 !bg-slate-800/50 overflow-hidden pl-2"
+                  className=" hover:!bg-bear-teal/50 !bg-hackathon-select-bg overflow-hidden pl-2"
                   key={index}
                   onClick={() => {
                     setUser({ ...user, [field]: option.name });
