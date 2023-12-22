@@ -11,6 +11,7 @@ import Upload from "./Upload";
 import { FILTERS, STATUSES } from "@/data/dynamic/admin/Messenger";
 import { CONFIG } from "@/data/Config";
 import axios from "axios";
+import { readFileAsBase64 } from "@/utils/convert";
 
 const Messenger = () => {
   const [email, setEmail] = useState({
@@ -21,15 +22,6 @@ const Messenger = () => {
   const [filters, setFilters] = useState(FILTERS);
   const [statuses, setStatuses] = useState(STATUSES);
 
-  const readFileAsBase64 = (file) => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = (error) => reject(error);
-    });
-  };
-
   const handleSend = async () => {
     if (email.subject === "") {
       toast("❌ Please add a subject!");
@@ -37,6 +29,24 @@ const Messenger = () => {
     }
     if (email.text === "") {
       toast("❌ Please add a body!");
+      return;
+    }
+
+    const usersCount = Object.keys(filters).filter(
+      (key) => filters[key].state
+    ).length;
+
+    const statusesCount = Object.values(statuses)
+      .filter((value) => value.state)
+      .map((value) => value.value).length;
+
+    if (usersCount === 0) {
+      toast("❌ Please select a user type!");
+      return;
+    }
+
+    if (statusesCount === 0) {
+      toast("❌ Please select a user status!");
       return;
     }
 

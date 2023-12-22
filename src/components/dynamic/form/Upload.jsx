@@ -3,6 +3,8 @@ import { BsUpload } from "react-icons/bs";
 import { FaFilePdf, FaImage, FaTimes } from "react-icons/fa";
 import { toast } from "react-hot-toast";
 import { BYTES } from "@/data/dynamic/Bytes";
+import { readFileAsBase64, compress } from "@/utils/convert";
+
 const getSize = (maxSize) => BYTES[maxSize[1]] * maxSize[0];
 const getType = (types) => "." + types.join(",.");
 
@@ -12,40 +14,32 @@ const Upload = ({ field, user, setUser, text, maxSize, types, required }) => {
 
   const handleInput = async (e) => {
     setUploading(true);
-    if (e.target.files[0].size > getSize(maxSize)) {
+    const blob = await compress(e.target.files[0]);
+    if (blob.size > getSize(maxSize)) {
       toast(`❌ File too big, exceeds ${maxSize[0]} ${maxSize[1]}!`);
       return;
     }
-    setFile(e.target.files[0]);
-    const base64 = await readFileAsBase64(e.target.files[0]);
+    setFile(blob);
+    const base64 = await readFileAsBase64(blob);
     setUser({ ...user, [field]: base64 });
     setUploading(false);
-  };
-
-  const readFileAsBase64 = (file) => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = (error) => reject(error);
-    });
   };
 
   return (
     <div className="flex flex-col">
       <p className="mb-0 font-semibold">
         {text}
-        {required && <span className="text-hackathon-green-300">*</span>}
+        {required && <span className="text-red-500">*</span>}
       </p>
       <div className="flex items-center w-full flex-col" data-cy="upload">
         {!file && (
           <label
             htmlFor="dropzone-file"
-            className="flex flex-col items-center justify-center w-full h-fit border-2 border-gray-300 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100"
+            className="flex flex-col items-center justify-center w-full h-fit border-2 border-gray-300 rounded-lg cursor-pointer bg-white/10 hover:bg-slate-600/10 transition-colors"
           >
-            <div className="flex flex-col items-center justify-center pt-4">
+            <div className="flex flex-col items-center justify-center py-4">
               <BsUpload className=" text-3xl mb-2 text-hackathon-green-300" />
-              <p className="text-sm text-gray-500 font-semibold">
+              <p className="text-sm text-white font-semibold">
                 Upload from my computer
               </p>
             </div>

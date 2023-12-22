@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { db } from "../../../../firebase";
+import { db } from "../../../utils/firebase";
 import { doc, getDoc, updateDoc, addDoc, collection } from "firebase/firestore";
 import { authenticate } from "@/utils/auth";
 import { AUTH } from "@/data/dynamic/user/Team";
@@ -17,7 +17,6 @@ export async function POST() {
 
   try {
     const team = {
-      name: "",
       links: {
         github: "",
         devpost: "",
@@ -56,11 +55,10 @@ export async function PUT(req) {
     );
   }
 
-  const { name, github, figma, devpost, members } = await req.json();
+  const { github, figma, devpost, members } = await req.json();
 
   try {
     await updateDoc(doc(db, "teams", user.team), {
-      name: name,
       links: {
         github: github,
         figma: figma,
@@ -79,11 +77,11 @@ export async function PUT(req) {
 
 export async function GET(req) {
   const res = NextResponse;
-  const { auth } = await authenticate(AUTH.GET);
+  const { auth, message } = await authenticate(AUTH.GET);
 
   if (auth !== 200) {
     return res.json(
-      { message: `Authentication Error: ${"MESSAGE VARIABLE SHOULD BE HERE"}` },
+      { message: `Authentication Error: ${message}` },
       { status: auth }
     );
   }
@@ -94,12 +92,11 @@ export async function GET(req) {
     const snapshot = await getDoc(doc(db, "teams", team));
     if (!snapshot.exists())
       return res.json({ message: "Invalid Team ID" }, { status: 500 });
-    const { name, links, members } = snapshot.data();
+    const { links, members } = snapshot.data();
     return res.json(
       {
         message: "OK",
         items: {
-          name: name,
           github: links.github,
           devpost: links.devpost,
           figma: links.figma,

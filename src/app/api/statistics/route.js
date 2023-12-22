@@ -1,10 +1,11 @@
 import { NextResponse } from "next/server";
-import { db } from "../../../../firebase";
+import { db } from "../../../utils/firebase";
 import {
   where,
   query,
   collection,
   getCountFromServer,
+  getDocs,
 } from "firebase/firestore";
 import { authenticate } from "@/utils/auth";
 
@@ -64,6 +65,14 @@ export async function GET() {
         )
       )
     ).data().count;
+    const sponsors = (
+      await getCountFromServer(
+        query(
+          collection(db, "users"),
+          where("roles.sponsors", "in", [-1, 0, 1])
+        )
+      )
+    ).data().count;
 
     const admins = (
       await getCountFromServer(
@@ -71,17 +80,30 @@ export async function GET() {
       )
     ).data().count;
 
-    const items = {
+    const events = await getDocs(collection(db, "events"));
+
+    const eventAttendees = {};
+
+    events.forEach((doc) => {
+      const { name, attendance } = doc.data();
+      eventAttendees[name] = attendance;
+    });
+
+    const users = {
       participants,
       teams,
       judges,
       volunteers,
       mentors,
       committees,
+      sponsors,
       admins,
     };
 
-    return res.json({ items: items }, { status: 200 });
+    return res.json(
+      { items: { users, events: eventAttendees } },
+      { status: 200 }
+    );
   } catch (err) {
     return res.json(
       { message: `Internal Server Error: ${err}` },

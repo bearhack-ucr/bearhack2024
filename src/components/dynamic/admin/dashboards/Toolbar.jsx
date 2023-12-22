@@ -34,6 +34,26 @@ const Toolbar = ({
   const [toggle, setToggle] = useState(false);
 
   const onClick = (value) => {
+    if (!objects.some((obj) => obj.selected)) {
+      toast("❌ No items selected.");
+      return;
+    }
+
+    const notPending = objects.some((obj) => obj.selected && obj.status !== 0);
+
+    if (notPending) {
+      toast("❌ Only pending items can be changed!");
+      setObjects(
+        objects.map((a) => {
+          if (a.selected) {
+            a.selected = false;
+          }
+          return a;
+        })
+      );
+      return;
+    }
+
     const winners = objects.some((obj) => obj.selected && obj.status === 2);
 
     if (winners) {
@@ -74,6 +94,20 @@ const Toolbar = ({
     );
   };
 
+  const handleShortcuts = (e) => {
+    if (e.repeat) return;
+    switch (e.key) {
+      case "r": {
+        handleReload();
+        break;
+      }
+      case "Backspace": {
+        handleDelete();
+        break;
+      }
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -106,6 +140,11 @@ const Toolbar = ({
   };
 
   const handleDelete = () => {
+    if (!objects.some((obj) => obj.selected)) {
+      toast("❌ No items selected for deletion.");
+      return;
+    }
+
     setToggle(false);
     const remove = objects.filter((object) => object.selected);
     const keep = objects.filter((object) => !object.selected);
@@ -126,6 +165,10 @@ const Toolbar = ({
 
   useEffect(() => {
     handleReload();
+
+    document.addEventListener("keydown", handleShortcuts);
+
+    return () => document.removeEventListener("keydown", handleShortcuts);
   }, []);
 
   return (
@@ -198,6 +241,7 @@ const Toolbar = ({
               toast("❌ Select row(s) before pressing the delete button");
               return;
             }
+
             setPopup({
               title: "Delete Confirmation",
               text: "Are you sure you want to delete these row(s)? This action is irreversible.",

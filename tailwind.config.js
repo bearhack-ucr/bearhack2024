@@ -9,6 +9,8 @@ module.exports = {
     extend: {
       fontFamily: {
         poppins: ["var(--font-poppins)"],
+        header: ["var(--font-grenze)"],
+        paragraph: ["var(--font-titillium-web)"],
       },
       colors: {
         hackathon: {
@@ -22,7 +24,8 @@ module.exports = {
           "gray-100": "#E7E7E7",
           "gray-200": "#9ea4af",
           "gray-300": "#525252",
-          page: "#F5F5F5",
+          "select-bg": "#3F3F3F",
+          page: "#000303" /* bear-dark */,
           tags: {
             "red-bg": "#FFE9E2",
             "red-text": "#F07167",
@@ -44,6 +47,14 @@ module.exports = {
             "pink-text": "#F583F1",
             white: "#fff",
           },
+        },
+        bear: {
+          dark: "#000303",
+          teal: "#4ABFB5",
+          "teal-100": "#B3FBF7",
+          purple: "#B16FF0",
+          light: "#FDF7C7",
+          pink: "#FF60B6",
         },
       },
     },
