@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import Arrows from "../../../public/faqArrows.svg";
-import Image from "next/image";
+import { LiaAngleDoubleUpSolid } from "react-icons/lia";
 
 const ToggleSelection = ({ title, children }) => {
   const [state, setState] = useState(false);
@@ -9,13 +8,11 @@ const ToggleSelection = ({ title, children }) => {
     <div className="bg-bear-dark py-2">
       <button
         onClick={() => setState(!state)}
-        className="flex items-center justify-between w-full py-2 pr-8 text-white font-chonburi text-sm md:text-xl"
+        className="flex items-center justify-between w-full py-3 text-white font-header text-sm md:text-3xl"
       >
         {title}
-        <Image
-          src={Arrows}
-          width={25}
-          className={`${state && "rotate-180"} duration-300`}
+        <LiaAngleDoubleUpSolid
+          className={`${state && "rotate-180"} duration-500 w-1/12 `}
         />
       </button>
       {!state && (
@@ -24,11 +21,19 @@ const ToggleSelection = ({ title, children }) => {
           <div className="w-2 h-2 bg-white transform rotate-45 absolute flex -mt-1"></div>
         </div>
       )}
-      {state && (
-        <div className="py-4 text-white text-xs md:text-lg font-cormorant">
-          {children}
-        </div>
-      )}
+      <div
+        className={`transition-opacity duration-500 ease-in-out ${
+          state ? "opacity-100 " : "opacity-0 "
+        }`}
+      >
+        {state && (
+          <div
+            className={`px-10 pb-6 text-white text-xs md:text-lg font-paragraph `}
+          >
+            {children}
+          </div>
+        )}
+      </div>
       {state && (
         <div className="flex flex-row justify-end">
           <div className="h-[1px] w-full bg-white"> </div>
