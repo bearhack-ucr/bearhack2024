@@ -26,12 +26,10 @@ const Radio = ({
               key={index}
               onClick={() => handleClick(option)}
             >
-              <div className="rounded-full w-4 border-black border aspect-square bg-transparent p-0.5 mr-1">
+              <div className="rounded-full w-4 border-white border aspect-square bg-transparent p-px m-1">
                 <div
                   className={`rounded-full w-full aspect-square duration-100 ${
-                    option === user[field]
-                      ? "bg-hackathon-green-300"
-                      : "bg-transparent"
+                    option === user[field] ? "bg-white" : "bg-transparent"
                   }`}
                 />
               </div>

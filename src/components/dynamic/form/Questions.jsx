@@ -51,7 +51,7 @@ const Questions = ({
   };
 
   return (
-    <div>
+    <div className="flex flex-col gap-3 mx-4">
       {Object.values(fields).map((field, index) => (
         <div key={index}>
           {field.input === "description" &&
@@ -102,21 +102,31 @@ const Questions = ({
                 )}
               </p>
               {field.options.map((option, i) => (
-                <Checkbox
-                  className="w-1/2"
-                  key={i}
-                  toggle={object[field.field].includes(option)}
-                  text={option}
-                  onClick={() =>
-                    setObject({
-                      ...object,
-                      [field.field]: object[field.field].includes(option)
-                        ? object[field.field].filter((item) => item !== option)
-                        : [...object[field.field], option],
-                    })
-                  }
-                  color="bg-hackathon-green-300"
-                />
+                <>
+                  {i > 0 && (
+                    <div
+                      key={i + 0.5}
+                      className="h-px mx-2 bg-white/30 my-1"
+                    ></div>
+                  )}
+                  <Checkbox
+                    className="w-1/2"
+                    key={i}
+                    toggle={object[field.field].includes(option)}
+                    text={option}
+                    onClick={() =>
+                      setObject({
+                        ...object,
+                        [field.field]: object[field.field].includes(option)
+                          ? object[field.field].filter(
+                              (item) => item !== option
+                            )
+                          : [...object[field.field], option],
+                      })
+                    }
+                    color="bg-transparent"
+                  />
+                </>
               ))}
             </>
           )}
