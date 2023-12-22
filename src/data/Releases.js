@@ -1,20 +1,13 @@
+const LIVE_END = new Date("April 29, 2024 9:00:00");
 const DEV = {
   STATIC: {
-    UPCOMING: {
-      START: new Date("10/01/2023"),
-      END: new Date("10/10/2024"),
-    },
-    PRELIVE: {
-      START: new Date("10/01/2023"),
-      END: new Date("10/10/2024"),
-    },
     LIVE: {
-      START: new Date("10/01/2023"),
-      END: new Date("10/10/2024"),
+      START: new Date("10/01/2000"),
+      END: LIVE_END,
     },
     POSTLIVE: {
-      START: new Date("10/01/2023"),
-      END: new Date("10/10/2024"),
+      START: LIVE_END,
+      END: new Date("10/10/2100"),
     },
   },
   DYNAMIC: {
@@ -52,14 +45,6 @@ const DEV = {
 
 const PRODUCTION = {
   STATIC: {
-    UPCOMING: {
-      START: new Date("10/01/2023"),
-      END: new Date("10/10/2024"),
-    },
-    PRELIVE: {
-      START: new Date("10/01/2023"),
-      END: new Date("10/10/2024"),
-    },
     LIVE: {
       START: new Date("10/01/2023"),
       END: new Date("10/10/2024"),

@@ -19,7 +19,7 @@ const Checkbox = ({ toggle, onClick = () => {}, text = "", color }) => {
           data-cy="checkmark"
           className={`${
             toggle ? "text-white" : "text-hackathon-gray-100 !opacity-0"
-          } text-lg`}
+          } text-lg transition-opacity`}
         />
       </div>
       {text && <p className="pl-3 my-0 pt-0">{text}</p>}
