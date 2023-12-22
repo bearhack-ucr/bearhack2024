@@ -9,7 +9,7 @@ const Checkbox = ({ toggle, onClick = () => {}, text = "", color }) => {
     >
       <div
         data-cy="checkbox-bg"
-        className={`w-4 h-4 rounded-sm ${
+        className={`w-4 h-4 rounded-sm border border-white !bg-transparent ${
           toggle
             ? `${color ? color : "bg-hackathon-blue-100"}`
             : "bg-hackathon-gray-100"
@@ -18,8 +18,8 @@ const Checkbox = ({ toggle, onClick = () => {}, text = "", color }) => {
         <BsCheckLg
           data-cy="checkmark"
           className={`${
-            toggle ? "text-white" : "text-hackathon-gray-100"
-          } text-lg`}
+            toggle ? "text-white" : "text-hackathon-gray-100 !opacity-0"
+          } text-lg transition-opacity`}
         />
       </div>
       {text && <p className="pl-3 my-0 pt-0">{text}</p>}

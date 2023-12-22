@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { db } from "../../../../firebase";
+import { db } from "../../../utils/firebase";
 import {
   doc,
   updateDoc,
@@ -48,6 +48,16 @@ export async function POST(req) {
       "roles.mentors": 0,
       availability: availability,
     });
+
+    SG.send({
+      to: user.email,
+      template_id: process.env.SENDGRID_CONFIRMATION_TEMPLATE,
+      dynamic_template_data: {
+        name: user.name,
+        position: "MENTOR",
+      },
+    });
+
     return res.json({ message: "OK" }, { status: 200 });
   } catch (err) {
     return res.json(
@@ -75,13 +85,14 @@ export async function GET() {
       query(collection(db, "users"), where("roles.mentors", "in", [-1, 0, 1]))
     );
     snapshot.forEach((doc) => {
-      const { name, email, discord, roles, availability, timestamp } =
+      const { name, email, discord, roles, availability, timestamp, response } =
         doc.data();
       output.push({
         name,
         email,
         discord,
         availability,
+        response,
         status: roles.mentors,
         uid: doc.id,
         selected: false,
@@ -124,6 +135,18 @@ export async function PUT(req) {
       } else if (attribute === "status") {
         await updateDoc(doc(db, "users", object.uid), {
           "roles.mentors": status,
+        });
+
+        SG.send({
+          to: object.email,
+          template_id:
+            status === 1
+              ? process.env.SENDGRID_ACCEPTANCE_TEMPLATE
+              : process.env.SENDGRID_REJECTION_TEMPLATE,
+          dynamic_template_data: {
+            name: object.name,
+            position: "MENTOR",
+          },
         });
       }
     });

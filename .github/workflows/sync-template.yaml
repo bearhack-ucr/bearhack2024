@@ -12,24 +12,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout current repo
+      - name: Checkout Current Repo
         uses: actions/checkout@v3
         with:
           path: ${{ github.repository }}
 
-      - name: checkout new branch
+      - name: Fetch all
         working-directory: ${{ github.repository }}
         run: |
-          git checkout -b sync-template
-
-      - name: fetch and merge template changes
-        working-directory: ${{ github.repository }}
-        run: |
+          current_date=$(date '+%m/%d/%Y')
           git remote add template https://github.com/acm-ucr/hackathon-website
           git fetch --all
-          git merge template/dev sync-template
 
-      - name: create new PR
+      - name: Checkout and push Template Dev Branch
         working-directory: ${{ github.repository }}
         run: |
-          gh pr create --title "Sync Template Changes" --body "Syncing template changes from $(date +'%m-%d-%Y')"
+          git checkout -b sync-template-$current_date template/dev
+          git push origin sync-template-$current_date
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create New Pull Request
+        working-directory: ${{ github.repository }}
+        run: |
+          gh pr create --base dev --head sync-template-$current_date --title "Sync Template Changes $current_date" --body "Syncing template changes from $current_date"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { db } from "../../../../firebase";
+import { db } from "../../../utils/firebase";
 import {
   doc,
   updateDoc,
@@ -12,6 +12,7 @@ import {
 } from "firebase/firestore";
 import { authenticate } from "@/utils/auth";
 import { AUTH } from "@/data/dynamic/admin/Participants";
+import SG from "@/utils/sendgrid";
 
 export async function POST(req) {
   const res = NextResponse;
@@ -24,12 +25,23 @@ export async function POST(req) {
     );
   }
 
-  const { phone, major, age, school, grade, gender, shirt, diet, resume } =
-    await req.json();
+  const {
+    phone,
+    discord,
+    major,
+    age,
+    school,
+    grade,
+    gender,
+    shirt,
+    diet,
+    resume,
+  } = await req.json();
 
   try {
     await updateDoc(doc(db, "users", user.id), {
       phone: phone,
+      discord: discord,
       major: major,
       age: age,
       school: school,
@@ -41,6 +53,16 @@ export async function POST(req) {
       diet: diet,
       resume: resume,
     });
+
+    SG.send({
+      to: user.email,
+      template_id: process.env.SENDGRID_CONFIRMATION_TEMPLATE,
+      dynamic_template_data: {
+        name: user.name,
+        position: "PARTICIPANT",
+      },
+    });
+
     return res.json({ message: "OK" }, { status: 200 });
   } catch (err) {
     return res.json(
@@ -76,6 +98,7 @@ export async function GET() {
         name,
         email,
         phone,
+        discord,
         major,
         age,
         school,
@@ -93,13 +116,14 @@ export async function GET() {
         name,
         email,
         phone,
+        discord,
         major,
         age,
         school,
         grade,
         gender,
         shirt,
-        diet,
+        diet: diet.join(","),
         timestamp,
         resume: resume || "",
         status: roles.participants,
@@ -143,6 +167,18 @@ export async function PUT(req) {
       } else if (attribute === "status") {
         await updateDoc(doc(db, "users", object.uid), {
           "roles.participants": status,
+        });
+
+        SG.send({
+          to: object.email,
+          template_id:
+            status === 1
+              ? process.env.SENDGRID_ACCEPTANCE_TEMPLATE
+              : process.env.SENDGRID_REJECTION_TEMPLATE,
+          dynamic_template_data: {
+            name: object.name,
+            position: "PARTICIPANT",
+          },
         });
       }
     });

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Input from "../Input";
 import Button from "../Button";
-import DropDown from "./DropDown";
+import Dropdown from "./Dropdown";
 import Checkbox from "@/components/dynamic/Checkbox";
 import Popup from "../Popup";
 import { FaTrashAlt } from "react-icons/fa";
@@ -109,9 +109,12 @@ const Toolbar = ({ objects, setObjects, teams, setTeams, tags, empty }) => {
       uid: uuid(),
     };
 
-    setObjects([...objects, data]);
-
-    axios.post("/api/prizes", data).then(() => toast("✅ Prize Added!"));
+    if (!Object.values(data).some((val) => val === "")) {
+      setObjects([...objects, data]);
+      axios.post("/api/prizes", data).then(() => toast("✅ Prize Added!"));
+    } else {
+      toast("❌ Please fill out all required fields");
+    }
 
     setPrize(reset);
     setTeam({ name: "No Team Selected", id: "" });
@@ -236,7 +239,7 @@ const Toolbar = ({ objects, setObjects, teams, setTeams, tags, empty }) => {
           label="prize"
           maxLength={30}
         />
-        <DropDown
+        <Dropdown
           option={team}
           setOption={setTeam}
           options={teams}

@@ -19,10 +19,6 @@ export const TAGS = [
     value: 1,
   },
   {
-    text: "pending",
-    value: 0,
-  },
-  {
     text: "reject",
     value: -1,
   },
@@ -30,7 +26,7 @@ export const TAGS = [
 
 export const HEADERS = [
   { text: "name", size: "w-2/12", icon: true, sort: "off", limit: 200 },
-  { text: "email", size: "w-2/12", icon: true, sort: "off" },
+  { text: "discord", size: "w-2/12", icon: true, sort: "off" },
   { text: "team", size: "w-2/12", icon: true, sort: "off" },
   { text: "major", size: "w-2/12", icon: true, sort: "off" },
   {
@@ -89,13 +85,13 @@ export const DROPDOWN = ({ object, icons }) => {
 export const AUTH = {
   POST: {},
   GET: {
-    admins: 1,
+    admins: [1],
   },
   PUT: {
-    admins: 1,
+    admins: [1],
   },
   DELETE: {
-    admins: 1,
+    admins: [1],
   },
 };
 

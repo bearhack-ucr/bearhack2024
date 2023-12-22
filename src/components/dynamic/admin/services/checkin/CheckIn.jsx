@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Title from "../../Title";
 import Scanner from "./Scanner";
-import DropDown from "../DropDown";
+import Dropdown from "../Dropdown";
 import Button from "../../Button";
 import toast from "react-hot-toast";
 import axios from "axios";
@@ -15,7 +15,7 @@ const CheckIn = () => {
   useEffect(() => {
     axios
       .get(
-        `https://www.googleapis.com/calendar/v3/calendars/${process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_EMAIL}/events?key=${process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API_KEY}&singleEvents=true&orderBy=startTime`
+        `https://www.googleapis.com/calendar/v3/calendars/${process.env.NEXT_PUBLIC_GOOGLE_CALENDAR}/events?key=${process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API_KEY}&singleEvents=true&orderBy=startTime`
       )
       .then((response) => {
         setEvents(
@@ -55,7 +55,7 @@ const CheckIn = () => {
       }
 
       axios
-        .put("/api/checkin", { uid: user, event: event.id })
+        .put("/api/checkin", { uid: user, event: event.id, name: event.name })
         .then(() => toast(`✅ Checked in for ${event.name}`));
     } else {
       toast("❌ Expired QR code!");
@@ -69,7 +69,7 @@ const CheckIn = () => {
       <div className="grid grid-cols-1">
         <div className="p-3 flex flex-col items-center">
           {events && (
-            <DropDown
+            <Dropdown
               option={event}
               setOption={setEvent}
               options={events}

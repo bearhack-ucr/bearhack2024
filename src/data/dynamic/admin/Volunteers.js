@@ -21,10 +21,6 @@ export const TAGS = [
     value: 1,
   },
   {
-    text: "pending",
-    value: 0,
-  },
-  {
     text: "not attending",
     value: -1,
   },
@@ -50,7 +46,7 @@ export const HEADERS = [
 export const DROPDOWN = ({ object }) => {
   return (
     <div className="flex justify-center">
-      <div className="grid grid-cols-3 w-11/12">
+      <div className="grid grid-rows-4 grid-flow-col w-11/12">
         {AVAILABILITY.map((text, index) => (
           <Checkbox
             toggle={object.availability.includes(text)}
@@ -66,16 +62,16 @@ export const DROPDOWN = ({ object }) => {
 export const AUTH = {
   POST: {},
   GET: {
-    admins: 1,
-    committees: 1,
+    admins: [1],
+    committees: [1],
   },
   PUT: {
-    admins: 1,
-    committees: 1,
+    admins: [1],
+    committees: [1],
   },
   DELETE: {
-    admins: 1,
-    committees: 1,
+    admins: [1],
+    committees: [1],
   },
 };
 

@@ -2,7 +2,7 @@ export const COLORS = {
   green: {
     bg: "bg-hackathon-green-300",
     text: "text-gray-800",
-    border: "border-0",
+    border: "border-white",
   },
   grayOutline: {
     bg: "bg-white",

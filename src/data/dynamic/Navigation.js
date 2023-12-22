@@ -7,12 +7,14 @@ import {
 } from "react-icons/bs";
 import { MdVolunteerActivism, MdFeedback } from "react-icons/md";
 import { BiSolidHelpCircle } from "react-icons/bi";
+import { GoSponsorTiers } from "react-icons/go";
 import {
   FaGavel,
   FaEnvelope,
   FaLock,
   FaCalendarDay,
   FaMedal,
+  FaExclamation,
 } from "react-icons/fa";
 import { AiOutlineQrcode } from "react-icons/ai";
 import { signOut } from "next-auth/react";
@@ -22,6 +24,7 @@ const iconStyle = "mr-2";
 
 export const TABS = {
   admin: {
+    dropdown: true,
     Dashboards: {
       expand: true,
       mt: "mt-0",
@@ -60,6 +63,16 @@ export const TABS = {
           name: "committees",
           link: "/admin/committees",
           icon: <SiHandshake className={iconStyle} />,
+        },
+        {
+          name: "sponsors",
+          link: "/admin/sponsors",
+          icon: <GoSponsorTiers className={iconStyle} />,
+        },
+        {
+          name: "interests",
+          link: "/admin/interests",
+          icon: <FaExclamation className={iconStyle} />,
         },
         {
           name: "feedback",
@@ -124,12 +137,12 @@ export const TABS = {
       tabs: [
         {
           name: "dashboard",
-          link: "/users/dashboard",
+          link: "/user/dashboard",
           icon: <BsFillPersonFill className={iconStyle} />,
         },
         {
           name: "checkin",
-          link: "/users/checkin",
+          link: "/user/checkin",
           icon: <AiOutlineQrcode className={iconStyle} />,
         },
         {

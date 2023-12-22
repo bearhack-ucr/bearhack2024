@@ -1,24 +1,5 @@
-import Dropdown from "react-bootstrap/Dropdown";
 import { RiArrowDownSLine } from "react-icons/ri";
-import { useEffect, useState } from "react";
-
-const Toggle = ({ onClick, option, show, placeholder }) => {
-  return (
-    <button
-      onClick={onClick}
-      className={`${
-        option ? "text-black" : "text-hackathon-gray-200"
-      } bg-white flex items-center justify-between w-full border-b-2 border-black`}
-      data-cy="select-toggle"
-    >
-      {option || placeholder}
-      <RiArrowDownSLine
-        className={`${show && "rotate-180"} duration-300 text-black`}
-        data-cy="select-arrow"
-      />
-    </button>
-  );
-};
+import { useState, useEffect, useRef } from "react";
 
 const Select = ({
   items,
@@ -34,6 +15,12 @@ const Select = ({
   const [options, setOptions] = useState(items);
   const [show, setShow] = useState(false);
   const [input, setInput] = useState("");
+  const ref = useRef(null);
+  const handleClickOutside = (event) => {
+    if (ref.current && !ref.current.contains(event.target)) {
+      setShow(false);
+    }
+  };
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -47,7 +34,12 @@ const Select = ({
 
     return () => clearTimeout(timeout);
   }, [input]);
-
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
   const handleInput = (e) => {
     setInput(e.target.value);
   };
@@ -56,43 +48,44 @@ const Select = ({
     <div className="flex flex-col">
       <p className="mb-1 font-semibold">
         {title}
-        {required && <span className="text-hackathon-green-300">*</span>}
+        {required && <span className="text-red-500">*</span>}
       </p>
-      <Dropdown
-        show={show}
-        className="w-full m-0"
-        onToggle={() => setShow(!show)}
-        autoClose={true}
-        data-cy="select"
-      >
+      <div className="w-full m-0 relative" data-cy="select" ref={ref}>
         {editable ? (
-          <Dropdown.Toggle
-            as={Toggle}
-            option={user[field]}
-            placeholder={placeholder}
-            show={show}
-          />
+          <button
+            onClick={() => setShow(!show)}
+            className={`${
+              user[field] ? "text-white" : "text-hackathon-gray-200"
+            } bg-transparent p-1 flex items-center justify-between w-full border-b-2 border-white`}
+            data-cy="select-toggle"
+          >
+            {user[field] || placeholder}
+            <RiArrowDownSLine
+              className={`${show && "rotate-180"} duration-300 text-white`}
+              data-cy="select-arrow"
+            />
+          </button>
         ) : (
           <div
             className={`placeholder:text-hackathon-gray-200 ${
-              user[field] ? "text-black" : "!text-hackathon-placeholder"
+              user[field] ? "text-white" : "!text-hackathon-placeholder"
             } w-full pl-3 !border-x-0 !border-t-0 ${
               editable ? "!border-b-2" : "border-0"
-            } !rounded-none !border-black`}
+            } !rounded-none !border-white`}
           >
             {user[field] || placeholder}
           </div>
         )}
-        {editable && (
-          <Dropdown.Menu
-            className="w-full !bg-hackathon-green-100 !border-none !rounded-none !p-0 overflow-y-auto max-h-[35vh]"
+        {editable && show && (
+          <div
+            className="w-full absolute z-10 !bg-hackathon-select-bg !border-none !rounded-none !p-0 overflow-y-auto max-h-[35vh]"
             data-cy="select-menu"
           >
             {searchable && (
               <input
                 value={input}
                 autoFocus
-                className="mx-1.5 my-1 w-11/12 ring-0 outline-none px-2 py-1 bg-hackathon-green-100"
+                className="w-full ring-0 outline-none p-2 bg-black/20"
                 placeholder="search"
                 onChange={handleInput}
               />
@@ -100,17 +93,20 @@ const Select = ({
             {options
               .filter((opt) => !opt.hidden)
               .map((option, index) => (
-                <Dropdown.Item
-                  className=" hover:!bg-hackathon-green-200 !bg-hackathon-green-100 overflow-hidden"
+                <div
+                  className=" hover:!bg-bear-teal/50 !bg-hackathon-select-bg overflow-hidden pl-2"
                   key={index}
-                  onClick={() => setUser({ ...user, [field]: option.name })}
+                  onClick={() => {
+                    setUser({ ...user, [field]: option.name });
+                    setShow(false);
+                  }}
                 >
                   {option.name}
-                </Dropdown.Item>
+                </div>
               ))}
-          </Dropdown.Menu>
+          </div>
         )}
-      </Dropdown>
+      </div>
     </div>
   );
 };
