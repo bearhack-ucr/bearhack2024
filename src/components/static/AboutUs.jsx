@@ -4,14 +4,14 @@ import Image from "next/image";
 
 const AboutUs = () => {
   return (
-    <div className="w-full h-screen md:h-full text-white bg-black flex flex-col justify-center items-center ">
+    <div className="w-full h-screen md:h-full text-white bg-black flex flex-col justify-center items-center">
       <div className="grid grid-cols-2 w-full h-full md:w-1/2 mt-16">
         <Image
           src={Frame}
           alt={"frame"}
           className="hidden lg:block lg:scale-75 rotate-0"
         />
-        <div className="flex justify-end">
+        <div className="flex justify-end items-start">
           <Image
             src={Frame}
             alt={"frame"}
@@ -35,13 +35,13 @@ const AboutUs = () => {
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </div>
-      <div className="grid grid-cols-2 w-full h-full md:w-1/2 -mt-3 mb-16">
+      <div className="grid grid-cols-2 w-full h-full md:w-1/2 2xl:w-1/2 -mt-3 mb-16">
         <Image
           src={Frame}
           alt={"frame"}
           className="hidden lg:block md:scale-75 -rotate-90"
         />
-        <div className="flex justify-end">
+        <div className="flex justify-end items-start">
           <Image
             src={Frame}
             alt={"frame"}
