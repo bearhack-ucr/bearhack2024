@@ -26,7 +26,7 @@ const Radio = ({
               key={index}
               onClick={() => handleClick(option)}
             >
-              <div className="rounded-full w-4 border-white border aspect-square bg-transparent p-px m-1">
+              <div className="rounded-full w-4 border-white border aspect-square bg-transparent p-1 m-1">
                 <div
                   className={`rounded-full w-full aspect-square duration-100 ${
                     option === user[field] ? "bg-white" : "bg-transparent"
