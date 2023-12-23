@@ -1,12 +1,11 @@
-const LIVE_END = new Date("April 29, 2024 9:00:00");
 const DEV = {
   STATIC: {
     LIVE: {
       START: new Date("10/01/2000"),
-      END: LIVE_END,
+      END: new Date("April 29, 2024 9:00:00"),
     },
     POSTLIVE: {
-      START: LIVE_END,
+      START: new Date("April 29, 2024 9:00:00"),
       END: new Date("10/10/2100"),
     },
   },
@@ -47,10 +46,10 @@ const PRODUCTION = {
   STATIC: {
     LIVE: {
       START: new Date("10/01/2023"),
-      END: new Date("10/10/2024"),
+      END: new Date("April 29, 2024 9:00:00"),
     },
     POSTLIVE: {
-      START: new Date("10/01/2023"),
+      START: new Date("April 29, 2024 9:00:00"),
       END: new Date("10/10/2024"),
     },
   },
