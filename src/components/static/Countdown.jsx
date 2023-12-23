@@ -2,18 +2,24 @@
 import { useState, useEffect } from "react";
 import { CONFIG } from "@/data/Config";
 
-const Digits = ({ value, text }) => {
+const Digits = ({ value, unit }) => {
   return (
-    <div className="flex flex-col items-center mr-3 md:mr-5 gap-2">
-      <div className="flex items-center">
-        <p className="bg-cutie-blue-200/75 mb-0 h-10 md:h-16 text-lg md:text-3xl font-bold w-8 md:w-14 flex items-center justify-center rounded-lg drop-shadow-md mr-1 md:mr-2">
-          {Math.floor(value / 10)}
-        </p>
-        <p className="bg-cutie-blue-200/75 mb-0 h-10 md:h-16 text-lg md:text-3xl font-bold w-8 md:w-14 flex items-center justify-center rounded-lg drop-shadow-md">
-          {value % 10}
-        </p>
+    <div className="flex flex-col items-center gap-3 last:hidden sm:last:flex">
+      <div className="flex gap-1 lg:!gap-2">
+        {value
+          .toString()
+          .padStart(2, "0")
+          .split("")
+          .map((digit, index) => (
+            <div
+              className="text-lg lg:text-4xl font-bold text-white bg-bear-teal-100/50 p-[10px] lg:p-3 rounded-lg"
+              key={index}
+            >
+              {digit}
+            </div>
+          ))}
       </div>
-      <p className="text-xs md:text-base">{text}</p>
+      <div>{unit}</div>
     </div>
   );
 };
@@ -54,9 +60,9 @@ const Countdown = () => {
   }, []);
 
   return (
-    <div className="flex">
-      {Object.entries(time).map(([text, value], index) => (
-        <Digits key={index} text={text} value={value} />
+    <div className="flex gap-3 md:!gap-6 font-paragraph">
+      {Object.entries(time).map(([unit, value], index) => (
+        <Digits key={index} unit={unit} value={value} />
       ))}
     </div>
   );
