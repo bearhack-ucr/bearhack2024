@@ -49,7 +49,8 @@ function calculateBlocksForDuration(duration) {
     const blocksIfRemainingAdded = blocks.length + i + 1;
     const amount = Math.floor(left / millis);
     left -= millis * amount;
-    if (blocksIfRemainingAdded <= 3 || amount > 0) {
+    // add by default since not enough || first nonzero || was first blocks already added
+    if (blocksIfRemainingAdded <= 3 || amount > 0 || blocks.length) {
       blocks.push({
         unit: amount == 1 ? unitSingular : unitPlural,
         amount: amount,
