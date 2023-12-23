@@ -28,7 +28,7 @@ const Title = () => {
           <Link text={"Register"} link={"/form/participant"} />
           <Link text={"Mentor"} link={"/form/mentor"} />
           <Link text={"Volunteer"} link={"/form/volunteer"} />
-          <Link text={"Sponsor"} link={"/form/sponsor"} />
+          {/* <Link text={"Sponsor"} link={"/form/sponsor"} /> */}
         </div>
         <div className="w-4/5 m-auto">
           <HorizontalLine />

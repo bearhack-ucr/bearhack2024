@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { LiaAngleDoubleUpSolid } from "react-icons/lia";
+import { LiaAngleDoubleDownSolid } from "react-icons/lia";
 
 const ToggleSelection = ({ title, children }) => {
   const [state, setState] = useState(false);
@@ -11,7 +11,7 @@ const ToggleSelection = ({ title, children }) => {
         className="flex items-center justify-between w-full py-3 text-white font-header text-sm md:text-3xl"
       >
         {title}
-        <LiaAngleDoubleUpSolid
+        <LiaAngleDoubleDownSolid
           className={`${state && "rotate-180"} duration-500 w-1/12 `}
         />
       </button>
