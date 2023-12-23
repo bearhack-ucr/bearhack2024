@@ -93,7 +93,7 @@ const Countdown = ({ targetTime }) => {
               .split("")
               .map((digit, index) => (
                 <div
-                  className="text-lg lg:text-4xl font-bold text-white bg-[#B3FBF780] p-[10px] lg:p-3 rounded-lg"
+                  className="text-lg lg:text-4xl font-bold text-white bg-bear-teal-100/50 p-[10px] lg:p-3 rounded-lg"
                   key={index}
                 >
                   {digit}
