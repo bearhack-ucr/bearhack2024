@@ -8,8 +8,12 @@ import { CONFIG } from "@/data/Config.js";
 const Title = () => {
   return (
     <div className="w-full h-screen text-white flex flex-col justify-center items-center lg:items-end">
-      <div className="absolute hidden lg:flex items-center left-0 w-full h-full m-auto z-0">
-        <Image src={titleBg} alt={"Background"} />
+      <div className="absolute hidden lg:flex w-full h-full z-0">
+        <Image
+          src={titleBg}
+          alt={"Background"}
+          className="object-cover h-full"
+        />
       </div>
       <div className="flex flex-col z-1 p-8 lg:p-16 gap-2 rounded-lg bg-slate-900 lg:bg-transparent">
         <div className="p-8 flex flex-col items-center lg:items-end gap-2">
