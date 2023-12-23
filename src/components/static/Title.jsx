@@ -22,7 +22,6 @@ const Title = () => {
           </div>
           <div className="text-lg lg:text-xl font-paragraph text-bear-teal-100">
             {CONFIG.date.toLocaleDateString(undefined, {
-              // year: "numeric",
               month: "long",
               day: "numeric",
             })}
