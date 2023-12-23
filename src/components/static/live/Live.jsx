@@ -1,9 +1,9 @@
 import Title from "../Title";
 import AboutUs from "../AboutUs";
 import GetInvolved from "../GetInvolved";
-import Team from "../Team";
+// import Team from "../Team";
 import FAQ from "../FAQ";
-import Sponsors from "../Sponsors";
+// import Sponsors from "../Sponsors";
 import Footer from "../Footer";
 
 const Live = () => {
@@ -12,9 +12,9 @@ const Live = () => {
       <Title />
       <AboutUs />
       <GetInvolved />
-      <Team />
+      {/* <Team /> */}
       <FAQ />
-      <Sponsors />
+      {/* <Sponsors /> */}
       <Footer />
     </div>
   );
