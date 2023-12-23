@@ -21,14 +21,14 @@ const Title = () => {
             BEARHACK 2024
           </div>
           <div className="text-lg lg:text-xl font-paragraph text-bear-teal-100">
-            {CONFIG.date.toLocaleDateString(undefined, {
+            {CONFIG.date.toLocaleDateString("en-US", {
               month: "long",
               day: "numeric",
             })}
             {"-"}
-            {CONFIG.lastDate.toLocaleDateString(undefined, { day: "numeric" })}
+            {CONFIG.lastDate.getDate()}
             {", "}
-            {CONFIG.lastDate.toLocaleDateString(undefined, { year: "numeric" })}
+            {CONFIG.lastDate.getFullYear()}
           </div>
         </div>
         <div className="flex flex-col gap-4 justify-end lg:flex-row px-8">

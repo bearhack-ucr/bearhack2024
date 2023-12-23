@@ -24,16 +24,6 @@ const units = [
     unitPlural: "days",
     millis: 24 * 60 * 60 * 1000,
   },
-  // {
-  //   unitSingular: "week",
-  //   unitPlural: "weeks",
-  //   millis: 7 * 24 * 60 * 60 * 1000,
-  // },
-  // {
-  //   unitSingular: "month",
-  //   unitPlural: "months",
-  //   millis: 30 * 24 * 60 * 60 * 1000,
-  // },
 ];
 
 /**
