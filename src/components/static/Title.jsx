@@ -41,7 +41,7 @@ const Title = () => {
           <HorizontalLine />
         </div>
         <div className="m-auto">
-          <Countdown targetTime={CONFIG.date.getTime()} />
+          <Countdown />
         </div>
       </div>
     </div>

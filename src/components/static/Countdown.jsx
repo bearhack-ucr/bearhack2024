@@ -1,97 +1,62 @@
 "use client";
+import { useState, useEffect } from "react";
+import { CONFIG } from "@/data/Config";
 
-import { useEffect, useState } from "react";
+const Digits = ({ value, text }) => {
+  return (
+    <div className="flex flex-col items-center mr-3 md:mr-5 gap-2">
+      <div className="flex items-center">
+        <p className="bg-cutie-blue-200/75 mb-0 h-10 md:h-16 text-lg md:text-3xl font-bold w-8 md:w-14 flex items-center justify-center rounded-lg drop-shadow-md mr-1 md:mr-2">
+          {Math.floor(value / 10)}
+        </p>
+        <p className="bg-cutie-blue-200/75 mb-0 h-10 md:h-16 text-lg md:text-3xl font-bold w-8 md:w-14 flex items-center justify-center rounded-lg drop-shadow-md">
+          {value % 10}
+        </p>
+      </div>
+      <p className="text-xs md:text-base">{text}</p>
+    </div>
+  );
+};
 
-// approximate units for a simple implementation, can use Date API if more accuracy is needed
-const units = [
-  {
-    unitSingular: "second",
-    unitPlural: "seconds",
-    millis: 1000,
-  },
-  {
-    unitSingular: "minute",
-    unitPlural: "minutes",
-    millis: 60 * 1000,
-  },
-  {
-    unitSingular: "hour",
-    unitPlural: "hours",
-    millis: 60 * 60 * 1000,
-  },
-  {
-    unitSingular: "day",
-    unitPlural: "days",
-    millis: 24 * 60 * 60 * 1000,
-  },
-];
+const Countdown = () => {
+  const [time, setTime] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
 
-/**
- * returns block data that can be rendered for some duration
- * @param {number} duration milliseconds to convert into larger time units
- * @return {{unit:string, amount:number}[]}
- */
-function calculateBlocksForDuration(duration) {
-  let left = duration;
-  const blocks = [];
-  const blockCount = 4;
-  for (let i = units.length - 1; i >= 0 && blocks.length < blockCount; --i) {
-    const { unitSingular, unitPlural, millis } = units[i];
-    const blocksIfRemainingAdded = blocks.length + i + 1;
-    const amount = Math.floor(left / millis);
-    left -= millis * amount;
-    // add by default since not enough || first nonzero || was first blocks already added
-    if (blocksIfRemainingAdded <= blockCount || amount > 0 || blocks.length) {
-      blocks.push({
-        unit: amount == 1 ? unitSingular : unitPlural,
-        amount: amount,
-      });
-    }
-  }
-  return blocks;
-}
-
-/**
- * Renders a countdown element with the 3 most significant time units.
- * @param {{targetTime: number}} props targetTime in millis since unix epoch (same as `Date.now()`)
- * @return {JSX.Element}
- */
-const Countdown = ({ targetTime }) => {
-  const [blocks, setBlocks] = useState(calculateBlocksForDuration(0, 0));
   useEffect(() => {
-    const update = () => {
-      setBlocks(
-        calculateBlocksForDuration(Math.max(targetTime - Date.now(), 0))
-      );
-    };
-    update();
-    const intervalId = setInterval(update, 1000);
-    return () => clearInterval(intervalId);
-  }, [targetTime]);
+    const interval = setInterval(() => {
+      const diff = CONFIG.date.getTime() - new Date().getTime();
+
+      setTime({
+        days:
+          Math.floor(diff / (1000 * 60 * 60 * 24)) > 0
+            ? Math.floor(diff / (1000 * 60 * 60 * 24))
+            : 0,
+        hours:
+          Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) > 0
+            ? Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+            : 0,
+        minutes:
+          Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)) > 0
+            ? Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
+            : 0,
+        seconds:
+          Math.floor((diff % (1000 * 60 * 60)) / 1000) % 60 > 0
+            ? Math.floor((diff % (1000 * 60 * 60)) / 1000) % 60
+            : 0,
+      });
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className="flex gap-3 md:!gap-6 font-paragraph">
-      {blocks.map(({ unit, amount }, index) => (
-        <div
-          className="flex flex-col items-center gap-3 last:hidden sm:last:flex"
-          key={index}
-        >
-          <div className="flex gap-1 lg:!gap-2">
-            {amount
-              .toString()
-              .padStart(2, "0")
-              .split("")
-              .map((digit, index) => (
-                <div
-                  className="text-lg lg:text-4xl font-bold text-white bg-bear-teal-100/50 p-[10px] lg:p-3 rounded-lg"
-                  key={index}
-                >
-                  {digit}
-                </div>
-              ))}
-          </div>
-          <div>{unit}</div>
-        </div>
+    <div className="flex">
+      {Object.entries(time).map(([text, value], index) => (
+        <Digits key={index} text={text} value={value} />
       ))}
     </div>
   );
