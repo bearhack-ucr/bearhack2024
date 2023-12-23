@@ -57,17 +57,15 @@ function calculateBlocksForDuration(duration) {
  * @return {JSX.Element}
  */
 const Countdown = ({ targetTime }) => {
-  const [blocks, setBlocks] = useState([]);
-  // Cypress E2E CI keeps dying... https://nextjs.org/docs/messages/react-hydration-error
+  const [blocks, setBlocks] = useState(calculateBlocksForDuration(0, 0));
   useEffect(() => {
-    setBlocks(calculateBlocksForDuration(Math.max(targetTime - Date.now(), 0)));
-  }, []);
-  useEffect(() => {
-    const intervalId = setInterval(() => {
+    const update = () => {
       setBlocks(
         calculateBlocksForDuration(Math.max(targetTime - Date.now(), 0))
       );
-    }, 1000);
+    };
+    update();
+    const intervalId = setInterval(update, 1000);
     return () => clearInterval(intervalId);
   }, [targetTime]);
 
