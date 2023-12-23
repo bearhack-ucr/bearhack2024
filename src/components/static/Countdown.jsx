@@ -24,16 +24,16 @@ const units = [
     unitPlural: "days",
     millis: 24 * 60 * 60 * 1000,
   },
-  {
-    unitSingular: "week",
-    unitPlural: "weeks",
-    millis: 7 * 24 * 60 * 60 * 1000,
-  },
-  {
-    unitSingular: "month",
-    unitPlural: "months",
-    millis: 30 * 24 * 60 * 60 * 1000,
-  },
+  // {
+  //   unitSingular: "week",
+  //   unitPlural: "weeks",
+  //   millis: 7 * 24 * 60 * 60 * 1000,
+  // },
+  // {
+  //   unitSingular: "month",
+  //   unitPlural: "months",
+  //   millis: 30 * 24 * 60 * 60 * 1000,
+  // },
 ];
 
 /**
@@ -44,13 +44,14 @@ const units = [
 function calculateBlocksForDuration(duration) {
   let left = duration;
   const blocks = [];
-  for (let i = units.length - 1; i >= 0 && blocks.length < 3; --i) {
+  const blockCount = 4;
+  for (let i = units.length - 1; i >= 0 && blocks.length < blockCount; --i) {
     const { unitSingular, unitPlural, millis } = units[i];
     const blocksIfRemainingAdded = blocks.length + i + 1;
     const amount = Math.floor(left / millis);
     left -= millis * amount;
     // add by default since not enough || first nonzero || was first blocks already added
-    if (blocksIfRemainingAdded <= 3 || amount > 0 || blocks.length) {
+    if (blocksIfRemainingAdded <= blockCount || amount > 0 || blocks.length) {
       blocks.push({
         unit: amount == 1 ? unitSingular : unitPlural,
         amount: amount,
@@ -79,24 +80,27 @@ const Countdown = ({ targetTime }) => {
   }, [targetTime]);
 
   return (
-    <div className="flex gap-4 font-paragraph">
+    <div className="flex gap-3 md:!gap-6 font-paragraph">
       {blocks.map(({ unit, amount }, index) => (
-        <div className="flex flex-col items-center m-2 gap-2" key={index}>
-          <div className="flex gap-2">
+        <div
+          className="flex flex-col items-center gap-3 last:hidden sm:last:flex"
+          key={index}
+        >
+          <div className="flex gap-1 lg:!gap-2">
             {amount
               .toString()
               .padStart(2, "0")
               .split("")
               .map((digit, index) => (
                 <div
-                  className="text-md lg:text-5xl font-bold text-white bg-[#B3FBF780] p-3 rounded-lg"
+                  className="text-lg lg:text-4xl font-bold text-white bg-[#B3FBF780] p-[10px] lg:p-3 rounded-lg"
                   key={index}
                 >
                   {digit}
                 </div>
               ))}
           </div>
-          <div className="">{unit}</div>
+          <div>{unit}</div>
         </div>
       ))}
     </div>

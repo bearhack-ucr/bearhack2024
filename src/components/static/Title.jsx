@@ -32,7 +32,7 @@ const Title = () => {
             {CONFIG.lastDate.toLocaleDateString(undefined, { year: "numeric" })}
           </div>
         </div>
-        <div className="flex gap-4 flex-col lg:flex-row px-8">
+        <div className="flex flex-col gap-4 justify-end lg:flex-row px-8">
           <Link text={"Register"} link={"/form/participant"} />
           <Link text={"Mentor"} link={"/form/mentor"} />
           <Link text={"Volunteer"} link={"/form/volunteer"} />
