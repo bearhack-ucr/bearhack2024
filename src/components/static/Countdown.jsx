@@ -33,28 +33,18 @@ const Countdown = () => {
   });
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      const diff = CONFIG.date.getTime() - new Date().getTime();
-
+    const updateTime = () => {
+      const diff = Math.max(CONFIG.date.getTime() - Date.now(), 0);
       setTime({
-        days:
-          Math.floor(diff / (1000 * 60 * 60 * 24)) > 0
-            ? Math.floor(diff / (1000 * 60 * 60 * 24))
-            : 0,
-        hours:
-          Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) > 0
-            ? Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-            : 0,
-        minutes:
-          Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)) > 0
-            ? Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
-            : 0,
-        seconds:
-          Math.floor((diff % (1000 * 60 * 60)) / 1000) % 60 > 0
-            ? Math.floor((diff % (1000 * 60 * 60)) / 1000) % 60
-            : 0,
+        days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+        hours: Math.floor(diff / (1000 * 60 * 60)) % 24,
+        minutes: Math.floor(diff / (1000 * 60)) % 60,
+        seconds: Math.floor(diff / 1000) % 60,
       });
-    }, 1000);
+    };
+
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
 
     return () => clearInterval(interval);
   }, []);
