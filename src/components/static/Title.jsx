@@ -22,10 +22,14 @@ const Title = () => {
           </div>
           <div className="text-lg lg:text-xl font-paragraph text-bear-teal-100">
             {CONFIG.date.toLocaleDateString(undefined, {
-              year: "numeric",
+              // year: "numeric",
               month: "long",
               day: "numeric",
             })}
+            {"-"}
+            {CONFIG.lastDate.toLocaleDateString(undefined, { day: "numeric" })}
+            {", "}
+            {CONFIG.lastDate.toLocaleDateString(undefined, { year: "numeric" })}
           </div>
         </div>
         <div className="flex gap-4 flex-col lg:flex-row px-8">

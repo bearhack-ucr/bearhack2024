@@ -3,6 +3,7 @@ export const CONFIG = {
   email: "contact.acmucr@gmail.com",
   year: "2024",
   date: new Date("April 27, 2024 9:00:00"),
+  lastDate: new Date("April 28, 2024 9:00:00"),
   packet: "",
 };
 
