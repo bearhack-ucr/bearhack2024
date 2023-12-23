@@ -1,6 +1,6 @@
 import Title from "../Title";
-import AboutUs from "../AboutUs";
-import GetInvolved from "../GetInvolved";
+// import AboutUs from "../AboutUs";
+// import GetInvolved from "../GetInvolved";
 // import Team from "../Team";
 import FAQ from "../FAQ";
 // import Sponsors from "../Sponsors";
@@ -10,8 +10,8 @@ const Live = () => {
   return (
     <div className="bg-bear-dark">
       <Title />
-      <AboutUs />
-      <GetInvolved />
+      {/* <AboutUs />
+      <GetInvolved /> */}
       {/* <Team /> */}
       <FAQ />
       {/* <Sponsors /> */}
