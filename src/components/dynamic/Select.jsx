@@ -48,44 +48,44 @@ const Select = ({
     <div className="flex flex-col">
       <p className="mb-1 font-semibold">
         {title}
-        {required && <span className="text-hackathon-green-300">*</span>}
+        {required && <span className="text-red-500">*</span>}
       </p>
       <div className="w-full m-0 relative" data-cy="select" ref={ref}>
         {editable ? (
           <button
             onClick={() => setShow(!show)}
             className={`${
-              user[field] ? "text-black" : "text-hackathon-gray-200"
-            } bg-white flex items-center justify-between w-full border-b-2 border-black`}
+              user[field] ? "text-white" : "text-hackathon-gray-200"
+            } bg-transparent p-1 flex items-center justify-between w-full border-b-2 border-white`}
             data-cy="select-toggle"
           >
             {user[field] || placeholder}
             <RiArrowDownSLine
-              className={`${show && "rotate-180"} duration-300 text-black`}
+              className={`${show && "rotate-180"} duration-300 text-white`}
               data-cy="select-arrow"
             />
           </button>
         ) : (
           <div
             className={`placeholder:text-hackathon-gray-200 ${
-              user[field] ? "text-black" : "!text-hackathon-placeholder"
+              user[field] ? "text-white" : "!text-hackathon-placeholder"
             } w-full pl-3 !border-x-0 !border-t-0 ${
               editable ? "!border-b-2" : "border-0"
-            } !rounded-none !border-black`}
+            } !rounded-none !border-white`}
           >
             {user[field] || placeholder}
           </div>
         )}
         {editable && show && (
           <div
-            className="w-full absolute z-10 !bg-hackathon-green-100 !border-none !rounded-none !p-0 overflow-y-auto max-h-[35vh]"
+            className="w-full absolute z-10 !bg-hackathon-select-bg !border-none !rounded-none !p-0 overflow-y-auto max-h-[35vh]"
             data-cy="select-menu"
           >
             {searchable && (
               <input
                 value={input}
                 autoFocus
-                className="mx-1.5 my-1 w-11/12 ring-0 outline-none px-2 py-1 bg-hackathon-green-100"
+                className="w-full ring-0 outline-none p-2 bg-black/20"
                 placeholder="search"
                 onChange={handleInput}
               />
@@ -94,7 +94,7 @@ const Select = ({
               .filter((opt) => !opt.hidden)
               .map((option, index) => (
                 <div
-                  className=" hover:!bg-hackathon-green-200 !bg-hackathon-green-100 overflow-hidden"
+                  className=" hover:!bg-bear-teal/50 !bg-hackathon-select-bg overflow-hidden pl-2"
                   key={index}
                   onClick={() => {
                     setUser({ ...user, [field]: option.name });

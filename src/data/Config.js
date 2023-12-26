@@ -1,13 +1,13 @@
 export const CONFIG = {
-  name: "HACKATHON",
+  name: "Bearhack 2024",
   email: "contact.acmucr@gmail.com",
   year: "2024",
-  date: new Date("November 4, 2023 9:00:00"),
+  date: new Date("April 27, 2024 9:00:00"),
   packet: "",
 };
 
 export const MANIFEST = {
-  name: "Hackathon Site",
+  name: "Bearhack 2024",
   short_name: "Hackathon Site",
   description: "Hackathon Site",
   start_url: "/",

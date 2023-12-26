@@ -1,3 +1,4 @@
+import Navbar from "../Navbar";
 import Title from "../Title";
 import AboutUs from "../AboutUs";
 import GetInvolved from "../GetInvolved";
@@ -6,9 +7,10 @@ import FAQ from "../FAQ";
 import Sponsors from "../Sponsors";
 import Footer from "../Footer";
 
-const Postlive = () => {
+const Upcoming = () => {
   return (
     <div className="bg-bear-dark">
+      <Navbar />
       <Title />
       <AboutUs />
       <GetInvolved />
@@ -20,4 +22,4 @@ const Postlive = () => {
   );
 };
 
-export default Postlive;
+export default Upcoming;
