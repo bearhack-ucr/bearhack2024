@@ -7,7 +7,12 @@ import RELEASES from "@/data/Releases";
 import Fault from "@/utils/error";
 import Navigation from "@/components/dynamic/Navigation";
 
-const ProtectedPage = ({ children, restrictions, title }) => {
+const ProtectedPage = ({
+  children,
+  restrictions,
+  title,
+  customStyle = false,
+}) => {
   const { data: session, status } = useSession();
   const [confirmed, setConfirmed] = useState(false);
 
@@ -57,8 +62,16 @@ const ProtectedPage = ({ children, restrictions, title }) => {
         <>
           <title>{title}</title>
           {navigation && <Navigation />}
-          <div className="flex justify-center items-start w-full bg-gradient-to-b from-hackathon-page to-[#002525] h-screen py-12 lg:py-0 z-0 overflow-x-hidden">
-            <div className={`w-full h-full`}>{children}</div>
+          <div
+            className={`flex justify-center items-start w-full ${
+              customStyle
+                ? "bg-gradient-to-b from-hackathon-page to-[#002525]"
+                : "bg-hackathon-page"
+            } h-screen py-12 lg:py-0 z-0 overflow-x-hidden`}
+          >
+            <div className={`${customStyle ? "w-full" : "w-[96%]"} h-full`}>
+              {children}
+            </div>
           </div>
         </>
       )}
