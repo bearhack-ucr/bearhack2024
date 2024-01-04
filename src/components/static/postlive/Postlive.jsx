@@ -9,6 +9,7 @@ import Footer from "../Footer";
 const Postlive = () => {
   return (
     <div className="bg-bear-dark">
+      <title>Bearhack 2024</title>
       <Title />
       <AboutUs />
       <GetInvolved />

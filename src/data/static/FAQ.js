@@ -11,7 +11,7 @@ export const FAQdata = [
   {
     question: "How long will the event last?",
     answer:
-      "The event will be on April 27-28th, 2024. It will start on the morning of April 27th and last till the next morning on April 28th.",
+      "The event will start on the morning of April 27th and last 24 hours.",
   },
   {
     question: "Where will Bearhack be hosted?",
