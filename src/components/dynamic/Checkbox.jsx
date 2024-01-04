@@ -6,6 +6,7 @@ const Checkbox = ({
   text = "",
   color,
   customStyle = false,
+  "data-cy": dataCy,
 }) => {
   return (
     <div
