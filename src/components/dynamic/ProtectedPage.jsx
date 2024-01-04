@@ -57,7 +57,7 @@ const ProtectedPage = ({
 
   return (
     <>
-      {status === "loading" && <Loading />}
+      {status === "loading" && <Loading customStyle={customStyle} />}
       {confirmed && (
         <>
           <title>{title}</title>
@@ -65,7 +65,7 @@ const ProtectedPage = ({
           <div
             className={`flex justify-center items-start w-full ${
               customStyle
-                ? "bg-gradient-to-b from-hackathon-page to-[#002525]"
+                ? "bg-gradient-to-b from-bear-page-gradient-1 to-bear-page-gradient-2"
                 : "bg-hackathon-page"
             } h-screen py-12 lg:py-0 z-0 overflow-x-hidden`}
           >

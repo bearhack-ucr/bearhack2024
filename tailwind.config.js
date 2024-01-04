@@ -25,7 +25,7 @@ module.exports = {
           "gray-200": "#9ea4af",
           "gray-300": "#525252",
           "select-bg": "#3F3F3F",
-          page: "#000303" /* bear-dark */,
+          page: "#F5F5F5",
           tags: {
             "red-bg": "#FFE9E2",
             "red-text": "#F07167",
@@ -50,6 +50,8 @@ module.exports = {
         },
         bear: {
           dark: "#000303",
+          "page-gradient-1": "#000303",
+          "page-gradient-2": "#002525",
           teal: "#4ABFB5",
           "teal-100": "#B3FBF7",
           purple: "#B16FF0",
