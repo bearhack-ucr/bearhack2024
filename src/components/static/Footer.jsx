@@ -16,7 +16,7 @@ const Footer = () => {
           Made with <AiFillHeart className="inline" /> by the Bear Hack team at
           UCR
         </div>
-        <div className="flex mb-8">
+        <div className="flex mb-8 gap-2">
           {CONTACTS.map((contact, index) => (
             <Link
               key={index}
