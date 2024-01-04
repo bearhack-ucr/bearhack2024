@@ -10,7 +10,7 @@ const CustomLink = ({ text, link }) => {
         className={`absolute bg-gradient-to-r from-bear-purple to-bear-teal w-full h-full rounded-full blur-sm`}
       />
       <p
-        className={`relative font-header md:text-xl bg-black/80 m-[0.5px] hover:bg-gradient-to-r from-bear-purple to-bear-teal rounded-full py-1 text-center w-full px-4 duration-300`}
+        className={`relative font-header md:text-2xl bg-black/80 m-[0.5px] hover:bg-gradient-to-r from-bear-purple to-bear-teal rounded-full py-1 text-center w-full px-4 duration-300`}
       >
         {text}
       </p>
