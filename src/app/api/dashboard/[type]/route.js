@@ -5,10 +5,12 @@ import {
   updateDoc,
   collection,
   getDocs,
+  getDoc,
   query,
   where,
   deleteField,
   Timestamp,
+  increment,
 } from "firebase/firestore";
 import { authenticate } from "@/utils/auth";
 import { AUTH, ATTRIBUTES } from "@/data/dynamic/admin/Dashboard";
@@ -45,6 +47,9 @@ export async function POST(req, { params }) {
         ...element,
         timestamp: Timestamp.now(),
         [`roles.${params.type}`]: 0,
+      });
+      await updateDoc(doc(db, "statistics", "statistics"), {
+        [`${params.type}.0`]: increment(1),
       });
 
       await EmailService.send({
@@ -127,20 +132,33 @@ export async function PUT(req, { params }) {
   }
   try {
     if (types.has(params.type)) {
-      objects.map(async (object) => {
-        await updateDoc(doc(db, "users", object.uid), {
-          [`roles.${params.type}`]: status,
-        });
-        await EmailService.send({
-          email: object.email,
-          id:
-            status === 1
-              ? process.env.EMAIL_ACCEPTANCE_TEMPLATE
-              : process.env.EMAIL_REJECTION_TEMPLATE,
-          name: object.name,
-          position: params.type.slice(0, -1).toUpperCase(),
-        });
-      });
+      await Promise.all(
+        objects.map(async (object) => {
+          await updateDoc(doc(db, "users", object.uid), {
+            [`roles.${params.type}`]: status,
+          });
+          await EmailService.send({
+            email: object.email,
+            id:
+              status === 1
+                ? process.env.EMAIL_ACCEPTANCE_TEMPLATE
+                : process.env.EMAIL_REJECTION_TEMPLATE,
+            name: object.name,
+            position: params.type.slice(0, -1).toUpperCase(),
+          });
+          status === 1 &&
+            (await updateDoc(doc(db, "statistics", "statistics"), {
+              [`${params.type}.1`]: increment(1),
+              [`${params.type}.0`]: increment(-1),
+            }));
+
+          status === -1 &&
+            (await updateDoc(doc(db, "statistics", "statistics"), {
+              [`${params.type}.-1`]: increment(1),
+              [`${params.type}.0`]: increment(-1),
+            }));
+        })
+      );
     }
     return res.json({ message: "OK" }, { status: 200 });
   } catch (err) {
@@ -164,11 +182,18 @@ export async function DELETE(req, { params }) {
   }
   try {
     if (types.has(params.type)) {
-      objects.map(async (object) => {
-        await updateDoc(doc(db, "users", object), {
-          [`roles.${params.type}`]: deleteField(),
-        });
-      });
+      await Promise.all(
+        objects.map(async (object) => {
+          const snapshot = await getDoc(doc(db, "users", object));
+          const status = snapshot.data().roles[params.type];
+          await updateDoc(doc(db, "statistics", "statistics"), {
+            [`${params.type}.${status}`]: increment(-1),
+          });
+          await updateDoc(doc(db, "users", object), {
+            [`roles.${params.type}`]: deleteField(),
+          });
+        })
+      );
     }
     return res.json({ message: "OK" }, { status: 200 });
   } catch (err) {

@@ -1,11 +1,10 @@
-import React from "react";
 import Select from "@/components/dynamic/Select";
 import Radio from "@/components/dynamic/Radio";
 import Checkbox from "@/components/dynamic/Checkbox";
 import Input from "@/components/dynamic/Input";
 import Button from "@/components/dynamic/Button.jsx";
-import Textarea from "@/components/dynamic/form/Textarea.jsx";
-import Upload from "@/components/dynamic/form/Upload";
+import Textarea from "@/components/dynamic/form/form/Textarea.jsx";
+import Upload from "@/components/dynamic/form/form/Upload";
 import toast from "react-hot-toast";
 import Link from "next/link";
 import { FaLink } from "react-icons/fa";
