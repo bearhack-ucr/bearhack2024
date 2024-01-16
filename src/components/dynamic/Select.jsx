@@ -78,14 +78,14 @@ const Select = ({
         <div className="relative">
           <div
             ref={ref}
-            className="absolute overflow-y-scroll bg-hackathon-green-100 w-full h-fit max-h-[35vh]"
+            className="absolute overflow-y-scroll !bg-hackathon-select-bg !border-none w-full h-fit max-h-[35vh]"
             data-cy="select-menu"
           >
             {searchable && (
               <input
                 value={input}
                 autoFocus
-                className="my-1 w-full ring-0 outline-none px-2 py-2 bg-hackathon-green-100 sticky top-0 left-0 z-10"
+                className="my-1 w-full ring-0 outline-none px-2 py-2 bg-black/20 sticky top-0 left-0 z-10"
                 placeholder="search"
                 onChange={handleInput}
               />
