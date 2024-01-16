@@ -125,6 +125,7 @@ const Questions = ({
                       })
                     }
                     color="bg-transparent"
+                    customStyle={true}
                   />
                 </>
               ))}
