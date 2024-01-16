@@ -1,5 +1,5 @@
 import React from "react";
-import Frame from "@/assets/frame.svg";
+import Frame from "@/public/frame.svg";
 import Image from "next/image";
 
 const AboutUs = () => {

@@ -2,7 +2,7 @@
  * List of hackathon organizing team members, used in the "Meet the Team" section
  */
 
-import placeholderImage from "@/assets/footer.svg";
+import placeholderImage from "@/public/footer.svg";
 
 const placeholderTeamMember = {
   name: "Placeholder Name",

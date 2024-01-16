@@ -1,4 +1,4 @@
-import titleBg from "@/assets/title-bg.svg";
+import titleBg from "@/public/title-bg.svg";
 import Link from "./Link.jsx";
 import Image from "next/image";
 import HorizontalLine from "./HorizontalLine.jsx";
