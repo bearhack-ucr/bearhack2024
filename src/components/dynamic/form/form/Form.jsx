@@ -1,0 +1,66 @@
+"use client";
+
+import { useState } from "react";
+import Status from "./Status";
+import Questions from "./Questions";
+import Confirmation from "./Confirmation";
+import Button from "../../Button";
+import { signOut } from "next-auth/react";
+
+const Form = ({
+  object,
+  setObject,
+  header,
+  fields,
+  onSubmit,
+  statuses,
+  bypass = false,
+}) => {
+  const [loading, setLoading] = useState(false);
+  const [state, setState] = useState(
+    typeof object.roles[object.form] !== "undefined" && !bypass ? 0 : 1
+  );
+
+  const handleSignOut = () => {
+    signOut({ callbackUrl: "/", redirect: true });
+  };
+
+  return (
+    <div className="w-full h-full overflow-scroll-y flex flex-col items-center font-poppins">
+      <div className="w-full flex flex-row justify-end mr-[10%]">
+        <Button
+          text="Sign Out"
+          onClick={handleSignOut}
+          loading={loading}
+          color="green"
+        />
+      </div>
+      <div className="w-10/12 md:w-1/2 xl:w-1/3 py-5 text-white">
+        <p className="text-2xl bg-bear-teal/40 font-header font-semibold px-4 py-3 rounded-t-xl m-0">
+          {header}
+        </p>
+        <div className="rounded-b-xl bg-white/10 p-3 font-paragraph">
+          <div className="grid grid-cols-1 gap-3">
+            {state === 0 ? (
+              <Status object={object} statuses={statuses} setState={setState} />
+            ) : state === 1 ? (
+              <Questions
+                loading={loading}
+                setLoading={setLoading}
+                object={object}
+                setObject={setObject}
+                fields={fields}
+                onSubmit={onSubmit}
+                setState={setState}
+              />
+            ) : (
+              <Confirmation />
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Form;
