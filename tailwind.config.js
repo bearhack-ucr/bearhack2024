@@ -25,6 +25,7 @@ module.exports = {
           "gray-200": "#9ea4af",
           "gray-300": "#525252",
           "select-bg": "#3F3F3F",
+          "radio-selected": "#FFFFFF",
           page: "#F5F5F5",
           tags: {
             "red-bg": "#FFE9E2",

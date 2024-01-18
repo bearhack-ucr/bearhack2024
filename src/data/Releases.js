@@ -20,10 +20,9 @@ const DEV = {
     "/admin/sponsors": new Date("10/01/2023"),
     "/admin/feedback": new Date("10/01/2023"),
     "/admin/calendar": new Date("10/01/2023"),
-    "/admin/messenger": new Date("10/01/2023"),
+    "/admin/contacts": new Date("10/01/2023"),
     "/admin/checkin": new Date("10/01/2023"),
     "/admin/judging": new Date("10/01/2023"),
-    "/admin/prizes": new Date("10/01/2023"),
     "/admin/statistics": new Date("10/01/2023"),
 
     "/form/participant": new Date("10/01/2023"),
@@ -64,10 +63,9 @@ const PRODUCTION = {
     "/admin/sponsors": new Date("10/01/2023"),
     "/admin/feedback": new Date("10/01/2023"),
     "/admin/calendar": new Date("10/01/2023"),
-    "/admin/messenger": new Date("10/01/2023"),
+    "/admin/contacts": new Date("10/01/2023"),
     "/admin/checkin": new Date("10/01/2023"),
     "/admin/judging": new Date("10/01/2023"),
-    "/admin/prizes": new Date("10/01/2023"),
     "/admin/statistics": new Date("10/01/2023"),
 
     "/form/participant": new Date("10/01/2023"),

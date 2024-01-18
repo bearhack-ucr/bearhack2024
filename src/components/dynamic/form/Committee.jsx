@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Form from "@/components/dynamic/form/Form.jsx";
+import Form from "@/components/dynamic/form/form/Form.jsx";
 import { FIELDS, ATTRIBUTES } from "@/data/dynamic/form/Committees";
 import { useSession } from "next-auth/react";
-import axios from "axios";
+import { api } from "@/utils/api";
 import toast from "react-hot-toast";
 import { STATUSES } from "@/data/dynamic/admin/Committees";
 
@@ -19,8 +19,11 @@ const Committee = () => {
   });
 
   const handleSubmit = (setLoading, setState) => {
-    axios
-      .post("/api/committees", committee)
+    api({
+      method: "POST",
+      url: "/api/dashboard/committees",
+      body: committee,
+    })
       .then(() => toast(`✅ Submitted successfully!`))
       .catch(() => toast(`❌ Internal Server Error`))
       .finally(() => {

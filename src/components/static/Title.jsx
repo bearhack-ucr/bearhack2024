@@ -1,4 +1,4 @@
-import titleBg from "@/assets/title-bg.svg";
+import titleBg from "@/public/title-bg.svg";
 import Link from "./Link.jsx";
 import Image from "next/image";
 import HorizontalLine from "./HorizontalLine.jsx";
@@ -15,7 +15,7 @@ const Title = () => {
           className="object-cover h-full"
         />
       </div>
-      <div className="flex flex-col z-1 p-8 lg:p-16 gap-2 rounded-lg bg-slate-900 lg:bg-transparent">
+      <div className="flex flex-col z-1 p-8 lg:p-16 gap-2 rounded-lg bg-slate-900 lg:bg-transparent z-10">
         <div className="p-8 flex flex-col items-center lg:items-end gap-2">
           <div className="text-3xl lg:text-5xl font-header font-bold">
             BEARHACK 2024
