@@ -4,10 +4,12 @@ import Image from "next/image";
 import HorizontalLine from "./HorizontalLine.jsx";
 import Countdown from "./Countdown.jsx";
 import { CONFIG } from "@/data/Config.js";
-
+import flyLeft from "@/public/flyLeft.svg";
+import flyRight from "@/public/flyRight.svg";
+import swirlTop from "@/public/swirlTop.svg";
 const Title = () => {
   return (
-    <div className="w-full h-screen text-white flex flex-col justify-center items-center lg:items-end">
+    <div className="w-full h-screen text-white flex flex-col justify-center items-center lg:items-end ">
       <div className="absolute hidden lg:flex w-full h-full z-0">
         <Image
           src={titleBg}
@@ -15,7 +17,19 @@ const Title = () => {
           className="object-cover h-full"
         />
       </div>
+      <div className=" flex justify-between w-full -mb-16 z-30">
+        <div className=" xl:hidden -ml-8">
+          <Image src={flyLeft} />
+        </div>
+        <div className=" xl:hidden -mr-8">
+          <Image src={flyRight} />
+        </div>
+      </div>
       <div className="flex flex-col z-1 p-8 lg:p-16 gap-2 rounded-lg bg-slate-900 lg:bg-transparent z-10">
+        <div className=" xl:hidden  flex justify-center -mt-14">
+          <Image src={swirlTop} className="w-2/3" />
+        </div>
+
         <div className="p-8 flex flex-col items-center lg:items-end gap-2">
           <div className="text-3xl lg:text-5xl font-header font-bold">
             BEARHACK 2024
