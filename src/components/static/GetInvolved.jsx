@@ -10,7 +10,9 @@ const GetInvolved = () => {
     <div className="w-full text-white flex flex-col justify-center items-center gap-14">
       <div className="flex justify-center items-center gap-3 w-5/6 md:w-1/2">
         <Image src={butterfly} alt="butterfly" className="w-24" />
-        <p className="font-header text-5xl">Get Involved</p>
+        <p className="font-header text-4xl lg:text-5xl flex whitespace-nowrap">
+          Get Involved
+        </p>
         <Image src={butterfly} alt="butterfly" className="w-24 -scale-x-100" />
       </div>
 
@@ -28,13 +30,13 @@ const GetInvolved = () => {
             behind-the-scenes of BearHack? Great, we&apos;d love to have you on
             our team. Apply to be a volunteer today!
           </p>
-          <div className="flex justify-center lg:justify-end">
+          <div className="flex justify-center lg:justify-end md:mt-0 mt-4">
             <Link text={"Mentor"} link={"/form/mentor"} />
           </div>
         </div>
       </div>
 
-      <div className=" flex flex-col lg:flex-row w-5/6 lg:w-2/3 justify-between items-center gap-5">
+      <div className=" flex flex-col lg:flex-row w-5/6 lg:w-2/3 justify-between items-center gap-10 lg:gap-5">
         <div className="lg:hidden w-36 h-36">
           <Image src={book} />
         </div>
@@ -47,7 +49,7 @@ const GetInvolved = () => {
             Are you confident in your coding skills? Apply to become a mentor
             and help future innovators make a difference!
           </p>
-          <div className="flex justify-center lg:justify-end">
+          <div className="flex justify-center lg:justify-end md:mt-0 mt-4">
             <Link text={"Volunteer"} link={"/form/volunteer"} />
           </div>
         </div>

@@ -8,7 +8,7 @@ const ToggleSelection = ({ title, children }) => {
     <div className="bg-bear-dark py-2">
       <button
         onClick={() => setState(!state)}
-        className="flex items-center justify-between w-full py-3 text-white font-header text-sm md:text-3xl"
+        className="flex items-center justify-between w-full py-3 text-white font-header text-base md:text-3xl whitespace-nowrap"
       >
         {title}
         <LiaAngleDoubleDownSolid
@@ -28,7 +28,7 @@ const ToggleSelection = ({ title, children }) => {
       >
         {state && (
           <div
-            className={`px-10 pb-6 text-white text-xs md:text-lg font-paragraph `}
+            className={`px-10 pb-6 text-white text-sm md:text-lg font-paragraph `}
           >
             {children}
           </div>
