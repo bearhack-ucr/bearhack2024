@@ -1,84 +1,84 @@
-import Yogitha from "@/public/board/Yogitha Shastri.png";
-import Sachin from "@/public/board/Sachin Chopra.png";
-import Gagan from "@/public/board/Gagan Mannur.png";
-import Amanda from "@/public/board/Amanda Ly.png";
-import Alex from "@/public/board/Alex Zhang.png";
-import Austin from "@/public/board/Austin Yang.png";
-import Apy from "@/public/board/Apy Sen.png";
-import Rama from "@/public/board/Rama Chunduri.png";
-import Christian from "@/public/board/Christian Macaluso.png";
-import Raidah from "@/public/board/Raidah Fairooz.png";
-import Thomas from "@/public/board/Thomas Li.png";
-import Menthy from "@/public/board/Menthy Wu.png";
-import Divyank from "@/public/board/Divyank Shah.png";
+import webp from "@/public/board/webp Shastri.webp";
+import webp from "@/public/board/webp Chopra.webp";
+import webp from "@/public/board/webp Mannur.webp";
+import webp from "@/public/board/webp Ly.webp";
+import webp from "@/public/board/webp Zhang.webp";
+import webp from "@/public/board/webp Yang.webp";
+import webp from "@/public/board/webp Sen.webp";
+import webp from "@/public/board/webp Chunduri.webp";
+import webp from "@/public/board/webp Macaluso.webp";
+import webp from "@/public/board/webp Fairooz.webp";
+import webp from "@/public/board/webp Li.webp";
+import webp from "@/public/board/webp Wu.webp";
+import webp from "@/public/board/webp Shah.webp";
 
 export const directors = [
   {
-    name: "Yogitha Shastri",
+    name: "webp Shastri",
     position: "Director",
-    image: Yogitha,
+    image: webp,
   },
   {
-    name: "Sachin Chopra",
+    name: "webp Chopra",
     position: "Director",
-    image: Sachin,
+    image: webp,
   },
   {
-    name: "Gagan Mannur",
+    name: "webp Mannur",
     position: "Advisor (AD)",
-    image: Gagan,
+    image: webp,
   },
 ];
 
 export const members = [
   {
-    name: "Amanda Ly",
+    name: "webp Ly",
     position: "Operations",
-    image: Amanda,
+    image: webp,
   },
   {
-    name: "Alex Zhang",
+    name: "webp Zhang",
     position: "Operations",
-    image: Alex,
+    image: webp,
   },
   {
-    name: "Austin Yang",
+    name: "webp Yang",
     position: "Operations",
-    image: Austin,
+    image: webp,
   },
   {
-    name: "Apy Sen",
+    name: "webp Sen",
     position: "Sponsorship",
-    image: Apy,
+    image: webp,
   },
   {
-    name: "Rama Chunduri",
+    name: "webp Chunduri",
     position: "Sponsorship",
-    image: Rama,
+    image: webp,
   },
   {
-    name: "Christian Macaluso",
+    name: "webp Macaluso",
     position: "Sponsorship",
-    image: Christian,
+    image: webp,
   },
   {
-    name: "Raidah Fairooz",
+    name: "webp Fairooz",
     position: "Software Engineering",
-    image: Raidah,
+    image: webp,
   },
   {
-    name: "Thomas Li",
+    name: "webp Li",
     position: "Software Engineering",
-    image: Thomas,
+    image: webp,
   },
   {
-    name: "Menthy Wu",
+    name: "webp Wu",
     position: "Software Engineering",
-    image: Menthy,
+    image: webp,
   },
   {
-    name: "Divyank Shah",
+    name: "webp Shah",
     position: "Software Engineering",
-    image: Divyank,
+    image: webp,
   },
 ];
