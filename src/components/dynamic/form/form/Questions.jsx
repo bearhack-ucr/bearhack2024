@@ -9,6 +9,7 @@ import toast from "react-hot-toast";
 import Link from "next/link";
 import { FaLink } from "react-icons/fa";
 import { CONFIG } from "@/data/Config";
+import Terms from "./Terms";
 
 const Questions = ({
   fields,
@@ -101,34 +102,37 @@ const Questions = ({
                 {field.required && <span className="text-red-500">*</span>}
               </p>
               {field.options.map((option, i) => (
-                <>
-                  {i > 0 && (
-                    <div
-                      key={i + 0.5}
-                      className="h-px mx-2 bg-white/30 my-1"
-                    ></div>
-                  )}
-                  <Checkbox
-                    className="w-1/2"
-                    key={i}
-                    toggle={object[field.field].includes(option)}
-                    text={option}
-                    onClick={() =>
-                      setObject({
-                        ...object,
-                        [field.field]: object[field.field].includes(option)
-                          ? object[field.field].filter(
-                              (item) => item !== option
-                            )
-                          : [...object[field.field], option],
-                      })
-                    }
-                    color="bg-transparent"
-                    customStyle={true}
-                  />
-                </>
+                <Checkbox
+                  key={i}
+                  toggle={object[field.field].includes(option)}
+                  text={option}
+                  onClick={() =>
+                    setObject({
+                      ...object,
+                      [field.field]: object[field.field].includes(option)
+                        ? object[field.field].filter((item) => item !== option)
+                        : [...object[field.field], option],
+                    })
+                  }
+                  color="bg-hackathon-green-300"
+                />
               ))}
             </>
+          )}
+          {field.input === "terms" && (
+            <Terms
+              options={field.options}
+              toggle={object[field.field].length === field.options.length}
+              onClick={() => {
+                setObject({
+                  ...object,
+                  [field.field]:
+                    object[field.field].length === field.options.length
+                      ? []
+                      : [...field.options],
+                });
+              }}
+            />
           )}
           {field.input === "radio" && (
             <Radio
@@ -165,7 +169,7 @@ const Questions = ({
           )}
         </div>
       ))}
-      <div className="font-semibold">Resources</div>
+      <p className="font-semibold mt-3">Resources</p>
       <Link
         href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
         target="_blank"

@@ -1,9 +1,10 @@
+import { METADATA } from "@/data/Config";
+
 export const TIERS = {
-  tier1: "Bronze",
-  tier2: "Silver",
-  tier3: "Gold",
-  tier4: "Tier4",
-  tier5: "Tier5",
+  tier1: "Owl",
+  tier2: "Bunny",
+  tier3: "Raccoon",
+  tier4: "Bear",
   other: "Other",
 };
 
@@ -12,8 +13,8 @@ export const FIELDS = {
     input: "description",
     width: 12,
     texts: [
-      "Welcome to Bearhack 2024. Thank you for being on the Sponsorship team, we appreciate your efforts to help support Bearhack 2024. Bearhack 2024 is a healthcare and medical technology based hackathon spanning 24 hours on April 27. ",
-      "By sponsoring Bearhack 2024, you help advocate for SPONSOR_REASONS.",
+      `Welcome to ${METADATA.name}. Thank you for being on the Sponsorship team, we appreciate your efforts to help support ${METADATA.name}. ${METADATA.name} is a ${METADATA.description} hackathon spanning ${METADATA.length} on ${METADATA.date}.`,
+      `By sponsoring ${METADATA.name}, you help advocate for creating sustainable and technology driven solutions to current world medical problems.`,
       "Sponsorship members are not required to stay the full duration of the event, but are encouraged to checkout the various events, workshops, and opportunities that are available.",
     ],
   },
@@ -86,7 +87,7 @@ export const FIELDS = {
   },
   requirements: {
     text: "Terms and Conditions",
-    input: "checkboxes",
+    input: "terms",
     width: 12,
     field: "requirements",
     options: [

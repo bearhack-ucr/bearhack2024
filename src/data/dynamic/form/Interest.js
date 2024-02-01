@@ -1,9 +1,11 @@
+import { METADATA } from "@/data/Config";
+
 export const FIELDS = {
   description: {
     input: "description",
     width: 12,
     texts: [
-      "Welcome to Bearhack 2024. Thank you for taking interest in Bearhack 2024, we appreciate your efforts to help support Bearhack 2024. Bearhack 2024 is a healthcare and medical technology based hackathon spanning 24 hours on April 27.",
+      `Welcome to ${METADATA.name}. Thank you for taking interest in ${METADATA.name}, we appreciate your efforts to help support ${METADATA.name}. ${METADATA.name} is a ${METADATA.description} hackathon spanning ${METADATA.length} on ${METADATA.date}.`,
       "This is simply an interest form, once applications are released, you will be notified immediately and will be required to register again. We hope to see you there!",
     ],
   },
