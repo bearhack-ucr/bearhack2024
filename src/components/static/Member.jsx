@@ -4,7 +4,7 @@ const TeamMember = ({ name, position, image }) => {
   return (
     <div className="flex flex-col items-center gap-3">
       <div className="rounded-full border border-white">
-        <div className="m-2 p-2 rounded-full border-3 border-white">
+        <div className="m-2 rounded-full border-3 border-white">
           <div className="w-28 h-28 md:w-40 md:h-40 rounded-full overflow-hidden flex justify-center items-center">
             <Image src={image} />
           </div>
