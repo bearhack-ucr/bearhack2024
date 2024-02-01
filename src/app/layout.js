@@ -1,6 +1,5 @@
 /* eslint-disable new-cap */
 import "./globals.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Poppins } from "next/font/google";
 import { Grenze, Titillium_Web as TitilliumWeb } from "next/font/google";
 import Session from "@/components/dynamic/Session";
