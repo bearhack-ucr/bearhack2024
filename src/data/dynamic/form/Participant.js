@@ -3,13 +3,14 @@ import { GRADES } from "./Information";
 import { GENDERS } from "./Information";
 import { SHIRTS } from "./Information";
 import { SCHOOLS } from "./Schools";
+import { METADATA } from "@/data/Config";
 
 export const FIELDS = {
   description: {
     input: "description",
     width: 12,
     texts: [
-      "Welcome to Bearhack 2024. Thank you for considering to become a participant, we appreciate your enthusiasm to join Bearhack 2024. Bearhack 2024 is a healthcare and medical technology based hackathon spanning 24 hours on April 27.",
+      `Welcome to ${METADATA.name}. Thank you for considering to become a participant, we appreciate your enthusiasm to join ${METADATA.name}. ${METADATA.name} is a ${METADATA.description} hackathon spanning ${METADATA.length} on ${METADATA.date}.`,
       "Participants are not required to stay the full duration of the event, but are encouraged to checkout the various events, workshops, and opportunities that are available.",
     ],
   },
@@ -129,7 +130,7 @@ export const FIELDS = {
   },
   requirements: {
     text: "Terms and Conditions",
-    input: "checkboxes",
+    input: "terms",
     width: 12,
     field: "requirements",
     required: true,
