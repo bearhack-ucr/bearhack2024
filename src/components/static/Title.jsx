@@ -57,7 +57,7 @@ const Title = () => {
         </>
 
         <div className="p-8 flex flex-col items-center lg:items-end gap-2">
-          <div className="text-3xl lg:text-5xl font-header font-bold">
+          <div className="text-4xl flex whitespace-nowrap lg:text-5xl font-header font-bold">
             BEARHACK 2024
           </div>
           <div className="text-lg lg:text-xl font-paragraph text-bear-teal-100">
