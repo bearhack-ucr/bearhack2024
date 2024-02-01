@@ -15,10 +15,10 @@ export const MANIFEST = {
 };
 
 export const METADATA = {
-  name: "HACKATHON_NAME",
-  description: "DESCRIPTION",
-  length: "HACKATHON_LENGTH",
-  date: "HACKATHON_DATE",
+  name: "Bearhack 2024",
+  description: "healthcare and medical technology based hackathon",
+  length: "24 hours",
+  date: "April 27th",
 };
 
 export const SITEMAP = {
