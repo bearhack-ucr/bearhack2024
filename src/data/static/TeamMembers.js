@@ -1,16 +1,16 @@
-import Yogitha from "@/public/board/YogithaShastri.png";
-import Sachin from "@/public/board/SachinChopra.png";
-import Gagan from "@/public/board/GaganMannur.png";
-import Amanda from "@/public/board/AmandaLy.png";
-import Alex from "@/public/board/AlexZhang.png";
-import Austin from "@/public/board/AustinYang.png";
-import Apy from "@/public/board/ApySen.png";
-import Rama from "@/public/board/RamaChunduri.png";
-import Christian from "@/public/board/ChristianMacaluso.png";
-import Raidah from "@/public/board/RaidahFairooz.png";
-import Thomas from "@/public/board/ThomasLi.png";
-import Menthy from "@/public/board/MenthyWu.png";
-import Divyank from "@/public/board/DivyankShah.png";
+import Yogitha from "@/public/board/YogithaShastri.webp";
+import Sachin from "@/public/board/SachinChopra.webp";
+import Gagan from "@/public/board/GaganMannur.webp";
+import Amanda from "@/public/board/AmandaLy.webp";
+import Alex from "@/public/board/AlexZhang.webp";
+import Austin from "@/public/board/AustinYang.webp";
+import Apy from "@/public/board/ApySen.webp";
+import Rama from "@/public/board/RamaChunduri.webp";
+import Christian from "@/public/board/ChristianMacaluso.webp";
+import Raidah from "@/public/board/RaidahFairooz.webp";
+import Thomas from "@/public/board/ThomasLi.webp";
+import Menthy from "@/public/board/MenthyWu.webp";
+import Divyank from "@/public/board/DivyankShah.webp";
 
 export const directors = [
   {
