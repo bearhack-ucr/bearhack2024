@@ -7,6 +7,8 @@ import Austin from "@/public/board/AustinYang.webp";
 import Apy from "@/public/board/ApySen.webp";
 import Rama from "@/public/board/RamaChunduri.webp";
 import Christian from "@/public/board/ChristianMacaluso.webp";
+import Pranoy from "@/public/board/PranoyGiri.webp";
+import Evi from "@/public/board/EviAguirre.webp";
 import Raidah from "@/public/board/RaidahFairooz.webp";
 import Thomas from "@/public/board/ThomasLi.webp";
 import Menthy from "@/public/board/MenthyWu.webp";
@@ -60,6 +62,16 @@ export const members = [
     name: "Christian Macaluso",
     position: "Sponsorship",
     image: Christian,
+  },
+  {
+    name: "Pranoy Giri",
+    position: "Marketing",
+    image: Pranoy,
+  },
+  {
+    name: "Evi Aguirre",
+    position: "Marketing",
+    image: Evi,
   },
   {
     name: "Raidah Fairooz",
