@@ -4,7 +4,7 @@ import { CONFIG } from "@/data/Config";
 
 const Digits = ({ value, unit }) => {
   return (
-    <div className="flex flex-col items-center gap-3 last:hidden sm:last:flex">
+    <div className="flex flex-col items-center gap-4 last:hidden sm:last:flex">
       <div className="flex gap-1 lg:!gap-2">
         {value
           .toString()
@@ -12,7 +12,7 @@ const Digits = ({ value, unit }) => {
           .split("")
           .map((digit, index) => (
             <div
-              className="text-lg lg:text-4xl font-bold text-white bg-bear-teal-100/50 p-[10px] lg:p-3 rounded-lg"
+              className="text-lg lg:text-4xl font-bold text-white bg-bear-teal-100/50 p-3 lg:p-3 rounded-lg"
               key={index}
             >
               {digit}
@@ -50,7 +50,7 @@ const Countdown = () => {
   }, []);
 
   return (
-    <div className="flex gap-3 md:!gap-6 font-paragraph">
+    <div className="flex justify-between font-paragraph w-full">
       {Object.entries(time).map(([unit, value], index) => (
         <Digits key={index} unit={unit} value={value} />
       ))}
