@@ -11,7 +11,7 @@ export const FIELDS = {
     width: 12,
     texts: [
       "Welcome to Bearhack 2024. Thank you for being on the Sponsorship team, we appreciate your efforts to help support Bearhack 2024. Bearhack 2024 is a healthcare and medical technology based hackathon spanning 24 hours on April 27. ",
-      "By sponsoring Bearhack 2024, you help advocate for SPONSOR_REASONS.",
+      "By sponsoring Bearhack 2024, you help advocate for producing sustainable and technology driven solutions for current global issues.",
       "Sponsorship members are not required to stay the full duration of the event, but are encouraged to checkout the various events, workshops, and opportunities that are available.",
     ],
   },
