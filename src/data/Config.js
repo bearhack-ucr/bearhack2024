@@ -14,6 +14,13 @@ export const MANIFEST = {
   start_url: "/",
 };
 
+export const METADATA = {
+  name: "Bearhack 2024",
+  description: "healthcare and medical technology based hackathon",
+  length: "24 hours",
+  date: "April 27th",
+};
+
 export const SITEMAP = {
   domain: "https://www.placeholder.com",
 };

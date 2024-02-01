@@ -14,9 +14,9 @@ const Footer = () => {
         <div className="text-lg md:text-4xl m-0 p-0">BEARHACK 2024</div>
         <div className="text-xs md:text-xl m-0 p-0 font-header">
           Made with <AiFillHeart className="inline" /> by the Bear Hack team at
-          UCR
+          University of California, Riverside
         </div>
-        <div className="flex mb-8">
+        <div className="flex mb-8 gap-2">
           {CONTACTS.map((contact, index) => (
             <Link
               key={index}
