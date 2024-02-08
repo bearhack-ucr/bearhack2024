@@ -66,7 +66,7 @@ const ProtectedPage = ({
             className={`flex justify-center items-start w-full ${
               customStyle
                 ? "bg-gradient-to-b from-bear-page-gradient-1 to-bear-page-gradient-2"
-                : "bg-red-300"
+                : "bg-hackathon-page"
             } h-screen py-12 lg:py-0 z-0 overflow-x-hidden`}
           >
             <div className={`${customStyle ? "w-full" : "w-[96%]"} h-full`}>
