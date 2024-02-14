@@ -1,3 +1,6 @@
+import { GENDERS, GRADES, SHIRTS, MAJORS } from "./Information";
+import { METADATA } from "@/data/Config";
+
 export const AFFILIATIONS = {
   director: "director",
   marketing: "marketing",
@@ -13,7 +16,7 @@ export const FIELDS = {
     input: "description",
     width: 12,
     texts: [
-      "Welcome to Bearhack 2024. Thank you for being on the organizing team, we appreciate your efforts to help support Bearhack 2024. Bearhack 2024 is a healthcare and medical technology based hackathon spanning 24 hours on April 27.",
+      `Welcome to ${METADATA.name}. Thank you for being on the organizing team, we appreciate your efforts to help support ${METADATA.name}. ${METADATA.name} is a ${METADATA.description} hackathon spanning ${METADATA.length} on ${METADATA.date}.`,
       "Admins are not required to stay the full duration of the event, but are encouraged to checkout the various events, workshops, and opportunities that are available.",
       "Note: Admins are not permitted to become participants for the hackathon.",
     ],
@@ -48,6 +51,42 @@ export const FIELDS = {
     width: 12,
     required: true,
   },
+  major: {
+    input: "select",
+    title: "Major",
+    options: MAJORS,
+    field: "major",
+    placeholder: "ie. Computer Science",
+    width: 12,
+    required: true,
+    searchable: true,
+  },
+  grade: {
+    input: "select",
+    title: "Grade",
+    options: GRADES,
+    field: "grade",
+    placeholder: "ie. Undergraduate",
+    width: 12,
+    required: true,
+    searchable: true,
+  },
+  gender: {
+    input: "radio",
+    text: "Gender",
+    options: GENDERS,
+    field: "gender",
+    width: 12,
+    required: true,
+  },
+  shirt: {
+    input: "radio",
+    text: "Shirt Size",
+    options: SHIRTS,
+    field: "shirt",
+    width: 12,
+    required: true,
+  },
   affiliation: {
     input: "radio",
     text: "Affiliation",
@@ -58,7 +97,7 @@ export const FIELDS = {
   },
   requirements: {
     text: "Terms and Conditions",
-    input: "checkboxes",
+    input: "terms",
     width: 12,
     field: "requirements",
     options: [
@@ -78,6 +117,10 @@ export const ATTRIBUTES = {
   name: "",
   email: "",
   discord: "",
+  grade: "",
+  major: "",
+  gender: "",
+  shirt: "",
   affiliation: "",
   requirements: [],
 };

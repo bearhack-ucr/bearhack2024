@@ -14,6 +14,14 @@ export const MANIFEST = {
   start_url: "/",
 };
 
+export const METADATA = {
+  name: "Bearhack 2024",
+  description: "healthcare and medical technology based",
+  length: "24 hours",
+  date: "April 27",
+  sponsor_reasons: "the empowerment of future healthcare leaders",
+};
+
 export const SITEMAP = {
   domain: "https://www.placeholder.com",
 };
