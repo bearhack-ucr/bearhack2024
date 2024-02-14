@@ -2,11 +2,10 @@ import { METADATA } from "@/data/Config";
 import { phone } from "@/data/dynamic/form/Regex";
 
 export const TIERS = {
-  tier1: "Bronze",
-  tier2: "Silver",
-  tier3: "Gold",
-  tier4: "Tier4",
-  tier5: "Tier5",
+  tier1: "Owl",
+  tier2: "Bunny",
+  tier3: "Raccoon",
+  tier4: "Bear",
   other: "Other",
 };
 

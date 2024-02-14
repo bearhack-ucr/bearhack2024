@@ -16,10 +16,11 @@ export const MANIFEST = {
 
 export const METADATA = {
   name: "Bearhack 2024",
-  description: "healthcare and medical technology based",
+  description: "healthcare and medical technology based hackathon",
   length: "24 hours",
-  date: "April 27",
-  sponsor_reasons: "the empowerment of future healthcare leaders",
+  date: "April 27th",
+  sponsor_reasons:
+    "creating sustainable and technology driven solutions to current world medical problems",
 };
 
 export const SITEMAP = {

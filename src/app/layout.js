@@ -26,7 +26,7 @@ export default function RootLayout({ children, session }) {
   return (
     <html lang="en" className="h-full">
       <body
-        className={`${poppins.variable} ${grenze.variable} ${titilliumWeb.variable} flex flex-col lg:flex-row h-full`}
+        className={`${poppins.variable} ${grenze.variable} ${titilliumWeb.variable} bg-bear-dark flex flex-col lg:flex-row h-full`}
       >
         <Session session={session} refetchInterval={5 * 60} className="h-full">
           <div className="flex w-full">

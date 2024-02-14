@@ -13,6 +13,9 @@ module.exports = {
         header: ["var(--font-grenze)"],
         paragraph: ["var(--font-titillium-web)"],
       },
+      animation: {
+        "twinkling-star": "pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;",
+      },
       colors: {
         hackathon: {
           "blue-100": "#38A3A5",
