@@ -16,9 +16,9 @@ module.exports = {
       animation: {
         "twinkling-star": "pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;",
         "shooting-star-outer":
-          "slide-early 10s cubic-bezier(0.8, 0, 0.4, 1) infinite",
+          "slide-early 20s cubic-bezier(0.8, 0, 0.4, 1) infinite",
         "shooting-star-inner":
-          "slide-late 10s cubic-bezier(0.8, 0, 0.4, 1) infinite",
+          "slide-late 20s cubic-bezier(0.8, 0, 0.4, 1) infinite",
         "fade-in": "fade-in 1s linear 1",
       },
       keyframes: {
