@@ -5,7 +5,6 @@ import HorizontalLine from "./HorizontalLine.jsx";
 import Countdown from "./Countdown.jsx";
 import { CONFIG } from "@/data/Config.js";
 import flyLeft from "@/public/flyLeft.svg";
-import flyRight from "@/public/flyRight.svg";
 import butterflyWing from "@/public/butterflyWing.svg";
 import swirlTop from "@/public/swirlTop.svg";
 import { useMemo } from "react";
