@@ -6,4 +6,23 @@
   .animation-delay-inherit {
     animation-delay: inherit;
   }
+
+  /** outer class for butterfly */
+  .butterfly {
+    display: flex;
+    width: fit-content;
+    transform-origin: center;
+    transform: perspective(700px) rotateX(55deg) rotateY(67deg) rotateZ(316deg);
+    transform-style: preserve-3d;
+  }
+
+  .butterfly-wing {
+    transform-style: preserve-3d;
+    transform-origin: center right;
+  }
+
+  .flip-x {
+    transform: scaleX(-1);
+    transform-style: preserve-3d;
+  }
 }

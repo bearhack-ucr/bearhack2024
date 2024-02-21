@@ -6,6 +6,7 @@ import Countdown from "./Countdown.jsx";
 import { CONFIG } from "@/data/Config.js";
 import flyLeft from "@/public/flyLeft.svg";
 import flyRight from "@/public/flyRight.svg";
+import butterflyWing from "@/public/butterflyWing.svg";
 import swirlTop from "@/public/swirlTop.svg";
 import { useMemo } from "react";
 
@@ -52,8 +53,19 @@ const Title = () => {
         <div className=" xl:hidden -ml-4">
           <Image src={flyLeft} />
         </div>
-        <div className="xl:hidden -mr-4">
-          <Image src={flyRight} />
+        <div className="xl:hidden mr-12">
+          <div className="butterfly">
+            <Image
+              src={butterflyWing}
+              className="butterfly-wing animate-flap"
+            />
+            <div className="flip-x">
+              <Image
+                src={butterflyWing}
+                className="butterfly-wing animate-flap"
+              />
+            </div>
+          </div>
         </div>
       </div>
       <div className="flex flex-col z-1 p-10 lg:p-16 gap-2  border-bear-dark/50 rounded-3xl lg:bg-transparent z-10">

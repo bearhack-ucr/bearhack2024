@@ -20,6 +20,7 @@ module.exports = {
         "shooting-star-inner":
           "slide-late 20s cubic-bezier(0.8, 0, 0.4, 1) infinite",
         "fade-in": "fade-in 1s linear 1",
+        flap: "wingbeat 1s infinite",
       },
       keyframes: {
         "slide-early": {
@@ -33,6 +34,16 @@ module.exports = {
         "fade-in": {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
+        },
+        wingbeat: {
+          "0%, 100%": {
+            transform: "rotateY(60deg)",
+            "animation-timing-function": "cubic-bezier(.77,0,.89,.46)",
+          },
+          "50%": {
+            transform: "rotateY(10deg)",
+            "animation-timing-function": "ease-out",
+          },
         },
       },
       colors: {
