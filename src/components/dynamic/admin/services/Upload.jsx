@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { RiAttachment2 } from "react-icons/ri";
 import { FaTimes } from "react-icons/fa";
-import toaster from "@/utils/toaster";
+import { toast } from "react-hot-toast";
 import { BYTES } from "@/data/dynamic/Bytes";
 import { compress } from "@/utils/convert";
 
@@ -17,7 +17,7 @@ const Upload = ({ text, setObjects, objects, size, types }) => {
   const handleInput = (e) => {
     setUploading(true);
     if (objects.files.length + e.target.files.length > 5) {
-      toaster("Exceeds 5 files!", "error");
+      toast("❌ Exceeds 5 files!");
       setUploading(false);
       return;
     }
@@ -29,11 +29,11 @@ const Upload = ({ text, setObjects, objects, size, types }) => {
         ...Object.values(e.target.files).filter(async (file) => {
           const blob = await compress(file);
           if (blob.size > getSize(size)) {
-            toaster(`${blob.name} exceeds ${size[0]} ${size[1]}`, "error");
+            toast(`❌ ${blob.name} exceeds ${size[0]} ${size[1]}`);
             return false;
           }
           if (objects.files.map((file) => file.name).includes(file.name)) {
-            toaster(`${file.name} is already uploaded`, "error");
+            toast(`❌ ${file.name} is already uploaded`);
             return false;
           }
           return true;

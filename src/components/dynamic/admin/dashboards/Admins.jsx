@@ -1,10 +1,5 @@
 "use client";
-import {
-  STATUSES,
-  TAGS,
-  COLUMNS,
-  DROPDOWN,
-} from "@/data/dynamic/admin/Admins.js";
+import { STATUSES, TAGS, COLUMNS } from "@/data/dynamic/admin/Admins.js";
 import Table from "./dashboard/Dashboard";
 
 const Admin = () => {
@@ -16,7 +11,6 @@ const Admin = () => {
         tags={TAGS}
         page="admins"
         statuses={STATUSES}
-        Dropdown={DROPDOWN}
         empty="No Admins Available"
       />
     </div>

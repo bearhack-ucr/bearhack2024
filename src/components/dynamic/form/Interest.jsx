@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Form from "@/components/dynamic/form/form/Form.jsx";
 import { api } from "@/utils/api";
-import toaster from "@/utils/toaster";
+import toast from "react-hot-toast";
 import { FIELDS, ATTRIBUTES } from "@/data/dynamic/form/Interest";
 import { useSession } from "next-auth/react";
 import { STATUSES } from "@/data/dynamic/admin/Interests";
@@ -24,8 +24,8 @@ const Interest = () => {
       url: "/api/dashboard/interests",
       body: interest,
     })
-      .then(() => toaster(`Submitted successfully!`, "success"))
-      .catch(() => toaster(`Internal Server Error`, "error"))
+      .then(() => toast(`✅ Submitted successfully!`))
+      .catch(() => toast(`❌ Internal Server Error`))
       .finally(() => {
         setLoading(false);
         setState(2);

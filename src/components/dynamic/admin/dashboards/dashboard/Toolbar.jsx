@@ -1,8 +1,8 @@
 "use client";
 import { api } from "@/utils/api";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { FaTrashAlt, FaUndoAlt } from "react-icons/fa";
-import toaster from "@/utils/toaster";
+import toast from "react-hot-toast";
 import Popup from "../../Popup";
 import Tag from "../../Tag";
 import { COLORS } from "@/data/dynamic/Tags";
@@ -38,7 +38,7 @@ const Toolbar = ({
       url: `/api/dashboard/${page}`,
     }).then(({ items }) => {
       setData(items);
-      toaster("Fetched Data Successfully", "success");
+      toast("✅ Fetched Data Successfully");
     });
   };
 
@@ -51,14 +51,14 @@ const Toolbar = ({
       method: "DELETE",
       url: `/api/dashboard/${page}?remove=${ids.join(",")}`,
     }).then(() => {
-      toaster("Successfully Deleted", "success");
+      toast("✅ Successfully Deleted");
       toggleAllRowsSelected(false);
     });
   };
 
   const confirmDelete = () => {
     if (rows.length === 0) {
-      toaster("No rows selected for deletion.", "error");
+      toast("❌ No rows selected for deletion.");
       return;
     }
 
@@ -74,14 +74,14 @@ const Toolbar = ({
 
   const onClick = (value) => {
     if (rows.length === 0) {
-      toaster("No items selected.", "error");
+      toast("❌ No items selected.");
       return;
     }
 
     const notPending = rows.some((obj) => obj.status !== 0);
 
     if (notPending) {
-      toaster("Only pending items can be changed!", "error");
+      toast("❌ Only pending items can be changed!");
       toggleAllRowsSelected(false);
       return;
     }
@@ -94,22 +94,18 @@ const Toolbar = ({
         status: value,
         attribute: "status",
       },
-    })
-      .then(() => {
-        const ids = rows.map(({ uid }) => uid);
+    });
 
-        setData(
-          data.map((a) => {
-            if (ids.includes(a.uid)) a.status = value;
-            return a;
-          })
-        );
+    const ids = rows.map(({ uid }) => uid);
 
-        toggleAllRowsSelected(false);
-
-        toaster("Operation Completed", "success");
+    setData(
+      data.map((a) => {
+        if (ids.includes(a.uid)) a.status = value;
+        return a;
       })
-      .catch(() => toaster("Operation Failed", "error"));
+    );
+
+    toggleAllRowsSelected(false);
   };
 
   useEffect(() => {
