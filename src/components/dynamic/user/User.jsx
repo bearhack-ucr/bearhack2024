@@ -13,7 +13,7 @@ import Select from "../Select";
 import Button from "../Button";
 import Checkbox from "../Checkbox";
 import { api } from "@/utils/api";
-import toaster from "@/utils/toaster";
+import toast from "react-hot-toast";
 
 const User = ({ user, setUser, edit, setEdit }) => {
   const handleEdit = () => {
@@ -21,25 +21,17 @@ const User = ({ user, setUser, edit, setEdit }) => {
   };
 
   const handleSave = async () => {
-    if (
-      Object.values(user).some(
-        (value) => typeof value === "string" && value.includes("Invalid")
-      )
-    ) {
-      toaster("Please complete all required fields!", "error");
-      return;
-    }
     api({
       method: "POST",
       url: "/api/participant",
       body: user,
     })
       .then(() => {
-        toaster("Successfully Updated!", "success");
+        toast("✅ Successfully Updated!");
         setEdit(false);
       })
       .catch(() => {
-        toaster("Internal Server Error", "error");
+        toast("❌ Internal Server Error");
         setEdit(false);
       });
   };
@@ -78,7 +70,6 @@ const User = ({ user, setUser, edit, setEdit }) => {
           user={user}
           setUser={setUser}
           editable={edit}
-          regex={phone}
         />
         <Select
           title="Age"

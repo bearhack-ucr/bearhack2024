@@ -1,24 +1,6 @@
 export const ATTRIBUTES = {
-  admins: [
-    "name",
-    "email",
-    "affiliation",
-    "discord",
-    "major",
-    "grade",
-    "gender",
-    "shirt",
-  ],
-  committees: [
-    "name",
-    "email",
-    "affiliation",
-    "discord",
-    "major",
-    "grade",
-    "gender",
-    "shirt",
-  ],
+  admins: ["name", "email", "affiliation", "discord"],
+  committees: ["name", "email", "affiliation", "discord"],
   judges: [
     "name",
     "email",

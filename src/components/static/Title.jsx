@@ -5,7 +5,7 @@ import HorizontalLine from "./HorizontalLine.jsx";
 import Countdown from "./Countdown.jsx";
 import { CONFIG } from "@/data/Config.js";
 import flyLeft from "@/public/flyLeft.svg";
-import butterflyWing from "@/public/butterflyWing.svg";
+import flyRight from "@/public/flyRight.svg";
 import swirlTop from "@/public/swirlTop.svg";
 import { useMemo } from "react";
 
@@ -20,23 +20,8 @@ const createStars = (starsToCreate) => {
   return array;
 };
 
-// shooting star is created with a growing end bound (container width)
-// and a delayed growing start bound (inner item width), the container
-// has overflow-hidden to properly clip and create the effect
-const createStreak = (amount) => {
-  return [...new Array(amount)].map(() => ({
-    top: `${Math.floor(Math.random() * 150 - 20).toString()}%`,
-    left: `${Math.floor(Math.random() * 100).toString()}%`,
-    transform: `rotate(${Math.random() * 2 * Math.PI}rad) scaleX(${
-      3 + Math.random() * 30
-    })`,
-    animationDelay: `${-Math.floor(Math.random() * 10000)}ms`,
-  }));
-};
-
 const Title = () => {
   const smallStars = useMemo(() => createStars(50), []);
-  const shootingStars = useMemo(() => createStreak(20), []);
 
   return (
     <div className="w-full h-screen text-white flex flex-col justify-center items-center lg:items-end bg-gradient-to-b from-bear-dark via-bear-teal/50 to-bear-dark lg:from-transparent">
@@ -52,19 +37,8 @@ const Title = () => {
         <div className=" xl:hidden -ml-4">
           <Image src={flyLeft} />
         </div>
-        <div className="xl:hidden mr-12">
-          <div className="butterfly">
-            <Image
-              src={butterflyWing}
-              className="butterfly-wing animate-flap"
-            />
-            <div className="flip-x">
-              <Image
-                src={butterflyWing}
-                className="butterfly-wing animate-flap"
-              />
-            </div>
-          </div>
+        <div className="xl:hidden -mr-4">
+          <Image src={flyRight} />
         </div>
       </div>
       <div className="flex flex-col z-1 p-10 lg:p-16 gap-2  border-bear-dark/50 rounded-3xl lg:bg-transparent z-10">
@@ -72,30 +46,15 @@ const Title = () => {
           <Image src={swirlTop} className="w-2/3" />
         </div>
 
-        <div className="absolute top-0 left-0 w-screen h-screen overflow-hidden">
-          <>
-            {smallStars.map((star, index) => (
-              <span
-                style={{ top: star.top, left: star.left }}
-                key={index}
-                className="absolute animate-twinkling-star bg-white h-1 w-1 rounded-full -z-10"
-              ></span>
-            ))}
-          </>
-          <>
-            {shootingStars.map((style, index) => (
-              <span
-                style={style}
-                key={index}
-                className="absolute -z-10 animate-fade-in"
-              >
-                <span className="absolute animate-shooting-star-outer animation-delay-inherit w-8 h-[2px]">
-                  <span className="absolute bg-white animate-shooting-star-inner animation-delay-inherit w-8 h-[2px]"></span>
-                </span>
-              </span>
-            ))}
-          </>
-        </div>
+        <>
+          {smallStars.map((star, index) => (
+            <span
+              style={{ top: star.top, left: star.left }}
+              key={index}
+              className="absolute animate-twinkling-star bg-white h-1 w-1 rounded-full -z-10"
+            ></span>
+          ))}
+        </>
 
         <div className="p-8 flex flex-col items-center lg:items-end gap-2">
           <div className="text-4xl flex whitespace-nowrap lg:text-5xl font-header font-bold">
