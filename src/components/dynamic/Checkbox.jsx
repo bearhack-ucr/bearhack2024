@@ -10,7 +10,7 @@ const Checkbox = ({
 }) => {
   return (
     <div
-      className="flex items-center hover:cursor-pointer w-fit"
+      className="flex items-center hover:cursor-pointer w-fit gap-2"
       onClick={onClick}
       data-cy="checkbox"
     >
