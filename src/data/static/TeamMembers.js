@@ -9,6 +9,7 @@ import Rama from "@/public/board/RamaChunduri.webp";
 import Christian from "@/public/board/ChristianMacaluso.webp";
 import Pranoy from "@/public/board/PranoyGiri.webp";
 import Evi from "@/public/board/EviAguirre.webp";
+import Peter from "@/public/board/PeterLu.webp";
 import Raidah from "@/public/board/RaidahFairooz.webp";
 import Thomas from "@/public/board/ThomasLi.webp";
 import Menthy from "@/public/board/MenthyWu.webp";
@@ -72,6 +73,11 @@ export const members = [
     name: "Evi Aguirre",
     position: "Marketing",
     image: Evi,
+  },
+  {
+    name: "Peter Lu",
+    position: "Marketing",
+    image: Peter,
   },
   {
     name: "Raidah Fairooz",
