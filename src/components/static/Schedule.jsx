@@ -49,6 +49,13 @@ const Schedule = () => {
           </div>
         ))}
       </div>
+      <div className="mt-8 w-11/12 lg:w-3/4 grid grid-cols-8 px-4 items-center content-center text-center font-base">
+        <div className="col-span-2 md:col-span-1">Time</div>
+        <div className="col-span-2">Event</div>
+        <div className="col-span-4 md:col-span-3">Details</div>
+        <div className="hidden md:block">Type</div>
+        <div className="hidden md:block">Location</div>
+      </div>
       <div className="w-11/12 lg:w-3/4 flex flex-col items-center p-4 gap-4 border border-white bg-gradient-to-r from-bear-page-gradient-1 to-bear-page-gradient-2 rounded-lg">
         {PLACEHOLDER_EVENTS.map(
           ({ time, name, description, type, location }, index) => (
