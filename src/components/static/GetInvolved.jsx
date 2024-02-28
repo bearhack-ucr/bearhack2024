@@ -9,11 +9,11 @@ const GetInvolved = () => {
   return (
     <div className="w-full text-white flex flex-col justify-center items-center gap-14">
       <div className="flex justify-center items-center gap-3 w-5/6 md:w-1/2">
-        <Image src={butterfly} alt="butterfly" className="w-24" />
+        <Image src={butterfly} alt="butterfly" className="w-16" />
         <p className="font-header text-4xl lg:text-5xl flex whitespace-nowrap">
           Get Involved
         </p>
-        <Image src={butterfly} alt="butterfly" className="w-24 -scale-x-100" />
+        <Image src={butterfly} alt="butterfly" className="w-16 -scale-x-100" />
       </div>
 
       <div className="flex flex-col lg:flex-row w-5/6 lg:w-2/3 justify-between items-center gap-2">
