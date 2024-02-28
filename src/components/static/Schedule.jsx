@@ -73,7 +73,7 @@ const Schedule = () => {
                 <div className="text-normal lg:text-lg col-span-2 font-bold">
                   {name}
                   <div className="block md:hidden">@ {location}</div>
-                  <div className="font-normal">{type}</div>
+                  <div className="block md:hidden font-normal">{type}</div>
                 </div>
                 <div className="col-span-4 md:col-span-3 px-4">
                   {description}
