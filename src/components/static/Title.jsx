@@ -72,7 +72,7 @@ const Title = () => {
           <Image src={swirlTop} className="w-2/3" />
         </div>
 
-        <div className="absolute top-0 left-0 w-screen h-screen overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-screen overflow-hidden">
           <>
             {smallStars.map((star, index) => (
               <span
