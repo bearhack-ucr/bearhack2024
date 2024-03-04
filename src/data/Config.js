@@ -5,6 +5,7 @@ export const CONFIG = {
   date: new Date("April 27, 2024 9:00:00"),
   lastDate: new Date("April 28, 2024 9:00:00"),
   packet: "",
+  devpost: "https://devpost.com/",
 };
 
 export const MANIFEST = {
