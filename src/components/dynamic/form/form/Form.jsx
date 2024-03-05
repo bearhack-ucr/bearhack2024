@@ -24,7 +24,7 @@ const Form = ({
 
   return (
     <div className="w-full h-full overflow-scroll-y flex flex-col items-center font-poppins">
-      <div className="w-full flex flex-row justify-end mr-[10%]">
+      <div className="w-full flex flex-row justify-end">
         <Button
           text="Sign Out"
           onClick={() => signOut({ callbackUrl: "/", redirect: true })}
