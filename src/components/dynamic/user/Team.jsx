@@ -122,7 +122,7 @@ const Team = ({ user, setUser }) => {
   }, [user.team]);
 
   return (
-    <div className="bg-white rounded-lg p-4 gap-3 m-2 overflow-scroll max-h-[70vh] flex flex-col justify-start">
+    <div className="bg-gradient-to-b from-bear-teal/10  to-bear-teal/20 text-white rounded-lg p-4 gap-3 m-2 overflow-auto max-h-[70vh] flex flex-col justify-start">
       {user.team && !load && <Loading />}
       {user.team && load && (
         <>
@@ -194,7 +194,7 @@ const Team = ({ user, setUser }) => {
               />
             </p>
           </div>
-          <div className="flex items-center justify-end gap-4">
+          <div className="flex items-center justify-center gap-4">
             <Button
               color="green"
               size="lg"

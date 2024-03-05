@@ -32,7 +32,6 @@ const Page = ({ params }) => {
       <ProtectedPage
         title={`Form | ${capitalizeFirstLetter(params.type)}`}
         restrictions={{}}
-        customStyle={true}
       >
         {components[params.type]}
       </ProtectedPage>
