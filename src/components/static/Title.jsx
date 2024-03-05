@@ -8,6 +8,7 @@ import flyLeft from "@/public/flyLeft.svg";
 import flyRight from "@/public/flyRight.svg";
 import swirlTop from "@/public/swirlTop.svg";
 import { useMemo } from "react";
+import Butterfly from "./Butterfly.jsx";
 
 const createStars = (starsToCreate) => {
   const array = Array(starsToCreate);
@@ -32,7 +33,6 @@ const Title = () => {
           className="object-cover h-full"
         />
       </div>
-
       <div className=" flex justify-between w-full -mb-14 z-30">
         <div className=" xl:hidden -ml-4">
           <Image src={flyLeft} />
@@ -45,7 +45,6 @@ const Title = () => {
         <div className=" xl:hidden  flex justify-center -mt-16">
           <Image src={swirlTop} className="w-2/3" />
         </div>
-
         <>
           {smallStars.map((star, index) => (
             <span
@@ -55,10 +54,12 @@ const Title = () => {
             ></span>
           ))}
         </>
-
         <div className="p-8 flex flex-col items-center lg:items-end gap-2">
-          <div className="text-4xl flex whitespace-nowrap lg:text-5xl font-header font-bold">
+          <div className="relative text-4xl flex whitespace-nowrap lg:text-5xl font-header font-bold">
             BEARHACK 2024
+            <div className="absolute right-0 top-0 scale-50 lg:scale-100 translate-x-1/2 -translate-y-1/2">
+              <Butterfly />
+            </div>
           </div>
           <div className="text-lg lg:text-xl font-paragraph text-bear-teal-100">
             {CONFIG.date.toLocaleDateString("en-US", {
