@@ -5,7 +5,7 @@ import Form from "@/components/dynamic/form/form/Form.jsx";
 import { FIELDS, ATTRIBUTES } from "@/data/dynamic/form/Admins";
 import { useSession } from "next-auth/react";
 import { api } from "@/utils/api";
-import toaster from "@/utils/toaster";
+import toast from "react-hot-toast";
 import { STATUSES } from "@/data/dynamic/admin/Admins";
 
 const Admin = () => {
@@ -24,8 +24,8 @@ const Admin = () => {
       url: "/api/dashboard/admins",
       body: admin,
     })
-      .then(() => toaster(`Submitted successfully!`, "success"))
-      .catch(() => toaster(`Internal Server Error`, "error"))
+      .then(() => toast(`✅ Submitted successfully!`))
+      .catch(() => toast(`❌ Internal Server Error`))
       .finally(() => {
         setLoading(false);
         setState(2);

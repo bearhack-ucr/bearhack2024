@@ -1,7 +1,7 @@
 import Button from "../Button";
 import Input from "../Input";
 import { useEffect, useState } from "react";
-import toaster from "@/utils/toaster";
+import toast from "react-hot-toast";
 import Loading from "../Loading";
 import { BiLink, BiSolidCopy } from "react-icons/bi";
 import { api } from "@/utils/api";
@@ -17,14 +17,14 @@ const Team = ({ user, setUser }) => {
 
   const handleCopy = () => {
     navigator.clipboard.writeText(user.team);
-    toaster("Successfully copied team id!", "success");
+    toast("✅ Successfully copied team id!");
   };
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(
       `${process.env.NEXT_PUBLIC_URL}user/join/${user.team}`
     );
-    toaster("Successfully copied join link!", "success");
+    toast("✅ Successfully copied join link!");
   };
 
   const handleLeave = () => {
@@ -32,7 +32,7 @@ const Team = ({ user, setUser }) => {
       method: "DELETE",
       url: "/api/members",
     }).then(() => {
-      toaster("Successfully left team!", "success");
+      toast("✅ Successfully left team!");
       setTeam(defaultTeam);
       setUser({ ...user, team: null });
       setLoad(false);
@@ -41,7 +41,7 @@ const Team = ({ user, setUser }) => {
 
   const handleJoin = () => {
     if (team.id === "") {
-      toaster("Enter a Valid Team ID", "error");
+      toast("❌ Enter a Valid Team ID");
       return;
     }
     api({
@@ -50,17 +50,17 @@ const Team = ({ user, setUser }) => {
       body: { team: team.id },
     }).then((response) => {
       if (response.message !== "OK") {
-        toaster(`${response.message}`, "error");
+        toast(`❌ ${response.message}`);
         return;
       }
-      toaster("Successfully joined team!", "success");
+      toast("✅ Successfully joined team!");
       setUser({ ...user, team: team.id });
     });
   };
 
   const handleCreate = () => {
     if (team.name === "") {
-      toaster("Enter a Valid Team Name", "error");
+      toast("❌ Enter a Valid Team Name");
       return;
     }
     api({
@@ -70,7 +70,7 @@ const Team = ({ user, setUser }) => {
     }).then(({ items }) => {
       setTeam(items);
       setUser({ ...user, team: items.id });
-      toaster("Successfully created a new team!", "success");
+      toast("✅ Successfully created a new team!");
       setEdit(false);
       setLoad(true);
     });
@@ -82,15 +82,15 @@ const Team = ({ user, setUser }) => {
 
   const handleSave = () => {
     if (!(team.github === "" || team.github.includes("github.com/"))) {
-      toaster("Invalid Github Link", "error");
+      toast("❌ Invalid Github Link");
       return;
     }
     if (!(team.devpost === "" || team.devpost.includes("devpost.com/"))) {
-      toaster("Invalid Devpost Link", "error");
+      toast("❌ Invalid Devpost Link");
       return;
     }
     if (!(team.figma === "" || team.figma.includes("figma.com/"))) {
-      toaster("Invalid Figma Link", "error");
+      toast("❌ Invalid Figma Link");
       return;
     }
 
@@ -99,7 +99,7 @@ const Team = ({ user, setUser }) => {
       url: "/api/team",
       body: team,
     }).then(() => {
-      toaster("Successfully Updated!", "success");
+      toast("✅ Successfully Updated!");
       setEdit(false);
     });
   };
@@ -115,9 +115,8 @@ const Team = ({ user, setUser }) => {
           setLoad(true);
         })
         .catch(({ response: data }) => {
-          if (data.message === "Invalid Team ID")
-            toaster("Invalid Team ID", "error");
-          else toaster("Internal Server Error", "error");
+          if (data.message === "Invalid Team ID") toast("❌ Invalid Team ID");
+          else toast("❌ Internal Server Error");
         });
     }
   }, [user.team]);

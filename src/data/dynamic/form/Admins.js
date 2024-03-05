@@ -1,4 +1,3 @@
-import { GENDERS, GRADES, SHIRTS, MAJORS } from "./Information";
 import { METADATA } from "@/data/Config";
 
 export const AFFILIATIONS = {
@@ -51,42 +50,6 @@ export const FIELDS = {
     width: 12,
     required: true,
   },
-  major: {
-    input: "select",
-    title: "Major",
-    options: MAJORS,
-    field: "major",
-    placeholder: "ie. Computer Science",
-    width: 12,
-    required: true,
-    searchable: true,
-  },
-  grade: {
-    input: "select",
-    title: "Grade",
-    options: GRADES,
-    field: "grade",
-    placeholder: "ie. Undergraduate",
-    width: 12,
-    required: true,
-    searchable: true,
-  },
-  gender: {
-    input: "radio",
-    text: "Gender",
-    options: GENDERS,
-    field: "gender",
-    width: 12,
-    required: true,
-  },
-  shirt: {
-    input: "radio",
-    text: "Shirt Size",
-    options: SHIRTS,
-    field: "shirt",
-    width: 12,
-    required: true,
-  },
   affiliation: {
     input: "radio",
     text: "Affiliation",
@@ -117,10 +80,6 @@ export const ATTRIBUTES = {
   name: "",
   email: "",
   discord: "",
-  grade: "",
-  major: "",
-  gender: "",
-  shirt: "",
   affiliation: "",
   requirements: [],
 };

@@ -1,11 +1,11 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Input from "../../Input";
 import Button from "../../Button";
 import Tag from "../../Tag";
 import { COLORS } from "@/data/dynamic/Tags";
 import Popup from "../../Popup";
-import toaster from "@/utils/toaster";
+import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { api } from "@/utils/api";
 
@@ -26,6 +26,22 @@ const Toolbar = ({ data, setData, view, setView, setJudgesView }) => {
     input: "",
   });
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+
+    setData(
+      data.map((group) => {
+        let boolean = false;
+
+        if (group.name.toLowerCase().match(input.input.toLowerCase())) {
+          boolean = true;
+        }
+
+        return { ...group, hidden: !boolean };
+      })
+    );
+  };
+
   const generate = (e) => {
     e.preventDefault();
     if (
@@ -34,7 +50,7 @@ const Toolbar = ({ data, setData, view, setView, setJudgesView }) => {
       parseInt(input.rotations) < 1 ||
       parseInt(input.rotations) > 99
     ) {
-      toaster("Please enter a valid integer value between 1 and 99", "error");
+      toast("❌ Please enter a valid integer value between 1 and 99");
       return;
     }
 
@@ -145,7 +161,7 @@ const Toolbar = ({ data, setData, view, setView, setJudgesView }) => {
       method: "PUT",
       url: "/api/judging",
       body: { teams },
-    }).then(() => toaster("Rounds Saved!", "success"));
+    }).then(() => toast("✅ Rounds Saved!"));
 
     setInput({
       ...input,
@@ -155,7 +171,7 @@ const Toolbar = ({ data, setData, view, setView, setJudgesView }) => {
 
   const handleReset = () => {
     if (data.some((team) => team.rounds.length === 0)) {
-      toaster("Already Reset!", "error");
+      toast("❌ Already Reset!");
       return;
     }
     setData(
@@ -170,7 +186,7 @@ const Toolbar = ({ data, setData, view, setView, setJudgesView }) => {
     api({
       method: "DELETE",
       url: `/api/judging?ids=${uids}`,
-    }).then(() => toaster("Successfully Reset", "success"));
+    }).then(() => toast("✅ Successfully Reset"));
   };
 
   const handleView = () => {
@@ -181,12 +197,9 @@ const Toolbar = ({ data, setData, view, setView, setJudgesView }) => {
       judge.rounds = Array.from(Array(data[0].rounds.length), () => []);
 
       data.forEach((team) => {
-        const name = team.table
-          ? team.table.toString().padStart(2, "0") + " : " + team.name
-          : team.name;
         team.rounds.forEach((round, index) => {
           if (round.some((individual) => individual.name === judge.name))
-            judge.rounds[index] = [{ name: name, affiliation: "student" }];
+            judge.rounds[index] = [{ name: team.name, affiliation: "student" }];
         });
       });
     });
@@ -261,6 +274,18 @@ const Toolbar = ({ data, setData, view, setView, setJudgesView }) => {
           ))}
         </div>
       </div>
+      <form className="flex items-center" onSubmit={handleSearch}>
+        <Input
+          classes="w-full"
+          object={input}
+          setObject={setInput}
+          clear={true}
+          label="input"
+          maxLength={60}
+          placeholder="search"
+          showLabel={false}
+        />
+      </form>
     </>
   );
 };

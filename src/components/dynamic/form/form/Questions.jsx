@@ -5,7 +5,7 @@ import Input from "@/components/dynamic/Input";
 import Button from "@/components/dynamic/Button.jsx";
 import Textarea from "@/components/dynamic/form/form/Textarea.jsx";
 import Upload from "@/components/dynamic/form/form/Upload";
-import toaster from "@/utils/toaster";
+import toast from "react-hot-toast";
 import Link from "next/link";
 import { FaLink } from "react-icons/fa";
 import { CONFIG } from "@/data/Config";
@@ -26,14 +26,10 @@ const Questions = ({
 
     if (
       Object.entries(fields).some(
-        ([key, value]) =>
-          value.required &&
-          (!object[key] ||
-            object[key] === "" ||
-            object[key].includes("Invalid"))
+        ([key, value]) => value.required && (!object[key] || object[key] === "")
       )
     ) {
-      toaster("Please complete all required fields!", "error");
+      toast("❌ Please complete all required fields!");
       setLoading(false);
       return;
     }
@@ -43,12 +39,12 @@ const Questions = ({
         (requirement) => !object.requirements.includes(requirement)
       )
     ) {
-      toaster("Please agree to all the terms!", "error");
+      toast("❌ Please agree to all the terms!");
       setLoading(false);
       return;
     }
     if (fields.availability && object.availability.length === 0) {
-      toaster("Please select at least one available time!", "error");
+      toast("❌ Please select at least one available time!");
       setLoading(false);
       return;
     }
@@ -57,7 +53,7 @@ const Questions = ({
   };
 
   return (
-    <div className="flex flex-col w-full gap-5">
+    <div className="flex flex-col gap-3 mx-4">
       {Object.values(fields).map((field, index) => (
         <div key={index}>
           {field.input === "description" &&
@@ -85,7 +81,6 @@ const Questions = ({
               setUser={setObject}
               required={field.required}
               editable={field.editable}
-              regex={field.regex}
             />
           )}
           {field.input === "select" && (
@@ -119,8 +114,7 @@ const Questions = ({
                         : [...object[field.field], option],
                     })
                   }
-                  color="bg-transparent"
-                  customStyle={true}
+                  color="bg-hackathon-green-300"
                 />
               ))}
             </>

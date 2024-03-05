@@ -2,41 +2,37 @@
 import { useState, useEffect } from "react";
 import Button from "@/components/dynamic/Button";
 import { useRouter } from "next/navigation";
-import toaster from "@/utils/toaster";
+import toast from "react-hot-toast";
 import { useSession } from "next-auth/react";
 import Fault from "@/utils/error";
 import { api } from "@/utils/api";
 
-export default function Page({ params }) {
+export default function page({ params }) {
   const [team, setTeam] = useState(null);
   const router = useRouter();
   const { update: sessionUpdate } = useSession();
-
-  const { teamID } = params;
-
   const handleJoin = () => {
     api({
       method: "PUT",
       url: "/api/members",
-      body: { team: teamID },
+      body: { team: params.teamID },
     }).then((response) => {
       if (response.message !== "OK") {
-        toaster(`${response.message}`, "error");
+        toast(`❌ ${response.message}`);
         return;
       }
-      toaster("Successfully joined team!", "success");
+      toast("✅ Successfully joined team!");
       sessionUpdate({
-        team: teamID,
+        team: params.teamID,
       });
       router.push("/user");
     });
   };
-
   useEffect(() => {
-    if (teamID) {
+    if (params.teamID) {
       api({
         method: "GET",
-        url: `/api/team?teamid=${teamID}`,
+        url: `/api/team?teamid=${params.teamID}`,
       }).then((response) => {
         if (response.message === "OK") {
           setTeam(response.items);
@@ -55,7 +51,7 @@ export default function Page({ params }) {
         }
       });
     }
-  }, [teamID]);
+  }, []);
 
   return (
     <div>

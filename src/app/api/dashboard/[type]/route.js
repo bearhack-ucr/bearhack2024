@@ -14,7 +14,7 @@ import {
 } from "firebase/firestore";
 import { authenticate } from "@/utils/auth";
 import { AUTH, ATTRIBUTES } from "@/data/dynamic/admin/Dashboard";
-import send from "@/utils/email";
+import EmailService from "@/utils/email";
 const types = new Set([
   "admins",
   "committees",
@@ -52,7 +52,7 @@ export async function POST(req, { params }) {
         [`${params.type}.0`]: increment(1),
       });
 
-      await send({
+      await EmailService.send({
         email: user.email,
         id: process.env.EMAIL_CONFIRMATION_TEMPLATE,
         name: user.name,
@@ -137,7 +137,7 @@ export async function PUT(req, { params }) {
           await updateDoc(doc(db, "users", object.uid), {
             [`roles.${params.type}`]: status,
           });
-          await send({
+          await EmailService.send({
             email: object.email,
             id:
               status === 1
