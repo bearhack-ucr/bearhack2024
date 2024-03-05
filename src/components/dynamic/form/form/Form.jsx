@@ -6,6 +6,8 @@ import Questions from "./Questions";
 import Confirmation from "./Confirmation";
 import Button from "../../Button";
 import { signOut } from "next-auth/react";
+import logo from "@/public/logo.svg";
+import Image from "next/image";
 
 const Form = ({
   object,
@@ -24,7 +26,7 @@ const Form = ({
 
   return (
     <div className="w-full h-full overflow-scroll-y flex flex-col items-center font-poppins">
-      <div className="w-full flex flex-row justify-end mr-[10%]">
+      <div className="w-full flex flex-row justify-end">
         <Button
           text="Sign Out"
           onClick={() => signOut({ callbackUrl: "/", redirect: true })}
@@ -32,8 +34,9 @@ const Form = ({
           color="green"
         />
       </div>
-      <div className="w-10/12 md:w-1/2 xl:w-1/3 py-5 text-white">
-        <p className="text-2xl bg-bear-teal/40 font-header font-semibold px-4 py-3 rounded-t-xl m-0">
+      <div className="w-10/12 md:w-1/2 xl:w-1/3 py-5 text-white flex flex-col items-center">
+        <Image src={logo} className="w-1/3" alt="Logo" />
+        <p className="text-2xl bg-bear-teal/40 font-header font-semibold px-4 py-3 rounded-t-xl m-0 w-full">
           {header}
         </p>
         <div className="rounded-b-xl bg-white/10 p-3 font-paragraph">

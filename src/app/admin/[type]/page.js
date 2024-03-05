@@ -17,7 +17,7 @@ import Volunteers from "@/components/dynamic/admin/dashboards/Volunteers";
 import Fault from "@/utils/error";
 import Settings from "@/components/dynamic/admin/services/settings/Settings";
 
-const Page = ({ params }) => {
+const Page = ({ params, searchParams }) => {
   const components = {
     admins: <Admins />,
     calendar: <Events />,

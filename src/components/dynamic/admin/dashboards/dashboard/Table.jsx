@@ -22,9 +22,9 @@ const Table = ({
 }) => {
   return (
     <>
-      <div className="bg-white h-[75vh] overflow-y-scroll flex flex-col justify-between">
+      <div className="h-[75vh] overflow-y-scroll flex flex-col justify-between bg-bear-teal/10">
         <div>
-          <div className="text-white bg-hackathon-blue-200 rounded-t-lg">
+          <div className="text-white bg-bear-teal/50 rounded-t-lg">
             {getHeaderGroups().map(({ headers, id }) => (
               <div key={id} className="flex items-center px-3 py-2">
                 {headers.map(({ id, column, getContext }) => (
@@ -64,7 +64,7 @@ const Table = ({
           </div>
           <>
             {getRowModel().rows.length === 0 && (
-              <p className="w-full text-center py-8 bg-white">{empty}</p>
+              <p className="w-full text-center py-8 text-white">{empty}</p>
             )}
             {getRowModel().rows.map(
               ({ id, getVisibleCells, original, getIsSelected }) => (
@@ -80,7 +80,7 @@ const Table = ({
           </>
         </div>
       </div>
-      <div className="flex justify-end items-center p-4 text-lg bg-white w-full rounded-b-lg">
+      <div className="flex justify-end items-center p-4 text-lg bg- w-full rounded-b-lg text-white">
         <div className="mx-2">{getRowModel().rows.length} row(s)</div>
         <button
           onClick={() => previousPage()}
@@ -89,7 +89,7 @@ const Table = ({
         >
           <FaChevronLeft />
         </button>
-        <div>
+        <div className="">
           Page {getState().pagination.pageIndex + 1} of {getPageCount()}
         </div>
         <button
