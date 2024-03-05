@@ -19,7 +19,9 @@ const Checkbox = ({
         className={`w-4 h-4 rounded-sm ${
           customStyle ? "border border-white !bg-transparent" : ""
         } ${
-          toggle ? `${color ? color : "bg-bear-teal"}` : "bg-hackathon-gray-100"
+          toggle
+            ? `${color ? color : "bg-bear-teal/50"}`
+            : "bg-hackathon-gray-100"
         } flex items-center justify-center`}
       >
         <BsCheckLg
