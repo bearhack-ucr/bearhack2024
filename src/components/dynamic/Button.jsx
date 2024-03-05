@@ -9,7 +9,7 @@ const Button = ({ onClick, text, loading, color, size }) => {
         loading ? COLORS["gray"].text : COLORS[color].text
       } ${SIZES[size]} ${
         COLORS[color].border
-      } py-1 font-bold px-12 rounded-full m-3 !bg-transparent !text-white border hover:!bg-bear-purple/50 transition-colors`}
+      } py-1 font-bold px-12 rounded m-3 transition-colors hover:opacity-80`}
       onClick={onClick}
     >
       {loading ? "Loading..." : text}

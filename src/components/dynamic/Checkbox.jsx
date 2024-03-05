@@ -20,7 +20,7 @@ const Checkbox = ({
           customStyle ? "border border-white !bg-transparent" : ""
         } ${
           toggle
-            ? `${color ? color : "bg-hackathon-blue-100"}`
+            ? `${color ? color : "bg-bear-teal/50"}`
             : "bg-hackathon-gray-100"
         } flex items-center justify-center`}
       >

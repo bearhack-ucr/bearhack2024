@@ -10,7 +10,7 @@ const TeamMember = ({ name, position, image }) => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center gap-1">
+      <div className="flex flex-col items-center gap-1 text-center">
         <div className="text-lg md:text-2xl font-header">{name}</div>
         <div className="text-sm md:text-base font-paragraph">{position}</div>
       </div>

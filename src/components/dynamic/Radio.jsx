@@ -35,7 +35,7 @@ const Radio = ({
               key={index}
               onClick={() => handleClick(optionKey, option)}
             >
-              <div className="rounded-full w-4 border-white border aspect-square bg-transparent p-1 m-1">
+              <div className="rounded-full w-4 border-white border aspect-square bg-transparent p-0.5 m-1">
                 <div
                   data-cy={`radio-button-${option}`}
                   className={`rounded-full w-full aspect-square duration-100 ${
