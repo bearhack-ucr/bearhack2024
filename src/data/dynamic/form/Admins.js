@@ -1,19 +1,21 @@
-export const AFFILIATIONS = [
-  "director",
-  "marketing",
-  "sponsorship",
-  "recruitment",
-  "software",
-  "uiux",
-  "operations",
-];
+import { METADATA } from "@/data/Config";
+
+export const AFFILIATIONS = {
+  director: "director",
+  marketing: "marketing",
+  sponsorship: "sponsorship",
+  recruitment: "recruitment",
+  software: "software",
+  uiux: "uiux",
+  operations: "operations",
+};
 
 export const FIELDS = {
   description: {
     input: "description",
     width: 12,
     texts: [
-      "Welcome to Bearhack 2024. Thank you for being on the organizing team, we appreciate your efforts to help support Bearhack 2024. Bearhack 2024 is a healthcare and medical technology based hackathon spanning 24 hours on April 27.",
+      `Welcome to ${METADATA.name}. Thank you for being on the organizing team, we appreciate your efforts to help support ${METADATA.name}. ${METADATA.name} is a ${METADATA.description} hackathon spanning ${METADATA.length} on ${METADATA.date}.`,
       "Admins are not required to stay the full duration of the event, but are encouraged to checkout the various events, workshops, and opportunities that are available.",
       "Note: Admins are not permitted to become participants for the hackathon.",
     ],
@@ -58,7 +60,7 @@ export const FIELDS = {
   },
   requirements: {
     text: "Terms and Conditions",
-    input: "checkboxes",
+    input: "terms",
     width: 12,
     field: "requirements",
     options: [

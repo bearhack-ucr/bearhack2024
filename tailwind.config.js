@@ -12,6 +12,9 @@ module.exports = {
         header: ["var(--font-grenze)"],
         paragraph: ["var(--font-titillium-web)"],
       },
+      animation: {
+        "twinkling-star": "pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;",
+      },
       colors: {
         hackathon: {
           "blue-100": "#38A3A5",
@@ -25,7 +28,8 @@ module.exports = {
           "gray-200": "#9ea4af",
           "gray-300": "#525252",
           "select-bg": "#3F3F3F",
-          page: "#000303" /* bear-dark */,
+          "radio-selected": "#FFFFFF",
+          page: "#F5F5F5",
           tags: {
             "red-bg": "#FFE9E2",
             "red-text": "#F07167",
@@ -50,6 +54,8 @@ module.exports = {
         },
         bear: {
           dark: "#000303",
+          "page-gradient-1": "#000303",
+          "page-gradient-2": "#002525",
           teal: "#4ABFB5",
           "teal-100": "#B3FBF7",
           purple: "#B16FF0",
