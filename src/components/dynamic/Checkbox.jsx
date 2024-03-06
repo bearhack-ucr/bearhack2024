@@ -5,6 +5,7 @@ const Checkbox = ({
   onClick = () => {},
   text = "",
   color,
+  customStyle = false,
   "data-cy": dataCy,
 }) => {
   return (
@@ -15,8 +16,9 @@ const Checkbox = ({
     >
       <div
         data-cy="checkbox-bg"
-        className={`w-4 h-4 rounded-sm border border-white !bg-transparent
-        ${
+        className={`w-4 h-4 rounded-sm ${
+          customStyle ? "border border-white !bg-transparent" : ""
+        } ${
           toggle
             ? `${color ? color : "bg-bear-teal/50"}`
             : "bg-hackathon-gray-100"

@@ -31,13 +31,11 @@ const Header = ({ horizontal = true }) => {
         width={125}
         height={125}
         alt="Picture of user's profile"
-        className="mr-4 lg:ml-16 rounded-full overflow-hidden"
+        className="mr-4 rounded-full overflow-hidden"
       />
       <div className="align-left">
-        <p className="text-2xl text-white font-bold mb-0">
-          {session.user.name}
-        </p>
-        <p className="text-base text-white mb-1">{session.user.email}</p>
+        <p className="text-2xl font-bold mb-0">{session.user.name}</p>
+        <p className="text-base mb-1">{session.user.email}</p>
         <Tag color={COLORS[color]} text={text} />
       </div>
     </div>
