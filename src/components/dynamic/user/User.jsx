@@ -13,7 +13,7 @@ import Select from "../Select";
 import Button from "../Button";
 import Checkbox from "../Checkbox";
 import { api } from "@/utils/api";
-import toast from "react-hot-toast";
+import toaster from "@/utils/toaster";
 
 const User = ({ user, setUser, edit, setEdit }) => {
   const handleEdit = () => {
@@ -21,23 +21,31 @@ const User = ({ user, setUser, edit, setEdit }) => {
   };
 
   const handleSave = async () => {
+    if (
+      Object.values(user).some(
+        (value) => typeof value === "string" && value.includes("Invalid")
+      )
+    ) {
+      toaster("Please complete all required fields!", "error");
+      return;
+    }
     api({
       method: "POST",
       url: "/api/participant",
       body: user,
     })
       .then(() => {
-        toast("✅ Successfully Updated!");
+        toaster("Successfully Updated!", "success");
         setEdit(false);
       })
       .catch(() => {
-        toast("❌ Internal Server Error");
+        toaster("Internal Server Error", "error");
         setEdit(false);
       });
   };
   return (
-    <div className="bg-white rounded-lg gap-3 flex flex-col m-2 max-h-[70vh] pb-4">
-      <div className="gap-3 flex flex-col m-2 overflow-scroll h-[90%] p-4 bg-transparent">
+    <div className="bg-gradient-to-b from-bear-teal/10  to-bear-teal/20 rounded-lg gap-3 flex flex-col m-2 max-h-[70vh] pb-4">
+      <div className="gap-3 flex flex-col m-2 overflow-auto h-[90%] p-4 bg-transparent text-white">
         <Select
           title="School"
           items={SCHOOLS}
@@ -70,6 +78,7 @@ const User = ({ user, setUser, edit, setEdit }) => {
           user={user}
           setUser={setUser}
           editable={edit}
+          regex={phone}
         />
         <Select
           title="Age"

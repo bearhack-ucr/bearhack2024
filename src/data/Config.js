@@ -19,6 +19,8 @@ export const METADATA = {
   description: "healthcare and medical technology based hackathon",
   length: "24 hours",
   date: "April 27th",
+  sponsor_reasons:
+    "creating sustainable and technology driven solutions to current world medical problems",
 };
 
 export const SITEMAP = {
