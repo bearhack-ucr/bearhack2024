@@ -1,5 +1,5 @@
 import Image from "next/image";
-import butterflyWing from "@/public/butterfly.svg";
+import butterflyWing from "@/public/butterflyWing.svg";
 
 function Butterfly() {
   return (
