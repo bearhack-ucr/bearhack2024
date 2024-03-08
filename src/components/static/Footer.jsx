@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image.js";
 import footer from "@/public/footer.svg";
-import logo from "@/public/logo.svg";
+import logo from "@/public/logo.webp";
 import { AiFillHeart } from "react-icons/ai";
 import { CONTACTS } from "@/data/static/Contacts.js";
 
