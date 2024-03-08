@@ -6,7 +6,7 @@ import Questions from "./Questions";
 import Confirmation from "./Confirmation";
 import Button from "../../Button";
 import { signOut } from "next-auth/react";
-import logo from "@/public/logo.svg";
+import logo from "@/public/logo.webp";
 import Image from "next/image";
 
 const Form = ({
