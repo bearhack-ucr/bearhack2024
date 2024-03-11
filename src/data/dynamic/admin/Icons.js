@@ -8,7 +8,9 @@ import {
   FaVenusMars,
   FaBirthdayCake,
   FaBook,
+  FaClock,
 } from "react-icons/fa";
+import { MdContactPage } from "react-icons/md";
 
 export const ICONS = {
   github: <SiGithub className="mr-2" />,
@@ -24,4 +26,6 @@ export const ICONS = {
   grade: <IoIosSchool className="text-white mr-2 text-lg" />,
   major: <FaBook className="text-white mr-2 text-lg" />,
   school: <FaSchool className="text-white mr-2 text-lg" />,
+  eventSource: <MdContactPage className="text-white mr-2 text-lg" />,
+  priorHackathons: <FaClock className="text-white mr-2 text-lg" />,
 };
