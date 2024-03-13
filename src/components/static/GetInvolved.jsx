@@ -26,9 +26,8 @@ const GetInvolved = () => {
           </p>
           <HorizontalLine />
           <p className="font-paragraph text-lg md:text-xl !text-center lg:!text-start mt-2">
-            Not interested in hacking, but still interested in the
-            behind-the-scenes of BearHack? Great, we&apos;d love to have you on
-            our team. Apply to be a volunteer today!
+            Are you confident in your coding skills? Apply to become a mentor
+            and help future innovators make a difference!
           </p>
           <div className="flex justify-center lg:justify-end md:mt-0 mt-4">
             <Link text={"Mentor"} link={"/form/mentor"} />
@@ -46,8 +45,9 @@ const GetInvolved = () => {
           </p>
           <HorizontalLine />
           <p className="font-paragraph text-lg md:text-xl !text-center lg:!text-start mt-2">
-            Are you confident in your coding skills? Apply to become a mentor
-            and help future innovators make a difference!
+            Not interested in hacking, but still interested in the
+            behind-the-scenes of BearHack? Great, we&apos;d love to have you on
+            our team. Apply to be a volunteer today!
           </p>
           <div className="flex justify-center lg:justify-end md:mt-0 mt-4">
             <Link text={"Volunteer"} link={"/form/volunteer"} />

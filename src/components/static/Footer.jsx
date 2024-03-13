@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="flex flex-col items-center justify-center w-full ">
         <Image src={logo} alt="Logo" className="w-1/6 xl:w-1/12" />
         <div className="text-xs md:text-xl m-0 p-1 font-header">
-          Made with <AiFillHeart className="inline" /> by the Bear Hack team at
+          Made with <AiFillHeart className="inline" /> by the Bearhack team at
           University of California, Riverside
         </div>
         <div className="flex mb-8 gap-2">
