@@ -83,6 +83,10 @@ const Title = () => {
               <Butterfly />
             </div>
           </div>
+          <div className="font-header text-lg lg:text-2xl font-bold">
+            {" "}
+            Healthcare Hackathon
+          </div>
           <div className="text-lg lg:text-xl font-paragraph text-bear-teal-100">
             {CONFIG.date.toLocaleDateString("en-US", {
               month: "long",
