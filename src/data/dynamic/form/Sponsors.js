@@ -16,7 +16,7 @@ export const FIELDS = {
     texts: [
       `Welcome to ${METADATA.name}. Thank you for being on the Sponsorship team, we appreciate your efforts to help support ${METADATA.name}. ${METADATA.name} is a ${METADATA.description} hackathon spanning ${METADATA.length} on ${METADATA.date}.`,
       `By sponsoring ${METADATA.name}, you help advocate for ${METADATA.sponsor_reasons}.`,
-      "Sponsorship members are not required to stay the full duration of the event, but are encouraged to checkout the various events, workshops, and opportunities that are available.",
+      // "Sponsorship members are not required to stay the full duration of the event, but are encouraged to checkout the various events, workshops, and opportunities that are available.",
     ],
   },
   name: {
