@@ -83,7 +83,7 @@ const Title = () => {
               <Butterfly />
             </div>
           </div>
-          <div className="font-header text-lg lg:text-2xl font-bold">
+          <div className="font-header text-xl lg:text-4xl font-bold">
             {" "}
             Healthcare Hackathon
           </div>
