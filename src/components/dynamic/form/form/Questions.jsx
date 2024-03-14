@@ -182,7 +182,7 @@ const Questions = ({
         target="_blank"
         className="no-underline flex items-center text-white hover:text-bear-teal"
       >
-        MLH Code of Conduct
+        Code of Conduct
         <FaLink className="mx-2" />
       </Link>
       {packet && (
