@@ -21,6 +21,7 @@ export const MAJORS = [
   "Computer Science with Business Applications",
   "Computer Engineering",
   "Bioengineering",
+  "Business",
   "Data Science",
   "Electrical Engineering",
   "Materials Science and Engineering",
