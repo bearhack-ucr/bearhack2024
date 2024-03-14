@@ -12,7 +12,7 @@ export const FIELDS = {
     width: 12,
     texts: [
       `Welcome to ${METADATA.name}. Thank you for considering to become a participant, we appreciate your enthusiasm to join ${METADATA.name}. ${METADATA.name} is a ${METADATA.description} hackathon spanning ${METADATA.length} on ${METADATA.date}.`,
-      "Participants are not required to stay the full duration of the event, but are encouraged to checkout the various events, workshops, and opportunities that are available.",
+      // "Participants are not required to stay the full duration of the event, but are encouraged to checkout the various events, workshops, and opportunities that are available.",
     ],
   },
   name: {
