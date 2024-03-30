@@ -8,24 +8,27 @@ import {
   FaSortAlphaUp,
 } from "react-icons/fa";
 import Loading from "@/components/dynamic/Loading";
+import Link from "next/link";
 
 const Table = ({
   getHeaderGroups,
   getRowModel,
-  getState,
-  previousPage,
-  getCanPreviousPage,
-  nextPage,
-  getCanNextPage,
-  getPageCount,
   Dropdown,
   empty,
   loading,
+  meta,
+  searchParams,
+  page,
 }) => {
+  const index = parseInt(searchParams.index ?? 1);
+  const size = parseInt(searchParams.size ?? 10);
+
+  const { first, last, total } = meta;
+
   return (
     <>
       <div className="h-[75vh] overflow-y-scroll flex flex-col justify-between bg-bear-teal/10">
-        <div>
+        <div className="h-full">
           <div className="text-white bg-bear-teal/50 rounded-t-lg">
             {getHeaderGroups().map(({ headers, id }) => (
               <div key={id} className="flex items-center px-3 py-2">
@@ -66,7 +69,9 @@ const Table = ({
           </div>
           <>
             {loading ? (
-              <Loading />
+              <div className="h-full">
+                <Loading />
+              </div>
             ) : (
               <>
                 {getRowModel().rows.length === 0 && (
@@ -90,23 +95,30 @@ const Table = ({
       </div>
       <div className="flex justify-end items-center p-4 text-lg bg- w-full rounded-b-lg text-white">
         <div className="mx-2">{getRowModel().rows.length} row(s)</div>
-        <button
-          onClick={() => previousPage()}
-          disabled={!getCanPreviousPage()}
-          className="mx-2 disabled:text-hackathon-gray-200"
+        <Link
+          href={`/admin/${page}?direction=prev&index=${
+            index - 1
+          }&size=${size}&first=${first}&last=${last}`}
+          className={`mx-2 ${
+            index <= 1 && "pointer-events-none text-hackathon-gray-200"
+          }`}
         >
           <FaChevronLeft />
-        </button>
+        </Link>
         <div className="">
-          Page {getState().pagination.pageIndex + 1} of {getPageCount()}
+          Page {index} of {Math.ceil(total / size)}
         </div>
-        <button
-          onClick={() => nextPage()}
-          disabled={!getCanNextPage()}
-          className="mx-2 disabled:text-hackathon-gray-200"
+        <Link
+          href={`/admin/${page}?direction=next&index=${
+            index + 1
+          }&size=${size}&first=${first}&last=${last}`}
+          className={`mx-2 ${
+            index >= Math.ceil(total / size) &&
+            "pointer-events-none text-hackathon-gray-200"
+          }`}
         >
           <FaChevronRight />
-        </button>
+        </Link>
       </div>
     </>
   );
