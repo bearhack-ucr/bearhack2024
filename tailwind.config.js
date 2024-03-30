@@ -66,7 +66,7 @@ module.exports = {
           "gray-100": "#E7E7E7",
           "gray-200": "#9ea4af",
           "gray-300": "#525252",
-          "select-bg": "#E7E7E7",
+          "select-bg": "#3F3F3F",
           "radio-selected": "#FFFFFF",
           page: "#F5F5F5",
           tags: {
