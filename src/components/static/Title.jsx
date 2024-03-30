@@ -10,12 +10,11 @@ import Butterfly from "./Butterfly.jsx";
 
 const createStars = (starsToCreate) => {
   const array = Array(starsToCreate);
-  for (let i = 0; i < starsToCreate; i++) {
-    array[i] = {
-      top: `${Math.floor(Math.random() * 150 - 20).toString()}%`,
-      left: `${Math.floor(Math.random() * 100).toString()}%`,
-    };
-  }
+
+  array.forEach((star) => {
+    star.top = `${Math.floor(Math.random() * 150 - 20)}%`;
+    star.left = `${Math.floor(Math.random() * 100)}%`;
+  });
   return array;
 };
 
@@ -24,9 +23,9 @@ const createStars = (starsToCreate) => {
 // has overflow-hidden to properly clip and create the effect
 const createStreak = (amount) => {
   return [...new Array(amount)].map(() => ({
-    top: `${Math.floor(Math.random() * 150 - 20).toString()}%`,
-    left: `${Math.floor(Math.random() * 100).toString()}%`,
-    transform: `rotate(${Math.random() * 2 * Math.PI}rad) scaleX(${
+    top: `${Math.floor(Math.random() * 150 - 20)}%`,
+    left: `${Math.floor(Math.random() * 100)}%`,
+    transform: `rotate(${Math.random() * Math.PI}rad) scaleX(${
       3 + Math.random() * 30
     })`,
     animationDelay: `${-Math.floor(Math.random() * 10000)}ms`,
