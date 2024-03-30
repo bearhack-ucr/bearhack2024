@@ -5,6 +5,7 @@ export const CONFIG = {
   date: new Date("April 27, 2024 9:00:00"),
   lastDate: new Date("April 28, 2024 9:00:00"),
   packet: "",
+  devpost: "https://devpost.com/",
 };
 
 export const MANIFEST = {
@@ -16,7 +17,7 @@ export const MANIFEST = {
 
 export const METADATA = {
   name: "Bearhack 2024",
-  description: "healthcare and medical technology based hackathon",
+  description: "healthcare and medical technology based",
   length: "24 hours",
   date: "April 27th",
   sponsor_reasons:

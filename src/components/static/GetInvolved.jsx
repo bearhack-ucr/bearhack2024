@@ -9,11 +9,11 @@ const GetInvolved = () => {
   return (
     <div className="w-full text-white flex flex-col justify-center items-center gap-14">
       <div className="flex justify-center items-center gap-3 w-5/6 md:w-1/2">
-        <Image src={butterfly} alt="butterfly" className="w-24" />
+        <Image src={butterfly} alt="butterfly" className="w-16" />
         <p className="font-header text-4xl lg:text-5xl flex whitespace-nowrap">
           Get Involved
         </p>
-        <Image src={butterfly} alt="butterfly" className="w-24 -scale-x-100" />
+        <Image src={butterfly} alt="butterfly" className="w-16 -scale-x-100" />
       </div>
 
       <div className="flex flex-col lg:flex-row w-5/6 lg:w-2/3 justify-between items-center gap-2">
@@ -26,9 +26,8 @@ const GetInvolved = () => {
           </p>
           <HorizontalLine />
           <p className="font-paragraph text-lg md:text-xl !text-center lg:!text-start mt-2">
-            Not interested in hacking, but still interested in the
-            behind-the-scenes of BearHack? Great, we&apos;d love to have you on
-            our team. Apply to be a volunteer today!
+            Are you confident in your coding skills? Apply to become a mentor
+            and help future innovators make a difference!
           </p>
           <div className="flex justify-center lg:justify-end md:mt-0 mt-4">
             <Link text={"Mentor"} link={"/form/mentor"} />
@@ -46,8 +45,9 @@ const GetInvolved = () => {
           </p>
           <HorizontalLine />
           <p className="font-paragraph text-lg md:text-xl !text-center lg:!text-start mt-2">
-            Are you confident in your coding skills? Apply to become a mentor
-            and help future innovators make a difference!
+            Not interested in hacking, but still interested in the
+            behind-the-scenes of BearHack? Great, we&apos;d love to have you on
+            our team. Apply to be a volunteer today!
           </p>
           <div className="flex justify-center lg:justify-end md:mt-0 mt-4">
             <Link text={"Volunteer"} link={"/form/volunteer"} />

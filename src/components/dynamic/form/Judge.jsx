@@ -15,6 +15,7 @@ const Judge = () => {
     name: session.user.name,
     email: session.user.email,
     roles: session.user.roles,
+    photo: session.user.photo ?? null,
     form: "judges",
   });
 

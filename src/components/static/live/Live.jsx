@@ -1,6 +1,7 @@
 import Title from "../Title";
 import AboutUs from "../AboutUs";
-import Schedule from "../Schedule";
+import Schedule from "../schedule/Schedule";
+import Tracks from "../Tracks";
 import GetInvolved from "../GetInvolved";
 import Team from "../Team";
 import FAQ from "../FAQ";
@@ -13,6 +14,7 @@ const Live = () => {
       <title>Bearhack 2024</title>
       <Title />
       <AboutUs />
+      <Tracks />
       <Schedule />
       <GetInvolved />
       <Team />

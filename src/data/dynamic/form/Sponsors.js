@@ -16,7 +16,7 @@ export const FIELDS = {
     texts: [
       `Welcome to ${METADATA.name}. Thank you for being on the Sponsorship team, we appreciate your efforts to help support ${METADATA.name}. ${METADATA.name} is a ${METADATA.description} hackathon spanning ${METADATA.length} on ${METADATA.date}.`,
       `By sponsoring ${METADATA.name}, you help advocate for ${METADATA.sponsor_reasons}.`,
-      "Sponsorship members are not required to stay the full duration of the event, but are encouraged to checkout the various events, workshops, and opportunities that are available.",
+      // "Sponsorship members are not required to stay the full duration of the event, but are encouraged to checkout the various events, workshops, and opportunities that are available.",
     ],
   },
   name: {
@@ -78,9 +78,9 @@ export const FIELDS = {
     width: 12,
     required: true,
   },
-  response: {
+  comments: {
     input: "textarea",
-    name: "response",
+    name: "comments",
     rows: 4,
     title: "Additional Comments/Questions",
     placeholder: "...",
@@ -93,7 +93,7 @@ export const FIELDS = {
     width: 12,
     field: "requirements",
     options: [
-      "I have read the MLH code of conduct and agree to the terms and conditions listed",
+      "I have read the code of conduct and agree to the terms and conditions listed",
       "I consent to photographs being taken and being used for future marketing purposes",
       "I consent to providing a safe space for hackers to learn and grow their interests in computing",
       "I consent to following the provided guidelines and rules instructed by the organizing team",

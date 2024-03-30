@@ -64,6 +64,7 @@ const Questions = ({
             field.texts.map((description, index) => (
               <div key={index}>
                 <p>{description}</p>
+                <br />
                 {index === field.texts.length - 1 && (
                   <p>
                     Fields with
@@ -179,9 +180,9 @@ const Questions = ({
       <Link
         href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
         target="_blank"
-        className="no-underline flex items-center text-hackathon-green-300"
+        className="no-underline flex items-center text-white hover:text-bear-teal"
       >
-        MLH Code of Conduct
+        Code of Conduct
         <FaLink className="mx-2" />
       </Link>
       {packet && (

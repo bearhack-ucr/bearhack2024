@@ -5,22 +5,20 @@ const Checkbox = ({
   onClick = () => {},
   text = "",
   color,
-  customStyle = false,
   "data-cy": dataCy,
 }) => {
   return (
     <div
-      className="flex items-center hover:cursor-pointer w-fit"
+      className="flex items-center hover:cursor-pointer w-fit gap-2"
       onClick={onClick}
       data-cy="checkbox"
     >
       <div
         data-cy="checkbox-bg"
-        className={`w-4 h-4 rounded-sm ${
-          customStyle ? "border border-white !bg-transparent" : ""
-        } ${
+        className={`w-4 h-4 rounded-sm border border-white !bg-transparent
+        ${
           toggle
-            ? `${color ? color : "bg-hackathon-blue-100"}`
+            ? `${color ? color : "bg-bear-teal/50"}`
             : "bg-hackathon-gray-100"
         } flex items-center justify-center`}
       >

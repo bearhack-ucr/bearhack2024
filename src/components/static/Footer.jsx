@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image.js";
 import footer from "@/public/footer.svg";
-import logo from "@/public/logo.svg";
+import logo from "@/public/logo.webp";
 import { AiFillHeart } from "react-icons/ai";
 import { CONTACTS } from "@/data/static/Contacts.js";
 
@@ -11,9 +11,8 @@ const Footer = () => {
       <Image src={footer} alt="Footer" className="w-full" />
       <div className="flex flex-col items-center justify-center w-full ">
         <Image src={logo} alt="Logo" className="w-1/6 xl:w-1/12" />
-        <div className="text-lg md:text-4xl m-0 p-0">BEARHACK 2024</div>
         <div className="text-xs md:text-xl m-0 p-1 font-header">
-          Made with <AiFillHeart className="inline" /> by the Bear Hack team at
+          Made with <AiFillHeart className="inline" /> by the Bearhack team at
           University of California, Riverside
         </div>
         <div className="flex mb-8 gap-2">

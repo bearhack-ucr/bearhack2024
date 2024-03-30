@@ -17,6 +17,7 @@ const Toolbar = ({
   tags,
   getFilteredSelectedRowModel,
   toggleAllRowsSelected,
+  setLoading,
 }) => {
   const selectedRows = getFilteredSelectedRowModel();
 
@@ -38,6 +39,7 @@ const Toolbar = ({
       url: `/api/dashboard/${page}`,
     }).then(({ items }) => {
       setData(items);
+      setLoading(false);
       toaster("Fetched Data Successfully", "success");
     });
   };
@@ -144,19 +146,19 @@ const Toolbar = ({
         onChangeFn={(e) => onChange("name", e.target.value)}
         clearFn={() => onChange("name", "")}
       />
-      <div>
+      <div className="text-white">
         Rows:<span className="mx-2">{data.length}</span>
       </div>
       <FaUndoAlt
         size={22.5}
         onClick={handleReload}
-        className="text-hackathon-gray-300 hover:opacity-70 duration-150 hover:cursor-pointer"
+        className="text-white hover:opacity-70 duration-150 hover:cursor-pointer"
       />
       <FaTrashAlt
         data-cy="delete"
         onClick={confirmDelete}
         size={22.5}
-        className="text-hackathon-gray-300 hover:opacity-70 duration-150 hover:cursor-pointer mx-2"
+        className="text-white hover:opacity-70 duration-150 hover:cursor-pointer mx-2"
       />
       {popup.visible && (
         <Popup
