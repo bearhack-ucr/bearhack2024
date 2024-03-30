@@ -1,24 +1,27 @@
 export const CONFIG = {
-  name: "Hackathon",
-  email: "contact.acmucr@gmail.com",
+  name: "Bearhack 2024",
+  email: "bearhackucr@gmail.com",
   year: "2024",
-  date: new Date("November 4, 2023 9:00:00"),
+  date: new Date("April 27, 2024 9:00:00"),
+  lastDate: new Date("April 28, 2024 9:00:00"),
   packet: "",
   devpost: "https://devpost.com/",
 };
 
 export const MANIFEST = {
-  name: "Hackathon Site",
+  name: "Bearhack 2024",
   short_name: "Hackathon Site",
   description: "Hackathon Site",
   start_url: "/",
 };
 
 export const METADATA = {
-  name: "HACKATHON_NAME",
-  description: "DESCRIPTION",
-  length: "HACKATHON_LENGTH",
-  date: "HACKATHON_DATE",
+  name: "Bearhack 2024",
+  description: "healthcare and medical technology based",
+  length: "24 hours",
+  date: "April 27th",
+  sponsor_reasons:
+    "creating sustainable and technology driven solutions to current world medical problems",
 };
 
 export const SITEMAP = {

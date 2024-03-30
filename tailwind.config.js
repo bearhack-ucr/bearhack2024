@@ -10,6 +10,41 @@ module.exports = {
     extend: {
       fontFamily: {
         poppins: ["var(--font-poppins)"],
+        header: ["var(--font-grenze)"],
+        paragraph: ["var(--font-titillium-web)"],
+      },
+      animation: {
+        "twinkling-star": "pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;",
+        "shooting-star-outer":
+          "slide-early 20s cubic-bezier(0.8, 0, 0.4, 1) infinite",
+        "shooting-star-inner":
+          "slide-late 20s cubic-bezier(0.8, 0, 0.4, 1) infinite",
+        "fade-in": "fade-in 1s linear 1",
+        flap: "wingbeat 1s infinite",
+      },
+      keyframes: {
+        "slide-early": {
+          "0%, 10%, 13.1%, 100%": { "clip-path": "rect(auto 0 auto auto)" },
+          "12%, 13%": { "clip-path": "rect(auto 10px auto auto)" },
+        },
+        "slide-late": {
+          "0%, 11%": { transform: "translateX(0)" },
+          "13%, 100%": { transform: "translateX(10px)" },
+        },
+        "fade-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        wingbeat: {
+          "0%, 100%": {
+            transform: "rotateY(60deg)",
+            "animation-timing-function": "cubic-bezier(.77,0,.89,.46)",
+          },
+          "50%": {
+            transform: "rotateY(10deg)",
+            "animation-timing-function": "ease-out",
+          },
+        },
       },
       colors: {
         hackathon: {
@@ -23,6 +58,8 @@ module.exports = {
           "gray-100": "#E7E7E7",
           "gray-200": "#9ea4af",
           "gray-300": "#525252",
+          "select-bg": "#3F3F3F",
+          "radio-selected": "#FFFFFF",
           page: "#F5F5F5",
           tags: {
             "red-bg": "#FFE9E2",
@@ -45,6 +82,16 @@ module.exports = {
             "pink-text": "#F583F1",
             white: "#fff",
           },
+        },
+        bear: {
+          dark: "#000303",
+          "page-gradient-1": "#000303",
+          "page-gradient-2": "#002525",
+          teal: "#4ABFB5",
+          "teal-100": "#B3FBF7",
+          purple: "#B16FF0",
+          light: "#FDF7C7",
+          pink: "#FF60B6",
         },
       },
     },

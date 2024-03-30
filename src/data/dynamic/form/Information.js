@@ -20,8 +20,11 @@ export const MAJORS = [
   "Computer Science",
   "Computer Science with Business Applications",
   "Computer Engineering",
+  "Bioengineering",
+  "Business",
   "Data Science",
   "Electrical Engineering",
+  "Materials Science and Engineering",
   "Mechanical Engineering",
   "Environmental Engineering",
   "Chemical Engineering",
@@ -47,10 +50,6 @@ export const SOURCES = [
 ];
 
 export const AVAILABILITY = [
-  "Friday Morning",
-  "Friday Afternoon",
-  "Friday Evening",
-  "Friday Night",
   "Saturday Morning",
   "Saturday Afternoon",
   "Saturday Evening",

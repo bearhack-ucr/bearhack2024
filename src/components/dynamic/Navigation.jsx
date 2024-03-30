@@ -16,7 +16,7 @@ const Navigation = () => {
 
   return (
     <>
-      <div className="flex lg:hidden w-full bg-hackathon-blue-200 h-12 items-center fixed z-20">
+      <div className="flex lg:hidden w-full bg-none h-12 items-center fixed z-20">
         <div
           className="flex items-center hover:cursor-pointer"
           onClick={() => setExpand(!expand)}
@@ -36,7 +36,7 @@ const Navigation = () => {
           expand ? "left-0 h-screen w-1/2 fixed pt-5" : `hidden`
         }`}
       >
-        <div className="bg-hackathon-blue-200 h-full flex flex-col justify-between items-center w-full">
+        <div className="bg-bear-teal/20 h-full flex flex-col justify-between items-center w-full">
           <div className="hidden lg:flex items-center my-3">
             <Image
               src={LOGO}
@@ -78,8 +78,8 @@ const Navigation = () => {
                           onClick={() => setExpand(false)}
                           className={`w-full flex [&>*]:text-white items-center justify-start py-1 pl-[10%] ${
                             pathName.endsWith(tab.link)
-                              ? "bg-hackathon-blue-100"
-                              : "[&>*]:hover:text-hackathon-blue-100"
+                              ? "bg-bear-teal/50"
+                              : "[&>*]:hover:text-bear-teal/50"
                           }`}
                         >
                           {tab.icon}

@@ -1,4 +1,4 @@
-# Hackathon Website Template
+# BearHack 2024 Website
 
 ![Next.js](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
@@ -12,7 +12,7 @@
 
 ## Figma
 
-[Hackathon Website Template Figma Design File](https://www.figma.com/file/YsmdMaZuYrkiaiWcB9XY1P/Hackathon-2024-Backend?type=design&node-id=0%3A1&mode=design&t=OkgKqUOkpAYqfjXU-1)
+[BearHack 2024 Website Figma Design File](https://www.figma.com/file/PwbwdXGQjreRxbjhWiyZyO/BearHack?type=design&node-id=0-1&mode=design&t=k6xTjPmrOpU5JRGj-0)
 
 ## Node.js
 
