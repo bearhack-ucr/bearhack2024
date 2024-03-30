@@ -45,7 +45,7 @@ module.exports = {
             "animation-timing-function": "ease-out",
           },
         },
-        "bounce": {
+        bounce: {
           "0%, 100%": {
             transform: "translateY(0)",
           },
