@@ -106,7 +106,7 @@ const Select = ({
 
                 return (
                   <div
-                    className="absolute top-0 left-0 w-full hover:!bg-bear-teal/50 !bg-hackathon-select-bg hover:cursor-pointer flex items-center px-2"
+                    className="absolute top-0 left-0 w-full hover:!bg-bear-teal/50 !bg-hackathon-select-bg hover:cursor-pointer flex items-center px-2 text-white"
                     key={virtualRow.index}
                     data-index={virtualRow.index}
                     ref={measureElement}
