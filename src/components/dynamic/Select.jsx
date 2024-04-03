@@ -63,7 +63,7 @@ const Select = ({
         onClick={() => setShow(!show)}
         className={`${
           !user[field] && "text-hackathon-gray-200"
-        } bg-transparent text-hackathon-gray-200 flex items-center justify-between w-full pb-1`}
+        } bg-transparent flex items-center justify-between w-full pb-1`}
         data-cy="select-toggle"
       >
         {user[field] || placeholder}
