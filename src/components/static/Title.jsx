@@ -6,6 +6,7 @@ import Countdown from "./Countdown.jsx";
 import { CONFIG } from "@/data/Config.js";
 import swirlTop from "@/public/swirlTop.svg";
 import { useMemo } from "react";
+
 import Butterfly from "./Butterfly.jsx";
 
 const createStars = (starsToCreate) => {
@@ -47,7 +48,7 @@ const Title = () => {
       </div>
       <div className="flex flex-col z-1 p-10 lg:p-16 gap-2  border-bear-dark/50 rounded-3xl lg:bg-transparent z-10">
         <div className=" xl:hidden  flex justify-center -mt-16">
-          <Image src={swirlTop} className="w-2/3" />
+          <Image src={swirlTop} className="w-2/3" alt="swirl" />
         </div>
 
         <div className="absolute top-0 left-0 w-full h-screen overflow-hidden">
