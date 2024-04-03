@@ -6,6 +6,7 @@ import Countdown from "./Countdown.jsx";
 import { CONFIG } from "@/data/Config.js";
 import swirlTop from "@/public/swirlTop.svg";
 import { useMemo } from "react";
+
 import Butterfly from "./Butterfly.jsx";
 
 const createStars = (starsToCreate) => {
