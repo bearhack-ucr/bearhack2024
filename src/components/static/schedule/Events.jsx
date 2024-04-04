@@ -2,18 +2,13 @@
 import { useState } from "react";
 
 const Events = ({ events, totalDays }) => {
-  const DAYS = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-
   const [selectedDay, setSelectedDay] = useState(
-    new Date() > events[0].start ? new Date().getDay() : 1
+    new Date() > new Date(events[0].start)
+      ? new Date().toLocaleString("en-US", {
+          timeZone: "America/Los_Angeles",
+          weekday: "long",
+        })
+      : "Tuesday"
   );
 
   return (
@@ -29,7 +24,7 @@ const Events = ({ events, totalDays }) => {
             key={index}
             onClick={() => setSelectedDay(day)}
           >
-            {DAYS[day]}
+            {day}
           </div>
         ))}
       </div>
@@ -42,7 +37,7 @@ const Events = ({ events, totalDays }) => {
       </div>
       <div className="w-11/12 lg:w-3/4 flex flex-col items-center p-4 gap-4 border border-white bg-gradient-to-r from-bear-page-gradient-1 to-bear-page-gradient-2 rounded-lg">
         {events
-          .filter(({ start }) => start.getDay() === selectedDay)
+          .filter(({ day }) => day === selectedDay)
           .map(({ start, summary, description, type, location }, index) => (
             <div key={index} className="w-full">
               {index > 0 && <div className="w-3/4 h-px bg-white" />}
@@ -51,6 +46,7 @@ const Events = ({ events, totalDays }) => {
                   {start.toLocaleTimeString("en-US", {
                     hour: "2-digit",
                     minute: "2-digit",
+                    timeZone: "America/Los_Angeles",
                   })}
                 </div>
                 <div className="text-normal lg:text-lg col-span-2 font-bold">
