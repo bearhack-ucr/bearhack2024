@@ -31,8 +31,11 @@ const Page = async ({ params }) => {
     return (
       <div className="w-full flex items-start justify-center font-poppins my-8">
         <title>{`Engineering | ${data.title}`}</title>
-        <div className="prose min-h-screen">
-          <article dangerouslySetInnerHTML={{ __html: markdown }} />
+        <div className="prose text-white">
+          <article
+            dangerouslySetInnerHTML={{ __html: markdown }}
+            className="markdown"
+          />
         </div>
       </div>
     );
