@@ -1,5 +1,5 @@
 import { members, directors } from "@/data/TeamMembers";
-import Member from "@/components/static/Member";
+import Member from "@/components/Member";
 
 const Team = () => {
   return (
