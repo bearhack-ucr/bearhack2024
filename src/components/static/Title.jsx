@@ -3,7 +3,7 @@ import Link from "./Link.jsx";
 import Image from "next/image";
 import HorizontalLine from "./HorizontalLine.jsx";
 import Countdown from "./Countdown.jsx";
-import { CONFIG } from "@/data/Config.js";
+import CONFIG from "@/data/Config.js";
 import swirlTop from "@/public/swirlTop.svg";
 import { useMemo } from "react";
 

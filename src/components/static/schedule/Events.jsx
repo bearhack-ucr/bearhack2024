@@ -39,30 +39,32 @@ const Events = ({ events, totalDays }) => {
         {events
           .filter(({ day }) => day === selectedDay)
           .map(({ start, summary, description, type, location }, index) => (
-            <div key={index} className="w-full">
-              {index > 0 && <div className="w-3/4 h-px bg-white" />}
-              <div className="grid grid-cols-8 items-center content-center text-center">
-                <div className="col-span-2 md:col-span-1 font-bold rounded-full m-auto w-3/4 py-2 bg-white/10">
-                  {start.toLocaleTimeString("en-US", {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                    timeZone: "America/Los_Angeles",
-                  })}
+            <>
+              {index > 0 && <div className="w-full h-px bg-white" />}
+              <div className="w-full">
+                <div className="grid grid-cols-8 items-center content-center text-center">
+                  <div className="col-span-2 md:col-span-1 font-bold rounded-full m-auto w-3/4 py-2 bg-white/10">
+                    {start.toLocaleTimeString("en-US", {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                      timeZone: "America/Los_Angeles",
+                    })}
+                  </div>
+                  <div className="text-normal lg:text-lg col-span-2 font-bold">
+                    {summary}
+                    <div className="block md:hidden">@ {location}</div>
+                    <div className="block md:hidden font-normal">{type}</div>
+                  </div>
+                  <div className="col-span-4 md:col-span-3 px-4">
+                    {description.split("\n")[1]}
+                  </div>
+                  <div className="hidden md:block font-bold">
+                    {description.split("\n")[0].substr(1)}
+                  </div>
+                  <div className="hidden md:block font-bold">{location}</div>
                 </div>
-                <div className="text-normal lg:text-lg col-span-2 font-bold">
-                  {summary}
-                  <div className="block md:hidden">@ {location}</div>
-                  <div className="block md:hidden font-normal">{type}</div>
-                </div>
-                <div className="col-span-4 md:col-span-3 px-4">
-                  {description.split("\n")[1]}
-                </div>
-                <div className="hidden md:block font-bold">
-                  {description.split("\n")[0].substr(1)}
-                </div>
-                <div className="hidden md:block font-bold">{location}</div>
               </div>
-            </div>
+            </>
           ))}
       </div>
     </div>

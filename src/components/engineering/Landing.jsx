@@ -7,10 +7,8 @@ const Landing = () => {
   return (
     <div className="flex flex-row items-center  justify-center w-full min-h-screen">
       <div className="w-5/12 ml-12">
-        <div className="border-l-8 border-hackathon-blue-100 px-5 text-hackathon-green-300 mb-3">
-          <div className="text-5xl text-hackathon-blue-200 mb-4 font-bold">
-            Hackathon Website
-          </div>
+        <div className="border-l-8 border-bear-teal/40 px-5 text-white mb-3">
+          <div className="text-5xl mb-4 font-bold">Hackathon Website</div>
           <p className="text-xl">
             A template website simplifying the management process for UC
             Riverside&apos; hackathon events.

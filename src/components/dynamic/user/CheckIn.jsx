@@ -35,7 +35,7 @@ const CheckinPage = () => {
           <p className="text-2xl font-bold">{session.user.name}</p>
           <p className="text-base">{session.user.email}</p>
         </div>
-        <div className="bg-gradient-to-b from-bear-teal/10  to-bear-teal/20 w-2/3 h-1/3 lg:h-5/6 flex justify-center items-center flex-col rounded-lg m-auto">
+        <div className="bg-gradient-to-b from-bear-teal/10 to-bear-teal/20 w-2/3 h-1/3 lg:h-5/6 flex justify-center items-center flex-col rounded-lg m-auto">
           <QRCodeSVG
             value={`${session.user.id}&${date.toISOString()}&${
               session.user.name
