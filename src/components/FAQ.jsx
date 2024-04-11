@@ -1,5 +1,5 @@
 "use client";
-import { FAQdata } from "@/data/static/FAQ";
+import { FAQdata } from "@/data/FAQ";
 import ToggleSelection from "./ToggleSelection";
 
 const FAQ = () => {

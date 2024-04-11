@@ -1,4 +1,4 @@
-import TRACKS from "@/data/static/Tracks";
+import TRACKS from "@/data/Tracks";
 import Image from "next/image";
 
 const Tracks = () => {

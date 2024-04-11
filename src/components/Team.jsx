@@ -1,4 +1,4 @@
-import { members, directors } from "@/data/static/TeamMembers";
+import { members, directors } from "@/data/TeamMembers";
 import Member from "@/components/static/Member";
 
 const Team = () => {
