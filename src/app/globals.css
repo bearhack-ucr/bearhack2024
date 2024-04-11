@@ -52,6 +52,13 @@ code[data-line-numbers-max-digits="2"] > [data-line]::before {
 
 .markdown h1,
 .markdown h2,
-.markdown h4 {
+.markdown h3,
+.markdown h4,
+.markdown code,
+.markdown strong {
   color: white;
+}
+
+.markdown a {
+  color: #4abfb5;
 }
