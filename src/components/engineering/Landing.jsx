@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { SiGithub } from "react-icons/si";
-import Pages from "@/public/pages.webp";
+import Pages from "@/public/engineering/pages.webp";
 import Image from "next/image";
 
 const Landing = () => {
   return (
-    <div className="flex flex-row items-center  justify-center w-full min-h-screen">
+    <div className="flex flex-row items-center justify-center w-full min-h-screen">
       <div className="w-5/12 ml-12">
         <div className="border-l-8 border-bear-teal/40 px-5 text-white mb-3">
           <div className="text-5xl mb-4 font-bold">Hackathon Website</div>
@@ -16,7 +16,7 @@ const Landing = () => {
         </div>
         <Link
           href="https://github.com/acm-ucr/hackathon-website"
-          className="text-black rounded-xl flex items-center gap-3 text-2xl hover:opacity-50 my-4 hover:cursor-pointer"
+          className="text-white rounded-xl flex items-center gap-3 text-2xl hover:opacity-50 my-4 hover:cursor-pointer"
         >
           <SiGithub className="text-3xl" />
           GitHub
