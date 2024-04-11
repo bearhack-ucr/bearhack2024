@@ -5,7 +5,7 @@ import Link from "next/link";
 const Navigation = () => {
   return (
     <div className="fixed top-0 z-10 flex items-center justify-between bg-[#1e4e4a] w-full text-2xl text-white py-4 px-4">
-      <Link href="/engineering">Hackathon Engineering</Link>
+      <Link href="/engineering">Bearhack Engineering</Link>
       <div className="flex">
         {TABS.map((tab, index) => (
           <Link

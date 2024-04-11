@@ -58,7 +58,7 @@ const ProtectedPage = ({ children, restrictions, title }) => {
           <title>{title}</title>
           {navigation && <Navigation />}
           <div
-            className={`flex justify-center items-start w-full ${"bg-gradient-to-b from-bear-page-gradient-1 to-bear-page-gradient-2"} h-screen py-12 lg:py-0 z-0 overflow-x-hidden`}
+            className={`flex justify-center items-start w-full bg-gradient-to-b from-bear-page-gradient-1 to-bear-page-gradient-2 h-screen py-12 lg:py-0 z-0 overflow-x-hidden`}
           >
             <div className={`w-[96%] h-full`}>{children}</div>
           </div>

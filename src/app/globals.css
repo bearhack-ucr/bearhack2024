@@ -7,7 +7,6 @@
     animation-delay: inherit;
   }
 
-  /** outer class for butterfly */
   .butterfly {
     display: flex;
     width: fit-content;
@@ -49,4 +48,10 @@ code[data-line-numbers-max-digits="2"] > [data-line]::before {
 [data-highlighted-line],
 [data-highlighted-chars] {
   background-color: #2a4668;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h4 {
+  color: white;
 }
