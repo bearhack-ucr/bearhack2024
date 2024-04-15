@@ -6,7 +6,6 @@ export const data = {
   sponsor_reasons:
     "creating sustainable and technology driven solutions to current world medical problems",
   length: "24 hours",
-  date: "April 27th",
   start_url: "/",
   year: "2024",
   date: "April 27th 2024",
