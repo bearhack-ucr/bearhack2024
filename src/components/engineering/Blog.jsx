@@ -18,30 +18,28 @@ const Blog = async () => {
   const blogs = await getBlogPost();
 
   return (
-    <>
-      <div className="w-10/12 mt-[10%] m-auto">
-        <p className="m-0 text-3xl font-bold">Engineering Blogs</p>
-        <p className="my-3 w-3/4">
-          Check out our engineering blogs to learn more about the behind the
-          scenes as engineers discuss various challenges, migrations,
-          bottlenecks. Our engineering blogs captures how our engineers approach
-          problems and bring innovative solutions to the table.
-        </p>
-        <div className="w-full my-8 grid grid-cols-5 gap-4">
-          {blogs.map(({ title, author, date, link }, index) => (
-            <Link
-              href={`/engineering/blog/${link}`}
-              key={index}
-              className="bg-hackathon-blue-200 rounded-lg px-3 py-2 hover:opacity-80 text-white"
-            >
-              <p className="font-semibold text-lg">{title}</p>
-              <p className="text-sm text-gray-300">{author}</p>
-              <p className="text-sm flex justify-end text-gray-300">{date}</p>
-            </Link>
-          ))}
-        </div>
+    <div className="w-10/12 mt-[10%] m-auto text-white">
+      <p className="m-0 text-3xl font-bold">Engineering Blogs</p>
+      <p className="my-3 w-3/4">
+        Check out our engineering blogs to learn more about the behind the
+        scenes as engineers discuss various challenges, migrations, bottlenecks.
+        Our engineering blogs captures how our engineers approach problems and
+        bring innovative solutions to the table.
+      </p>
+      <div className="w-full my-8 grid grid-cols-5 gap-4">
+        {blogs.map(({ title, author, date, link }, index) => (
+          <Link
+            href={`/engineering/blog/${link}`}
+            key={index}
+            className="bg-bear-teal/40 rounded-lg px-3 py-2 hover:opacity-80 text-white"
+          >
+            <p className="font-semibold text-lg">{title}</p>
+            <p className="text-sm text-gray-300">{author}</p>
+            <p className="text-sm flex justify-end text-gray-300">{date}</p>
+          </Link>
+        ))}
       </div>
-    </>
+    </div>
   );
 };
 
