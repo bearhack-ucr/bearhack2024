@@ -100,3 +100,23 @@ export const members = [
     image: Divyank,
   },
 ];
+
+export const committee = {
+  software: [
+    "Aheli Banerjee",
+    "Atharva Nevasekar",
+    "Danniel Kim",
+    "Eliot L Lee",
+    "Holland Pleskac",
+    "Javi Becerril",
+    "Jonathan Darius",
+    "Jonathan Trujillo",
+    "Julian Gonzalez",
+    "Kavin Phabiani",
+    "Kelly Ma",
+    "Raul Razo",
+    "Stanley Lew",
+    "Vaneesha Singh",
+  ],
+  marketing: ["Abhishta Umesh"],
+};
