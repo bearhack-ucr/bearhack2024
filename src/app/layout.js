@@ -29,11 +29,7 @@ export const RootLayout = ({ children, session }) => {
         className={`${poppins.variable} ${grenze.variable} ${titilliumWeb.variable} bg-bear-dark flex flex-col lg:flex-row h-full`}
       >
         <div className="flex w-full">
-          <Session
-            session={session}
-            refetchInterval={5 * 60}
-            className="h-full"
-          >
+          <Session session={session} refetchInterval={5 * 60}>
             <Toaster />
             {children}
           </Session>
