@@ -1,9 +1,9 @@
-import Vertical from "@/public/vertical.webp";
+import Vertical from "@/public/engineering/vertical.webp";
 import Image from "next/image";
 
 const What = () => {
   return (
-    <div className="flex flex-row items-center justify-evenly text-white w-full  bg-hackathon-blue-100">
+    <div className="flex flex-row items-center justify-evenly text-white w-full">
       <Image src={Vertical} alt="Web Pages" />
       <div className="w-1/3">
         <div className="text-4xl font-bold">What is Hackathon Website?</div>

@@ -1,11 +1,17 @@
 import { TABS } from "@/data/engineering/Navigation";
 import { SiGithub } from "react-icons/si";
 import Link from "next/link";
+import Image from "next/image";
+import LOGO from "@/app/favicon.ico";
+import data from "@/data/Config";
 
 const Navigation = () => {
   return (
-    <div className="fixed top-0 z-10 flex items-center justify-between bg-hackathon-blue-200 w-full text-2xl text-white py-4 px-4">
-      <Link href="/engineering">Hackathon Engineering</Link>
+    <div className="fixed top-0 z-10 flex items-center justify-between bg-[#1e4e4a] w-full text-2xl text-white py-4 px-4">
+      <Link href="/engineering" className="flex">
+        <Image src={LOGO} className="w-8 h-8 mx-2" alt={`${data.name} Logo`} />
+        Bearhack Engineering
+      </Link>
       <div className="flex">
         {TABS.map((tab, index) => (
           <Link

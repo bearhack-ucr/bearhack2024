@@ -1,29 +1,23 @@
-export const CONFIG = {
-  name: "Bearhack 2024",
-  email: "bearhackucr@gmail.com",
-  year: "2024",
-  date: new Date("April 27, 2024 9:00:00"),
-  lastDate: new Date("April 28, 2024 9:00:00"),
-  packet: "",
-  devpost: "https://devpost.com/",
-};
-
-export const MANIFEST = {
+export const data = {
   name: "Bearhack 2024",
   short_name: "Hackathon Site",
-  description: "Hackathon Site",
-  start_url: "/",
-};
-
-export const METADATA = {
-  name: "Bearhack 2024",
+  email: "bearhackucr@gmail.com",
   description: "healthcare and medical technology based",
-  length: "24 hours",
-  date: "April 27th",
   sponsor_reasons:
     "creating sustainable and technology driven solutions to current world medical problems",
+  length: "24 hours",
+  start_url: "/",
+  year: "2024",
+  date: "April 27th 2024",
+  dateObject: new Date("April 27, 2024 9:00:00"),
+  lastDateObject: new Date("April 28, 2024 9:00:00"),
+  packet: "",
+  devpost: "https://devpost.com/",
+  domain: "https://www.placeholder.com",
+  instagram: "https://www.instagram.com",
+  linkedin: "https://www.linkedin.com",
+  discord: "https://www.discord.com",
+  heart: "🤎",
 };
 
-export const SITEMAP = {
-  domain: "https://www.placeholder.com",
-};
+export default data;
