@@ -5,6 +5,10 @@ import HorizontalLine from "./HorizontalLine.jsx";
 import Countdown from "./Countdown.jsx";
 import CONFIG from "@/data/Config.js";
 import swirlTop from "@/public/swirlTop.svg";
+import moredots from "@/public/moredots.svg";
+import dots from "@/public/dots.svg";
+import bigswirly from "@/public/bigswirly.svg";
+import smallswirly from "@/public/smallswirly.svg";
 import { useMemo } from "react";
 
 import Butterfly from "./Butterfly.jsx";
@@ -44,6 +48,22 @@ const Title = () => {
           src={titleBg}
           alt={"Background"}
           className="object-cover h-full"
+        />
+      </div>
+      <div className="absolute xl:left-[7%] md:left-[7%] top-[56%]">
+        <Image src={dots} alt={"dots"} className="animate-pulse" />
+      </div>
+      <div className="absolute left-[22.5%] top-[14%]">
+        <Image src={moredots} alt={"moredots"} className="animate-pulse" />
+      </div>
+      <div className="absolute left-[22.5%] top-[43%]">
+        <Image src={bigswirly} alt={"bigswirly"} className="animate-spinny" />
+      </div>
+      <div className="absolute left-[25%] top-[30%]">
+        <Image
+          src={smallswirly}
+          alt={"smallswirly"}
+          className="animate-spinny"
         />
       </div>
       <div className="flex flex-col z-1 p-10 lg:p-16 gap-2  border-bear-dark/50 rounded-3xl lg:bg-transparent z-10">

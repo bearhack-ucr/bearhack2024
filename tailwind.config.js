@@ -20,6 +20,7 @@ module.exports = {
         "shooting-star-inner":
           "slide-late 20s cubic-bezier(0.8, 0, 0.4, 1) infinite",
         "fade-in": "fade-in 1s linear 1",
+        spinny: "spin 18s linear infinite",
         flap: "wingbeat 1s infinite",
       },
       keyframes: {
