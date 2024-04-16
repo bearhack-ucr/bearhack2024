@@ -5,7 +5,7 @@ import Tracks from "../Tracks";
 import GetInvolved from "../GetInvolved";
 import Team from "../Team";
 import FAQ from "../FAQ";
-// import Sponsors from "../Sponsors";
+import Sponsors from "../Sponsors";
 import Footer from "../Footer";
 
 const Live = () => {
@@ -19,7 +19,7 @@ const Live = () => {
       <GetInvolved />
       <Team />
       <FAQ />
-      {/* <Sponsors /> */}
+      <Sponsors />
       <Footer />
     </div>
   );
