@@ -32,11 +32,11 @@ const Navigation = () => {
         </div>
       </div>
       <div
-        className={`z-10 lg:flex lg:w-[12%] ${
+        className={`h-screen z-10 lg:flex lg:w-[12%] ${
           expand ? "left-0 h-screen w-1/2 fixed pt-5" : `hidden`
         }`}
       >
-        <div className="bg-bear-teal/20 h-full flex flex-col justify-between items-center w-full">
+        <div className="overflow-y-auto bg-bear-teal/20 h-full flex flex-col justify-between items-center w-full">
           <div className="hidden lg:flex items-center my-3">
             <Image
               src={LOGO}
@@ -44,7 +44,7 @@ const Navigation = () => {
               alt={`${data.name} Logo`}
             />
           </div>
-          <div className="w-full flex flex-col items-center h-full">
+          <div className="w-full flex flex-col items-center h-fit">
             {Object.entries(tabs)
               .filter(([title]) => title !== " " && title !== "dropdown")
               .map(([title, subTabs], index) => (
@@ -90,7 +90,7 @@ const Navigation = () => {
                 </div>
               ))}
           </div>
-          <div className="w-full flex flex-col items-center mb-3">
+          <div className="w-full flex flex-col items-center mt-6 mb-3">
             {tabs[" "].map((tab, index) => (
               <Link
                 key={index}

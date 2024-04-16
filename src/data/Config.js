@@ -9,6 +9,7 @@ export const data = {
   start_url: "/",
   year: "2024",
   date: "April 27th 2024",
+  end: "April 28th 2024 9:00:00",
   dateObject: new Date("April 27, 2024 9:00:00"),
   lastDateObject: new Date("April 28, 2024 9:00:00"),
   packet: "",

@@ -18,7 +18,7 @@ const Events = ({ events, totalDays }) => {
       <div className="flex flex-row gap-0 lg:gap-2 border border-white bg-gradient-to-r from-bear-page-gradient-1 to-bear-page-gradient-2 rounded-full">
         {totalDays.map((day, index) => (
           <div
-            className={`px-2 lg:px-8 py-2 rounded-full transition-colors ${
+            className={`px-1 lg:px-8 py-2 rounded-full transition-colors text-xs md:text-base ${
               selectedDay === day ? "bg-white/30" : "hover:bg-white/10"
             }`}
             key={index}
@@ -35,7 +35,7 @@ const Events = ({ events, totalDays }) => {
         <div className="hidden md:block">Type</div>
         <div className="hidden md:block">Location</div>
       </div>
-      <div className="w-11/12 lg:w-3/4 flex flex-col items-center p-4 gap-4 border border-white bg-gradient-to-r from-bear-page-gradient-1 to-bear-page-gradient-2 rounded-lg">
+      <div className="w-4/5 lg:w-3/4 flex flex-col items-center p-4 border border-white bg-gradient-to-r from-bear-page-gradient-1 to-bear-page-gradient-2 rounded-lg">
         {events
           .filter(({ day }) => day === selectedDay)
           .map(({ start, summary, description, type, location }, index) => (
