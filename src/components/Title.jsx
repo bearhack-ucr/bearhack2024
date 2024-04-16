@@ -56,10 +56,10 @@ const Title = () => {
       <div className="absolute left-[22.5%] top-[14%]">
         <Image src={moredots} alt={"moredots"} className="animate-pulse" />
       </div>
-      <div className="absolute left-[22.5%] top-[43%]">
+      <div className="hidden md:flex absolute left-[22.5%] top-[43%]">
         <Image src={bigswirly} alt={"bigswirly"} className="animate-spinny" />
       </div>
-      <div className="absolute left-[25%] top-[30%]">
+      <div className="hidden md:flex absolute left-[25%] top-[30%]">
         <Image
           src={smallswirly}
           alt={"smallswirly"}
