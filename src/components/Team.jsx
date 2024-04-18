@@ -8,7 +8,7 @@ const Team = () => {
       <div className="text-2xl lg:text-3xl font-header mt-8 mb-4">
         Directors
       </div>
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+      <div className="flex w-3/4 flex-wrap justify-center gap-4 sm:px-4 md:gap-8">
         {directors.map(({ name, position, image }, index) => (
           <Member name={name} position={position} image={image} key={index} />
         ))}
