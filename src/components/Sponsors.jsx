@@ -1,6 +1,5 @@
 import Image from "next/image";
-import { TOP_SPONSORS } from "@/data/Sponsors";
-import { LOW_SPONSORS } from "@/data/Sponsors";
+import { SPONSORS } from "@/data/Sponsors";
 import Link from "next/link";
 
 const Sponsors = () => {
@@ -9,23 +8,12 @@ const Sponsors = () => {
       <div className="font-header text-4xl md:text-5xl text-white flex mb-4 md:mb-20">
         Sponsors
       </div>
-      <div className="w-2/3 grid grid-cols-2 grid-rows-2 md:grid-rows-none md:grid-cols-3 gap-12 place-items-center">
-        {TOP_SPONSORS.map((item, index) => (
+      <div className="flex w-full flex-wrap justify-center items-center gap-4 sm:px-4 md:gap-8">
+        {SPONSORS.map((item, index) => (
           <Link
             key={index}
             href={item.link}
-            className="hover:cursor-pointer hover:scale-105"
-          >
-            <Image className="rounded-full" src={item.logo} />
-          </Link>
-        ))}
-      </div>
-      <div className="w-2/3 md:w-1/3 grid grid-cols-2 grid-rows-2 md:grid-rows-none md:grid-cols-2 gap-12 place-items-center">
-        {LOW_SPONSORS.map((item, index) => (
-          <Link
-            key={index}
-            href={item.link}
-            className="hover:cursor-pointer hover:scale-105"
+            className="hover:cursor-pointer w-1/3 lg:w-1/4 hover:scale-105"
           >
             <Image className="rounded-full" src={item.logo} />
           </Link>
