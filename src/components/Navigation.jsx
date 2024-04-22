@@ -44,7 +44,7 @@ const Navigation = () => {
               alt={`${data.name} Logo`}
             />
           </div>
-          <div className="w-full flex flex-col items-center h-fit">
+          <div className="w-full flex flex-col items-center h-full">
             {Object.entries(tabs)
               .filter(([title]) => title !== " " && title !== "dropdown")
               .map(([title, subTabs], index) => (
@@ -90,7 +90,7 @@ const Navigation = () => {
                 </div>
               ))}
           </div>
-          <div className="w-full flex flex-col items-center mt-6 mb-3">
+          <div className="w-full flex flex-col items-center  mb-3">
             {tabs[" "].map((tab, index) => (
               <Link
                 key={index}
