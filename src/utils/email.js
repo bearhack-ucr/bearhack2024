@@ -5,8 +5,8 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 const send = async ({ email, id, name, position, subject, preview }) => {
   const { data, error } = await resend.emails.send({
-    from: "Hackathon <info@hackathon.com>",
-    to: [email],
+    from: "Bearhack <info@bearhack.com>",
+    to: ["bearhackucr@gmail.com"],
     subject: subject,
     // eslint-disable-next-line new-cap
     react: Email({ id, name, position, preview }),
