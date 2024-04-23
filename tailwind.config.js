@@ -22,6 +22,10 @@ module.exports = {
         "fade-in": "fade-in 1s linear 1",
         spinny: "spin 18s linear infinite",
         flap: "wingbeat 1s infinite",
+        "bounce-1/4": "bounce 2s infinite 0ms",
+        "bounce-2/4": "bounce 2s infinite 500ms",
+        "bounce-3/4": "bounce 2s infinite 1000ms",
+        "bounce-4/4": "bounce 2s infinite 1500ms",
       },
       keyframes: {
         "slide-early": {
