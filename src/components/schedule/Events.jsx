@@ -48,11 +48,12 @@ const Events = ({ events, totalDays }) => {
         {events
           .filter(({ day }) => day === selectedDay)
           .map(({ start, summary, description, type, location }, index) => (
-            <>
-              {index > 0 && (
-                <div className="w-full h-px bg-white" key={-index} />
-              )}
-              <div className="w-full" key={index}>
+            <div
+              className="w-full flex flex-col items-center gap-4"
+              key={index}
+            >
+              {index > 0 && <div className="w-full h-px bg-white" />}
+              <div className="w-full">
                 <div className="grid grid-cols-8 items-center content-center text-center">
                   <div className="col-span-2 md:col-span-1 font-bold rounded-full m-auto w-3/4 py-2 bg-white/10">
                     {start.toLocaleTimeString("en-US", {
@@ -75,7 +76,7 @@ const Events = ({ events, totalDays }) => {
                   <div className="hidden md:block font-bold">{location}</div>
                 </div>
               </div>
-            </>
+            </div>
           ))}
       </div>
     </div>
