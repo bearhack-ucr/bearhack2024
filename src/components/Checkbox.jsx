@@ -23,7 +23,7 @@ const Checkbox = ({ toggle, onClick = () => {}, text = "", color }) => {
           } text-lg transition-opacity`}
         />
       </div>
-      {text && <p className="my-0 pt-0">{text}</p>}
+      {text && <p className="my-0 pt-0 text-white">{text}</p>}
     </div>
   );
 };

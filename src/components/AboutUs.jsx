@@ -1,6 +1,7 @@
 import React from "react";
 import Frame from "@/public/frame.svg";
 import Image from "next/image";
+import AboutUsText from "./AboutUsText";
 
 const AboutUs = () => {
   return (
@@ -19,26 +20,7 @@ const AboutUs = () => {
           />
         </div>
       </div>
-
-      <div className="flex flex-col w-4/6 md:w-5/12 lg:w-4/12 items-center gap-8 -my-24 md:-my-24">
-        <p className="font-header text-4xl md:text-5xl flex justify-center !text-center lg:!text-center -mb-1">
-          About Us
-        </p>
-        <div className="h-0.5 w-11/12 bg-gray-300 rounded-full" />
-        <p className="font-paragraph text-base md:text-xl text-center mt-1">
-          Welcome to Bearhack, a medical-technology-focused, in-person,
-          weekend-long event brought to you by BMES (Biomedical Engineering
-          Society). Bearhack invites curious minds to embark on a journey of
-          learning and innovation. This event provides a unique opportunity for
-          participants to choose a project of their liking and dedicate the
-          weekend to exploring and building something new. Whether you&apos;re
-          passionate about a specific medical technology or have been meaning to
-          delve into a particular topic, Bearhack is the perfect platform for
-          you. Form a team of up to 4 people to collaborate and create. The
-          event not only fosters individual growth but also offers the chance to
-          forge new friendships with fellow enthusiasts.
-        </p>
-      </div>
+      <AboutUsText />
       <div className="grid grid-cols-2 w-full md:h-full md:w-1/2 2xl:w-1/2 mb-10 md:mb-32">
         <Image
           src={Frame}

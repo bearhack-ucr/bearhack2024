@@ -99,7 +99,7 @@ const Title = () => {
         <div className="p-8 flex flex-col items-center lg:items-end gap-2">
           <div className="relative text-4xl flex whitespace-nowrap lg:text-5xl font-header font-bold">
             BEARHACK 2024
-            <div className="absolute right-0 top-0 scale-50 lg:scale-100 translate-x-1/2 -translate-y-1/2">
+            <div className="absolute right-0 top-0 lg:scale-100 translate-x-1/2 -translate-y-1/2">
               <Butterfly />
             </div>
           </div>

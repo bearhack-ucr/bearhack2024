@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const Events = ({ events, totalDays }) => {
   const [selectedDay, setSelectedDay] = useState(
@@ -10,6 +10,7 @@ const Events = ({ events, totalDays }) => {
         })
       : "Tuesday"
   );
+  const eventsRef = useRef(null);
 
   return (
     <div className="flex flex-col items-center justify-center text-white gap-8 pb-24 text-sm lg:text-base">
@@ -22,7 +23,12 @@ const Events = ({ events, totalDays }) => {
               selectedDay === day ? "bg-white/30" : "hover:bg-white/10"
             }`}
             key={index}
-            onClick={() => setSelectedDay(day)}
+            onClick={() => {
+              setSelectedDay(day);
+              console.log(eventsRef);
+              eventsRef.current.style.animation = "none";
+              setInterval(() => (eventsRef.current.style.animation = ""), 0);
+            }}
           >
             {day}
           </div>
@@ -35,11 +41,17 @@ const Events = ({ events, totalDays }) => {
         <div className="hidden md:block">Type</div>
         <div className="hidden md:block">Location</div>
       </div>
-      <div className="w-4/5 lg:w-3/4 flex flex-col items-center p-4 border border-white bg-gradient-to-r from-bear-page-gradient-1 to-bear-page-gradient-2 rounded-lg">
+      <div
+        className="w-4/5 lg:w-3/4 flex flex-col items-center p-4 gap-4 border border-white bg-gradient-to-r from-bear-page-gradient-1 to-bear-page-gradient-2 rounded-lg opacity-0 translate-y-1 animate-slide-in"
+        ref={eventsRef}
+      >
         {events
           .filter(({ day }) => day === selectedDay)
           .map(({ start, summary, description, type, location }, index) => (
-            <>
+            <div
+              className="w-full flex flex-col items-center gap-4"
+              key={index}
+            >
               {index > 0 && <div className="w-full h-px bg-white" />}
               <div className="w-full">
                 <div className="grid grid-cols-8 items-center content-center text-center">
@@ -64,7 +76,7 @@ const Events = ({ events, totalDays }) => {
                   <div className="hidden md:block font-bold">{location}</div>
                 </div>
               </div>
-            </>
+            </div>
           ))}
       </div>
     </div>

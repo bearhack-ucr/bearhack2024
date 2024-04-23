@@ -1,7 +1,7 @@
 import { RiArrowDownSLine } from "react-icons/ri";
 const Collapse = ({ text, children, setExpand, expand }) => {
   return (
-    <div className="w-full bg-white rounded-xl p-4 drop-shadow-md">
+    <div className="w-full bg-white rounded-xl p-4 drop-shadow-md text-black">
       <div
         className="flex items-center justify-between cursor-pointer text-xl font-bold"
         onClick={() => setExpand(text === expand ? "" : text)}
