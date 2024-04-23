@@ -13,7 +13,16 @@ const Tracks = () => {
             }`}
             key={index}
           >
-            <div className="animate-bounce relative px-6 lg:px-8 pt-20 pb-36 w-40 lg:w-48 h-96 lg:h-[28rem] flex flex-col gap-4 justify-start text-center border border-white rounded-full bg-gradient-to-b from-bear-page-gradient-1 to-bear-page-gradient-2 overflow-hidden">
+            <div
+              className={`${
+                [
+                  "animate-bounce-1/4",
+                  "animate-bounce-2/4",
+                  "animate-bounce-3/4",
+                  "animate-bounce-4/4",
+                ][index]
+              } relative px-6 lg:px-8 pt-20 pb-36 w-40 lg:w-48 h-96 lg:h-[28rem] flex flex-col gap-4 justify-start text-center border border-white rounded-full bg-gradient-to-b from-bear-page-gradient-1 to-bear-page-gradient-2 overflow-hidden`}
+            >
               <div className={`absolute bottom-0 ${offset}`}>
                 <Image src={image} />
               </div>
