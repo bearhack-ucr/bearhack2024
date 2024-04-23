@@ -14,10 +14,10 @@ export const data = {
   lastDateObject: new Date("April 28, 2024 9:00:00"),
   packet: "",
   devpost: "https://devpost.com/",
-  domain: "https://www.placeholder.com",
-  instagram: "https://www.instagram.com",
-  linkedin: "https://www.linkedin.com",
-  discord: "https://www.discord.com",
+  domain: "https://www.bearhack.com",
+  instagram: "https://www.instagram.com/bearhackucr/",
+  linkedin: "https://www.linkedin.com/company/bearhackucr",
+  discord: "https://discord.gg/NtrtKpWjhe",
   heart: "🤎",
 };
 
