@@ -27,6 +27,7 @@
     "compressorjs": "^1.2.1",
     "firebase": "^10.8.0",
     "firebase-admin": "^11.11.0",
+    "framer-motion": "^11.1.7",
     "gray-matter": "^4.0.3",
     "next": "^14.0.1",
     "next-auth": "^4.24.4",
