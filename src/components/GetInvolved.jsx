@@ -1,4 +1,3 @@
-import butterfly from "@/public/butterfly.svg";
 import hat from "@/public/hat.svg";
 import book from "@/public/book.svg";
 import HorizontalLine from "./HorizontalLine";
