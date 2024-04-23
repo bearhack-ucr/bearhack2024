@@ -25,7 +25,6 @@ const Events = ({ events, totalDays }) => {
             key={index}
             onClick={() => {
               setSelectedDay(day);
-              console.log(eventsRef);
               eventsRef.current.style.animation = "none";
               setInterval(() => (eventsRef.current.style.animation = ""), 0);
             }}
