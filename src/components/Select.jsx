@@ -63,7 +63,7 @@ const Select = ({
         onClick={() => setShow(!show)}
         className={`${
           !user[field] && "text-hackathon-gray-200"
-        } bg-transparent flex items-center justify-between w-full pb-1`}
+        } bg-transparent flex items-center justify-between w-full pb-1 text-white`}
         data-cy="select-toggle"
       >
         {user[field] || placeholder}
@@ -78,7 +78,7 @@ const Select = ({
         <div className="relative">
           <div
             ref={ref}
-            className="absolute overflow-y-scroll !bg-hackathon-select-bg !border-none w-full h-fit max-h-[35vh]"
+            className="absolute overflow-y-auto !bg-hackathon-select-bg !border-none w-full h-fit max-h-[35vh]"
             data-cy="select-menu"
           >
             {searchable && (
