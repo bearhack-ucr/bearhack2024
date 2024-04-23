@@ -26,6 +26,7 @@ module.exports = {
         "bounce-2/4": "bounce 2s infinite 500ms",
         "bounce-3/4": "bounce 2s infinite 1000ms",
         "bounce-4/4": "bounce 2s infinite 1500ms",
+        "slide-in": "slide-in-up 0.3s cubic-bezier(0.4, 0, 0.6, 1) 1 forwards",
       },
       keyframes: {
         "slide-early": {
@@ -39,6 +40,10 @@ module.exports = {
         "fade-in": {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
+        },
+        "slide-in-up": {
+          "0%": { opacity: "0", transform: "translateY(4px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
         wingbeat: {
           "0%, 100%": {
