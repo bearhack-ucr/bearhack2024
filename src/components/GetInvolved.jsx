@@ -9,12 +9,12 @@ const GetInvolved = () => {
   return (
     <div className="w-full text-white flex flex-col justify-center items-center gap-14">
       <div className="flex justify-center items-center gap-3 w-5/6 md:w-1/2">
-        <p className="relative font-header text-4xl lg:text-5xl flex whitespace-nowrap">
+        <div className="relative font-header text-4xl lg:text-5xl flex whitespace-nowrap">
           Get Involved
           <div className="absolute right-0 top-0 !scale-50 lg:scale-100 translate-x-1/2 -translate-y-1/2">
             <Butterfly />
           </div>
-        </p>
+        </div>
       </div>
 
       <div className="flex flex-col lg:flex-row w-5/6 lg:w-2/3 justify-between items-center gap-2">
