@@ -64,7 +64,7 @@ export const DROPDOWN = ({ object }) => {
     <div className="flex flex-col justify-center items-center">
       <div className="grid grid-cols-3 w-11/12">
         {attributes.map((attribute, index) => (
-          <div key={index} className="my-1 px-1 flex text-sm">
+          <div key={index} className="my-1 px-1 flex text-sm text-white">
             {ICONS[attribute]}
             {Array.isArray(object[attribute])
               ? object[attribute].length !== 0
