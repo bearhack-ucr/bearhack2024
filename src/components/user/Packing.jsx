@@ -8,9 +8,9 @@ const Packing = () => {
   ];
   return (
     <div className="bg-white rounded-lg shadow-xl p-3 my-3">
-      <div className="font-bold p-2">💻 Packing List</div>
+      <div className="font-bold p-2 text-black">💻 Packing List</div>
 
-      <ul className="font-light list-disc pl-9 mb-2">
+      <ul className="font-light list-disc pl-9 mb-2 text-black">
         {list.map((list, index) => (
           <li key={index}>{list}</li>
         ))}
