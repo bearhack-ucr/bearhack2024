@@ -40,7 +40,7 @@ const Contact = ({ role, disabled, setDisabled }) => {
   };
 
   return (
-    <div className="grid grid-cols-3 w-1/2 gap-3 text-lg bg-white p-4 rounded">
+    <div className="grid grid-cols-3 w-1/2 gap-3 text-lg text-white bg-bear-teal/20 p-4 rounded">
       <div className="flex items-center">
         <BsFillPersonFill className="mx-2" /> {role}
       </div>

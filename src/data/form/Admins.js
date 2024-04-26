@@ -101,7 +101,7 @@ export const FIELDS = {
     width: 12,
     field: "requirements",
     options: [
-      "I have read the MLH code of conduct and agree to the terms and conditions listed",
+      "I have read the code of conduct and agree to the terms and conditions listed",
       "I consent to photographs being taken and being used for future marketing purposes",
       "I consent to providing a safe space for hackers to learn and grow their interests in computing",
       "I consent to following the provided guidelines and rules instructed by the organizing team",

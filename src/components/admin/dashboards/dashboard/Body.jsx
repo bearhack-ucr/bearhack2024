@@ -9,13 +9,13 @@ const Body = ({ getIsSelected, getVisibleCells, Dropdown, original }) => {
     <>
       <div
         className={`flex px-3 py-2 border-b-[1px] border-hackathon-gray-200 items-center ${
-          getIsSelected() ? "bg-green-100" : "bg-white"
+          getIsSelected() ? "bg-bear-teal/50" : "bg-bear-teal/10"
         }`}
         data-cy={original.uid}
       >
         {getVisibleCells().map(({ id, column, getContext }) => (
           <div
-            className={`flex items-center ${column.columnDef.width}`}
+            className={`flex items-center ${column.columnDef.width} text-white`}
             key={id}
           >
             {flexRender(column.columnDef.cell, getContext())}
@@ -25,7 +25,7 @@ const Body = ({ getIsSelected, getVisibleCells, Dropdown, original }) => {
           <FaChevronDown
             className={`${
               dropdown && "rotate-180"
-            } duration-300 hover:cursor-pointer`}
+            } duration-300 hover:cursor-pointer text-white`}
             onClick={() => setDropdown(!dropdown)}
           />
         )}

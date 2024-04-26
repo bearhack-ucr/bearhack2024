@@ -19,7 +19,7 @@ const Dashboard = () => {
   const [expand, setExpand] = useState("Rules");
 
   return (
-    <div className="h-full font-poppins flex flex-col py-4 gap-3">
+    <div className="h-full font-poppins flex flex-col py-4 gap-3 text-hackathon-tags-white">
       <Header email={session.user.email} name={session.user.name} />
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
         <div className="col-span-2">

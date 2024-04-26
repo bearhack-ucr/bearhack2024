@@ -1,6 +1,6 @@
 import data from "@/data/Config";
 import Template from "./Template";
-import { Text } from "@react-email/components";
+import { Link, Text } from "@react-email/components";
 
 const Rejection = ({ name, position, preview }) => {
   return (
@@ -12,7 +12,10 @@ const Rejection = ({ name, position, preview }) => {
       </Text>
       <Text>
         However, we loved getting to know you and hope that you apply next year.
-        If you have any questions, please reach out at {data.email}
+        If you have any questions, please reach out at{" "}
+        <Link href={`mailto:${data.email}`} className="text-[#4ABFB5]">
+          {data.email}
+        </Link>
       </Text>
     </Template>
   );

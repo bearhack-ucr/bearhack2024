@@ -16,7 +16,7 @@ const Terms = ({ options, toggle, onClick }) => {
         toggle={toggle}
         text="By selecting this I agree to all of the above terms"
         onClick={onClick}
-        color="bg-hackathon-green-300"
+        color="bg-bear-teal/50"
       />
     </>
   );

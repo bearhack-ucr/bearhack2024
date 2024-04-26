@@ -63,13 +63,13 @@ const Select = ({
         onClick={() => setShow(!show)}
         className={`${
           !user[field] && "text-hackathon-gray-200"
-        } bg-transparent flex items-center justify-between w-full pb-1`}
+        } bg-transparent flex items-center justify-between w-full pb-1 text-white`}
         data-cy="select-toggle"
       >
         {user[field] || placeholder}
         {editable && (
           <RiArrowDownSLine
-            className={`${show && "rotate-180"} duration-300 text-black`}
+            className={`${show && "rotate-180"} duration-300 text-white`}
             data-cy="select-arrow"
           />
         )}
@@ -78,14 +78,14 @@ const Select = ({
         <div className="relative">
           <div
             ref={ref}
-            className="absolute overflow-y-scroll bg-hackathon-green-100 w-full h-fit max-h-[35vh]"
+            className="absolute overflow-y-auto !bg-hackathon-select-bg !border-none w-full h-fit max-h-[35vh]"
             data-cy="select-menu"
           >
             {searchable && (
               <input
                 value={input}
                 autoFocus
-                className="my-1 w-full ring-0 outline-none px-2 py-2 bg-hackathon-green-100 sticky top-0 left-0 z-10"
+                className="my-1 w-full ring-0 outline-none px-2 py-2 bg-hackathon-gray-300 sticky top-0 left-0 z-10"
                 placeholder="search"
                 onChange={handleInput}
               />
@@ -106,7 +106,7 @@ const Select = ({
 
                 return (
                   <div
-                    className="absolute top-0 left-0 w-full hover:bg-hackathon-green-200 hover:cursor-pointer flex items-center px-2"
+                    className="absolute top-0 left-0 w-full hover:!bg-bear-teal/50 !bg-hackathon-select-bg hover:cursor-pointer flex items-center px-2 text-white"
                     key={virtualRow.index}
                     data-index={virtualRow.index}
                     ref={measureElement}

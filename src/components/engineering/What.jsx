@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const What = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-evenly  text-white w-full  bg-hackathon-blue-100">
+    <div className="flex flex-col md:flex-row items-center justify-evenly  text-white w-full ">
       <Image src={Vertical} alt="Web Pages" className="mb-8 pt-8" />
       <div className="w-9/12 md:w-1/3">
         <div className="text-3xl md:text-4xl font-bold">

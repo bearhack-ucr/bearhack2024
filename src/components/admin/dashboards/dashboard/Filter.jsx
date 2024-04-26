@@ -29,9 +29,7 @@ const Filter = ({ value, status, isActive, setFilters }) => {
     <div className="flex justify-center" onClick={onClick}>
       <div
         className={`rounded hover:opacity-70 duration-300 ${
-          isActive
-            ? "text-white bg-hackathon-blue-100"
-            : "text-hackathon-blue-100 bg-white"
+          isActive ? "text-white bg-bear-teal/50" : "text-white"
         } cursor-pointer flex items-center justify-between w-full`}
         data-cy={status + "-filter"}
       >

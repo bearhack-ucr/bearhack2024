@@ -178,13 +178,13 @@ const Toolbar = ({
       <FaUndoAlt
         size={22.5}
         onClick={handleReload}
-        className="text-hackathon-gray-300 hover:opacity-70 duration-150 hover:cursor-pointer"
+        className="text-white hover:opacity-70 duration-150 hover:cursor-pointer"
       />
       <FaTrashAlt
         data-cy="delete"
         onClick={confirmDelete}
         size={22.5}
-        className="text-hackathon-gray-300 hover:opacity-70 duration-150 hover:cursor-pointer mx-2"
+        className="text-white hover:opacity-70 duration-150 hover:cursor-pointer mx-2"
       />
       {popup.visible && (
         <Popup

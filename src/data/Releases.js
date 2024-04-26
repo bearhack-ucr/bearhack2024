@@ -1,12 +1,13 @@
 const DEV = {
   LIVE: {
-    START: new Date("10/01/2023"),
-    END: new Date("10/10/2024"),
+    START: new Date("10/01/2000"),
+    END: new Date("April 29, 2024 9:00:00"),
   },
   POSTLIVE: {
-    START: new Date("10/01/2023"),
-    END: new Date("10/10/2024"),
+    START: new Date("April 29, 2024 9:00:00"),
+    END: new Date("10/10/2100"),
   },
+
   "/admin/participants": new Date("10/01/2023"),
   "/admin/teams": new Date("10/01/2023"),
   "/admin/judges": new Date("10/01/2023"),
@@ -42,11 +43,11 @@ const DEV = {
 const PRODUCTION = {
   LIVE: {
     START: new Date("10/01/2023"),
-    END: new Date("10/10/2024"),
+    END: new Date("April 29, 2024 9:00:00"),
   },
   POSTLIVE: {
-    START: new Date("10/01/2023"),
-    END: new Date("10/10/2024"),
+    START: new Date("April 29, 2024 9:00:00"),
+    END: new Date("10/10/2100"),
   },
   "/admin/participants": new Date("10/01/2023"),
   "/admin/teams": new Date("10/01/2023"),
@@ -75,9 +76,9 @@ const PRODUCTION = {
   "/form/feedback": new Date("10/01/2023"),
   "/form/interest": new Date("10/01/2023"),
 
-  "/user/checkin": new Date("10/01/2023"),
-  "/user/dashboard": new Date("10/01/2023"),
-  "/user/join": new Date("10/01/2023"),
+  "/user/checkin": new Date("4/20/2024"),
+  "/user/dashboard": new Date("4/20/2024"),
+  "/user/join": new Date("4/20/2024"),
 };
 
 export default process.env.NODE_ENV === "production" ? PRODUCTION : DEV;

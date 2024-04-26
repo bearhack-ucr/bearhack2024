@@ -8,9 +8,9 @@ export const FIELDS = {
     width: 12,
     texts: [
       `Welcome to ${data.name}. Thank you for considering to become a volunteer, we appreciate your efforts to help support ${data.name}. ${data.name} is a ${data.description} hackathon spanning ${data.length} on ${data.date}.`,
-      "Volunteers are not required to stay the full duration of the event, but are encouraged to checkout the various events, workshops, and opportunities that are available.",
-      "Volunteer duties include but are not limited to setup, workshop organization, food handling, cleanup and more.",
-      "Note: Volunteers are not permitted to become participants for the hackathon.",
+      // "Volunteers are not required to stay the full duration of the event, but are encouraged to checkout the various events, workshops, and opportunities that are available.",
+      // "Volunteer duties include but are not limited to setup, workshop organization, food handling, cleanup and more.",
+      // "Note: Volunteers are not permitted to become participants for the hackathon.",
     ],
   },
   name: {
@@ -106,7 +106,7 @@ export const FIELDS = {
     field: "requirements",
     required: true,
     options: [
-      "I have read the MLH code of conduct and agree to the terms and conditions listed",
+      "I have read the code of conduct and agree to the terms and conditions listed",
       "I consent to photographs being taken and being used for future marketing purposes",
       "I consent to providing a safe space for hackers to learn and grow their interests in computing",
       "I consent to following the provided guidelines and rules instructed by the organizing team",
