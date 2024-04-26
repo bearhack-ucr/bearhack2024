@@ -25,7 +25,6 @@ const Events = ({ events, totalDays }) => {
             key={index}
             onClick={() => {
               setSelectedDay(day);
-              console.log(eventsRef);
               eventsRef.current.style.animation = "none";
               setInterval(() => (eventsRef.current.style.animation = ""), 0);
             }}
@@ -53,7 +52,7 @@ const Events = ({ events, totalDays }) => {
               key={index}
             >
               {index > 0 && <div className="w-full h-px bg-white" />}
-              <div className="w-full">
+              <div className="w-full my-3">
                 <div className="grid grid-cols-8 items-center content-center text-center">
                   <div className="col-span-2 md:col-span-1 font-bold rounded-full m-auto w-3/4 py-2 bg-white/10">
                     {start.toLocaleTimeString("en-US", {

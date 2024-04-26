@@ -7,14 +7,14 @@ export const TRACKS = [
   {
     name: "Best Beginner",
     description:
-      "Develop a mobile application that is aimed at promoting healthy lifestyles choices.",
+      "For your hack to qualify as a Beginner Hack, Bearhack must be the first hackathon a majority of your team has attended.",
     image: track1,
     offset: "translate-y-8",
   },
   {
     name: "Best Hardware",
     description:
-      "Design wearable medical device for monitoring a health parameter",
+      "This project involves the best incorporation of hardware that meshes well with software.",
     image: track2,
     offset: "scale-150",
   },
