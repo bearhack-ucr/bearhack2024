@@ -22,7 +22,7 @@ const Dashboard = () => {
     <div className="h-full font-poppins flex flex-col py-4 gap-3 text-hackathon-tags-white">
       <Header email={session.user.email} name={session.user.name} />
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
-        <div className="col-span-2">
+        <div className="col-span-2 flex flex-col gap-4">
           <Countdown />
           <div className="flex gap-4">
             <Tile icon={<BsQrCode />} text="Check In" link="/user/checkin" />
@@ -47,11 +47,6 @@ const Dashboard = () => {
             <Hackpacks />
           </Collapse>
         </div>
-
-        {/* <User user={user} setUser={setUser} edit={edit} setEdit={setEdit} />
-        {user.roles.participants === 1 && (
-          <Team user={user} team={user.team} setUser={setUser} />
-        )} */}
       </div>
     </div>
   );
