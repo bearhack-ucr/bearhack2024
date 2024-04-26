@@ -16,7 +16,7 @@ import { RULES } from "@/data/user/Rules";
 
 const Dashboard = () => {
   const { data: session } = useSession();
-  const [expand, setExpand] = useState("");
+  const [expand, setExpand] = useState("Rules");
 
   return (
     <div className="h-full font-poppins flex flex-col py-4 gap-3 text-hackathon-tags-white">
@@ -29,7 +29,7 @@ const Dashboard = () => {
             <Tile
               icon={<LuParkingCircle />}
               text="Parking Info"
-              link="https://transportation.ucr.edu/visitor-parking#parking-options-how-to-pay"
+              link="https://transportation.ucr.edu/visitor-parking"
             />
           </div>
           <Rooms />
@@ -37,11 +37,11 @@ const Dashboard = () => {
         </div>
 
         <div className="flex flex-col gap-4">
-          <Collapse setExpand={setExpand} expand={expand} text="Judging">
-            <BulletPoints list={JUDGING} />
-          </Collapse>
           <Collapse setExpand={setExpand} expand={expand} text="Rules">
             <BulletPoints list={RULES} />
+          </Collapse>
+          <Collapse setExpand={setExpand} expand={expand} text="Judging">
+            <BulletPoints list={JUDGING} />
           </Collapse>
           <Collapse setExpand={setExpand} expand={expand} text="Hackpacks">
             <Hackpacks />
