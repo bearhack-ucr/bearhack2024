@@ -28,7 +28,7 @@ export const GET = async () => {
 
   try {
     const teamsSnapshot = await getDocs(
-      query(collection(db, "teams"), where("status", "==", 1))
+      query(collection(db, "teams"), where("status", "in", [0, 1]))
     );
     teamsSnapshot.forEach((doc) => {
       const { links, name, rounds, table } = doc.data();

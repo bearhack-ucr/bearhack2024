@@ -25,14 +25,14 @@ const Table = ({ data }) => {
                           key={index}
                           href={link.link}
                           target="_blank"
-                          className="m-0 p-0 text-black no-underline hover:!text-hackathon-blue-100 text-xl"
+                          className="m-0 p-0 text-black no-underline hover:!text-bear-teal/40 text-xl"
                         >
                           {ICONS[link.name]}
                         </Link>
                       ))}
                 </div>
                 {table && (
-                  <p className="mb-0 text-hackathon-green-300 font-semibold whitespace-nowrap">
+                  <p className="mb-0 text-black font-semibold whitespace-nowrap">
                     table {table}
                   </p>
                 )}

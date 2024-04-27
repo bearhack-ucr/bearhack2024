@@ -132,20 +132,26 @@ const Details = () => {
   return (
     <div className="bg-gradient-to-b from-bear-teal/10  to-bear-teal/20 text-white rounded-lg p-4 gap-3 m-2 overflow-auto max-h-[70vh] flex flex-col justify-start">
       {user.team && !load && <Loading />}
-
-      {console.log(user)}
       {user.team && load && (
         <>
-          <Input
-            name="name"
-            type="text"
-            title="Team Name"
-            value={team.name}
-            user={team}
-            editable={edit}
-            setUser={setTeam}
-            placeholder="N/A"
-          />
+          <div className="flex justify-between">
+            <Input
+              name="name"
+              type="text"
+              title="Team Name"
+              value={team.name}
+              user={team}
+              editable={edit}
+              setUser={setTeam}
+              placeholder="N/A"
+            />
+            <div className="w-full flex justify-end">
+              <p className="font-semibold">
+                Table: {team.table ?? "No assigned table"}
+              </p>
+            </div>
+          </div>
+
           <Input
             name="github"
             type="text"

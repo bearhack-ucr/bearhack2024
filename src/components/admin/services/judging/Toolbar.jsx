@@ -117,14 +117,14 @@ const Toolbar = ({ data, setData, view, setView, setJudgesView }) => {
       }
     }
 
-    if (professors.length * input.rotations < teams.length) {
-      setPopup({
-        title: "Insufficient Professors",
-        text: "There are not enough professors to go around to each team. Please consider adding more professors via the judge dashboard. ",
-        color: "green",
-        visible: true,
-      });
-    }
+    // if (professors.length * input.rotations < teams.length) {
+    //   setPopup({
+    //     title: "Insufficient Professors",
+    //     text: "There are not enough professors to go around to each team. Please consider adding more professors via the judge dashboard. ",
+    //     color: "green",
+    //     visible: true,
+    //   });
+    // }
 
     if (
       professors.length * input.rotations +
