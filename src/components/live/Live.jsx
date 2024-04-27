@@ -4,8 +4,9 @@ import Schedule from "../schedule/Schedule";
 import Tracks from "../Tracks";
 import GetInvolved from "../GetInvolved";
 import Team from "../Team";
-import FAQ from "../FAQ";
 import Sponsors from "../Sponsors";
+import Judges from "../Judges";
+import FAQ from "../FAQ";
 import Footer from "../Footer";
 
 const Live = () => {
@@ -18,8 +19,9 @@ const Live = () => {
       <Schedule />
       <GetInvolved />
       <Team />
-      <FAQ />
       <Sponsors />
+      <Judges />
+      <FAQ />
       <Footer />
     </div>
   );
