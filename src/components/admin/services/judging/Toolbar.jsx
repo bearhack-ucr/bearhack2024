@@ -239,7 +239,7 @@ const Toolbar = ({ data, setData, view, setView, setJudgesView }) => {
               placeholder="ie. 5"
               clear={true}
             />
-            <p className="mb-0 font-semibold mx-2"># of rotations</p>
+            <p className="mb-0 font-semibold mx-2 text-white"># of rotations</p>
             <Button color="green" text="generate" onClick={generate} />
           </form>
           <Button
