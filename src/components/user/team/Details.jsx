@@ -11,8 +11,6 @@ import { useSession } from "next-auth/react";
 const Details = () => {
   const { data: session } = useSession();
 
-  // const user = session.user;
-
   const defaultTeam = {
     id: "",
     name: "",
@@ -21,7 +19,7 @@ const Details = () => {
   const [team, setTeam] = useState(defaultTeam);
   const [edit, setEdit] = useState(false);
   const [user, setUser] = useState({
-    user: session.user,
+    ...session.user,
   });
 
   const handleCopy = () => {
@@ -134,6 +132,8 @@ const Details = () => {
   return (
     <div className="bg-gradient-to-b from-bear-teal/10  to-bear-teal/20 text-white rounded-lg p-4 gap-3 m-2 overflow-auto max-h-[70vh] flex flex-col justify-start">
       {user.team && !load && <Loading />}
+
+      {console.log(user)}
       {user.team && load && (
         <>
           <Input
