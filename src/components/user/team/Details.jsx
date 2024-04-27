@@ -146,7 +146,7 @@ const Details = () => {
               placeholder="N/A"
             />
             <div className="w-full flex justify-end">
-              <p className="font-semibold">
+              <p className="font-semibold text-right">
                 Table: {team.table ?? "No assigned table"}
               </p>
             </div>
