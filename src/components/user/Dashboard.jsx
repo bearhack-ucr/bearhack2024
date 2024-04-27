@@ -16,20 +16,20 @@ import { RULES } from "@/data/user/Rules";
 
 const Dashboard = () => {
   const { data: session } = useSession();
-  const [expand, setExpand] = useState("");
+  const [expand, setExpand] = useState("Rules");
 
   return (
     <div className="h-full font-poppins flex flex-col py-4 gap-3 text-hackathon-tags-white">
       <Header email={session.user.email} name={session.user.name} />
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
-        <div className="col-span-2">
+        <div className="col-span-2 flex flex-col gap-4">
           <Countdown />
           <div className="flex gap-4">
             <Tile icon={<BsQrCode />} text="Check In" link="/user/checkin" />
             <Tile
               icon={<LuParkingCircle />}
               text="Parking Info"
-              link="https://transportation.ucr.edu/visitor-parking#parking-options-how-to-pay"
+              link="https://transportation.ucr.edu/visitor-parking"
             />
           </div>
           <Rooms />
@@ -37,21 +37,16 @@ const Dashboard = () => {
         </div>
 
         <div className="flex flex-col gap-4">
-          <Collapse setExpand={setExpand} expand={expand} text="Judging">
-            <BulletPoints list={JUDGING} />
-          </Collapse>
           <Collapse setExpand={setExpand} expand={expand} text="Rules">
             <BulletPoints list={RULES} />
+          </Collapse>
+          <Collapse setExpand={setExpand} expand={expand} text="Judging">
+            <BulletPoints list={JUDGING} />
           </Collapse>
           <Collapse setExpand={setExpand} expand={expand} text="Hackpacks">
             <Hackpacks />
           </Collapse>
         </div>
-
-        {/* <User user={user} setUser={setUser} edit={edit} setEdit={setEdit} />
-        {user.roles.participants === 1 && (
-          <Team user={user} team={user.team} setUser={setUser} />
-        )} */}
       </div>
     </div>
   );

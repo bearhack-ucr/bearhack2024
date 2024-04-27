@@ -1,7 +1,12 @@
 import { RiJavascriptFill } from "react-icons/ri";
-import { SiArduino, SiNextdotjs, SiTailwindcss } from "react-icons/si";
+import {
+  SiArduino,
+  SiDiscord,
+  SiNextdotjs,
+  SiTailwindcss,
+} from "react-icons/si";
 import { IoLogoFirebase } from "react-icons/io5";
-import { BiLogoCPlusPlus, BiLogoMongodb } from "react-icons/bi";
+import { BiLogoCPlusPlus, BiLogoMongodb, BiLogoPython } from "react-icons/bi";
 
 export const TECHSTACKS = {
   JavaScript: <RiJavascriptFill />,
@@ -11,17 +16,28 @@ export const TECHSTACKS = {
   MongoDB: <BiLogoMongodb />,
   Arduino: <SiArduino />,
   "C++": <BiLogoCPlusPlus />,
+  Python: <BiLogoPython />,
+  Discord: <SiDiscord />,
 };
 export const HACKPACKS = [
   {
-    link: "https://github.com",
-    text: "Full Stack Web App",
-    techs: ["JavaScript", "Next.js", "firebase", "tailwind"],
+    link: "https://github.com/acm-ucr/arduino-hackpack",
+    text: "Hardware Arduino Hackpack",
+    techs: ["C++", "Arduino"],
   },
   {
-    link: "https://github.com",
-    text: "Full Stack Web App",
-    techs: ["JavaScript", "Next.js", "MongoDB", "tailwind"],
+    link: "https://github.com/acm-ucr/discord_python_hackpack",
+    text: "Discord Python Hackpack",
+    techs: ["Python", "SiDiscord"],
   },
-  { link: "https://github.com", text: "Hardware", techs: ["Arduino", "C++"] },
+  {
+    link: "https://github.com/acm-ucr/python_hackpack",
+    text: "Python Hackpack",
+    techs: ["Python"],
+  },
+  {
+    link: "https://github.com/acm-ucr/nextjs-hackpack",
+    text: "Next.js Hackpack",
+    techs: ["JavaScript", "Next.js", "tailwind"],
+  },
 ];

@@ -1,5 +1,13 @@
 const Rooms = () => {
-  const rooms = ["WCH 127", "WCH 110", "WCH 130", "Byte", "WCH 129"];
+  const rooms = [
+    "WCH 110",
+    "WCH 127",
+    "WCH 129",
+    "WCH 136",
+    "WCH 138",
+    "WCH 136",
+    "WCH 139",
+  ];
 
   return (
     <div className="font-bold p-3 rounded-lg mt-3 mb-3 bg-white shadow-xl">

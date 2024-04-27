@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import data from "/src/data/Config.js";
 
 const parts = data.end.split(" ");
@@ -12,7 +12,7 @@ const endDate = new Date(year, monthIndex - 1, day, sec[0], sec[1], sec[2]);
 
 const Digits = ({ value, unit }) => {
   return (
-    <div className="flex flex-col items-center gap-4 last:hidden  sm:last:flex">
+    <div className="flex flex-col items-center gap-4 last:hidden sm:last:flex">
       <div className="flex gap-1 m-3 mb-0 lg:!gap-1">
         {value
           .toString()
@@ -20,14 +20,14 @@ const Digits = ({ value, unit }) => {
           .split("")
           .map((digit, index) => (
             <div
-              className="text-lg lg:text-3xl font-bold text-white bg-white bg-opacity-40 p-3 lg:min-w-11 lg:p-3 rounded-lg"
+              className="text-center text-lg lg:text-3xl font-bold text-white bg-white bg-opacity-40 p-3 lg:min-w-11 rounded-lg"
               key={index}
             >
               {digit}
             </div>
           ))}
       </div>
-      <div className="text-white m-2 mt-0 text-xs ">{unit}</div>
+      <div className="text-white m-2 mt-0 text-md">{unit}</div>
     </div>
   );
 };
@@ -57,9 +57,11 @@ const Countdown = () => {
   }, []);
 
   return (
-    <div className=" rounded-lg inline-flex-col inline-block bg-bear-teal/40 mb-3 shadow-xl">
-      <div className="font-bold text-white m-2 mb-0">HACKING ENDS IN</div>
-      <div className="inline-flex font-bold">
+    <div className="rounded-lg flex-col items-center justify-center bg-bear-teal/40 shadow-xl w-full p-2">
+      <div className="font-bold text-white text-xl text-center">
+        HACKING ENDS IN
+      </div>
+      <div className="flex justify-center font-bold">
         {Object.entries(countdown).map(([unit, value], index) => (
           <Digits key={index} unit={unit} value={value} />
         ))}
