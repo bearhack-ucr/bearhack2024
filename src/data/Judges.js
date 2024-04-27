@@ -15,19 +15,9 @@ export const judges = [
     image: RichYueh,
   },
   {
-    name: "Ethan Roos",
-    position: "Graduate TA",
-    image: EthanRoos,
-  },
-  {
     name: "Rohit Manimaran",
     position: "Solutions Architect @ ZyberTech",
     image: RohitManimaran,
-  },
-  {
-    name: "Karan Bhogal",
-    position: "Graduate TA",
-    image: KaranBhogal,
   },
   {
     name: "Lisa Chen",
@@ -35,13 +25,23 @@ export const judges = [
     image: LisaChen,
   },
   {
+    name: "Ethan Roos",
+    position: "Graduate TA",
+    image: EthanRoos,
+  },
+  {
+    name: "Karan Bhogal",
+    position: "Graduate TA",
+    image: KaranBhogal,
+  },
+  {
     name: "Joshua Candelaria",
-    position: "Master's Student in CS",
+    position: "Graudate TA",
     image: JoshuaCandelaria,
   },
   {
     name: "Hallie Pham",
-    position: "Hackathon Director",
+    position: "Former Hackathon Director",
     image: HalliePham,
   },
   {
