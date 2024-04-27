@@ -1,9 +1,12 @@
 import Title from "../Title";
 import AboutUs from "../AboutUs";
+import Schedule from "../schedule/Schedule";
+import Tracks from "../Tracks";
 import GetInvolved from "../GetInvolved";
 import Team from "../Team";
-import FAQ from "../FAQ";
 import Sponsors from "../Sponsors";
+import Judges from "../Judges";
+import FAQ from "../FAQ";
 import Footer from "../Footer";
 
 const Postlive = () => {
@@ -12,10 +15,13 @@ const Postlive = () => {
       <title>Bearhack 2024</title>
       <Title />
       <AboutUs />
+      <Tracks />
+      <Schedule />
       <GetInvolved />
       <Team />
-      <FAQ />
       <Sponsors />
+      <Judges />
+      <FAQ />
       <Footer />
     </div>
   );

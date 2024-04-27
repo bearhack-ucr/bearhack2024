@@ -33,7 +33,7 @@ const Events = ({ events, totalDays }) => {
           </div>
         ))}
       </div>
-      <div className="mt-8 w-11/12 lg:w-3/4 grid grid-cols-8 px-4 items-center content-center text-center font-base">
+      <div className="mt-8 w-4/5 lg:w-3/4 grid grid-cols-8 px-4 items-center content-center text-center font-base">
         <div className="col-span-2 md:col-span-1">Time</div>
         <div className="col-span-2">Event</div>
         <div className="col-span-4 md:col-span-3">Details</div>
