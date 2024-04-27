@@ -1,12 +1,18 @@
-import Button from "../Button";
-import Input from "../Input";
+"use client";
+import Button from "../../Button";
+import Input from "../../Input";
 import { useEffect, useState } from "react";
 import toaster from "@/utils/toaster";
-import Loading from "../Loading";
+import Loading from "../../Loading";
 import { BiLink, BiSolidCopy } from "react-icons/bi";
 import { api } from "@/utils/api";
+import { useSession } from "next-auth/react";
 
-const Team = ({ user, setUser }) => {
+const Details = () => {
+  const { data: session } = useSession();
+
+  // const user = session.user;
+
   const defaultTeam = {
     id: "",
     name: "",
@@ -14,6 +20,9 @@ const Team = ({ user, setUser }) => {
   const [load, setLoad] = useState(false);
   const [team, setTeam] = useState(defaultTeam);
   const [edit, setEdit] = useState(false);
+  const [user, setUser] = useState({
+    user: session.user,
+  });
 
   const handleCopy = () => {
     navigator.clipboard.writeText(user.team);
@@ -180,9 +189,6 @@ const Team = ({ user, setUser }) => {
           </div>
           <div className="mt-3 pt-2 flex-grow">
             <p className="mb-1 font-semibold">Team ID</p>
-            <div className="text-hackathon-green-300">
-              share this team ID or join link to your teammates
-            </div>
             <p className="pl-3 mb-0 flex items-center">
               {user.team}
               <BiSolidCopy
@@ -209,10 +215,6 @@ const Team = ({ user, setUser }) => {
       {!user.team && team && (
         <div className="flex flex-col justify-start h-full gap-5">
           <div className="">
-            <div className="text-hackathon-green-300">
-              Ask your teammates to share team ID or join link with you to join
-              the team
-            </div>
             <Input
               name="id"
               type="text"
@@ -226,9 +228,6 @@ const Team = ({ user, setUser }) => {
             <Button color="green" size="lg" text="join" onClick={handleJoin} />
           </div>
           <div className="">
-            <div className="text-hackathon-green-300">
-              Type a team name to create a new team
-            </div>
             <Input
               name="name"
               type="text"
@@ -252,4 +251,4 @@ const Team = ({ user, setUser }) => {
   );
 };
 
-export default Team;
+export default Details;
