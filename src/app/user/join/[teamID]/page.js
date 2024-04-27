@@ -60,12 +60,9 @@ const Page = ({ params }) => {
   return (
     <div>
       {team && (
-        <div className="flex flex-col w-screen h-screen items-center justify-center font-poppins">
-          <p className="text-3xl">
-            Are you sure you want to join{" "}
-            <span className="font-bold">{team.name}</span>
-          </p>
-          <p className="mb-1 font-semibold">Members</p>
+        <div className="flex flex-col w-screen h-screen items-center justify-center font-poppins text-white">
+          <span className="font-bold text-3xl">{team.name}</span>
+          <p className="mb-1 font-semibold mt-4">Members</p>
           {team.members.map((member, index) => (
             <p className="pl-3 m-0 flex items-center" key={index}>
               {member.name}

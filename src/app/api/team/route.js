@@ -101,7 +101,8 @@ export const GET = async (req) => {
     const snapshot = await getDoc(doc(db, "teams", team));
     if (!snapshot.exists())
       return res.json({ message: "Invalid Team ID" }, { status: 500 });
-    const { links, members, name } = snapshot.data();
+    const { links, members, name, table } = snapshot.data();
+
     return res.json(
       {
         message: "OK",
@@ -111,6 +112,7 @@ export const GET = async (req) => {
           figma: links.figma,
           members: members,
           name: name,
+          table: table,
         },
       },
       { status: 200 }
