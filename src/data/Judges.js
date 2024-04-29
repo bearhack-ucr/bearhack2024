@@ -7,8 +7,14 @@ import JoshuaCandelaria from "@/public/judges/JoshuaCandelaria.webp";
 import HalliePham from "@/public/judges/HalliePham.webp";
 import RachitPrajapati from "@/public/judges/RachitPrajapati.webp";
 import SamarthSrinivasa from "@/public/judges/SamarthSrinivasa.webp";
+import VictorRodgers from "@/public/judges/VictorRodgers.webp";
 
 export const judges = [
+  {
+    name: "Victor Rodgers",
+    position: "Bioengineering Professor",
+    image: VictorRodgers,
+  },
   {
     name: "Rich Yueh",
     position: "Assistant Professor of Teaching in IS",
