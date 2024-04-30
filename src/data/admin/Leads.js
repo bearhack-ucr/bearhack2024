@@ -57,6 +57,7 @@ const attributes = [
   "eventSource",
   "school",
   "priorHackathons",
+  "interested",
 ];
 
 export const DROPDOWN = ({ object }) => {
@@ -66,15 +67,16 @@ export const DROPDOWN = ({ object }) => {
         {attributes.map((attribute, index) => (
           <div key={index} className="my-1 px-1 flex text-sm text-white">
             {ICONS[attribute]}
+            {console.log(object)}
             {Array.isArray(object[attribute])
               ? object[attribute].length !== 0
-                ? object[attribute].join(",")
+                ? object[attribute].join(", ")
                 : "N/A"
               : object[attribute]}
           </div>
         ))}
       </div>
-      <div className="flex flex-row justify-evenly px-5 w-full">
+      <div className="flex flex-row justify-evenly px-5 w-full text-white">
         <div>Why do you want to join?: {object.response}</div>
         <div>Prior Experience: {object.priorExperience}</div>
       </div>

@@ -87,6 +87,7 @@ export const ATTRIBUTES = {
     "school",
     "priorExperience",
     "priorHackathons",
+    "interested",
   ],
 };
 
