@@ -99,6 +99,23 @@ export const FIELDS = {
     width: 12,
     required: true,
   },
+  interested: {
+    input: "checkboxes",
+    text: "Interested Role",
+    field: "interested",
+    width: 12,
+    required: true,
+    options: [
+      "director",
+      "marketing",
+      "sponsorship",
+      "recruitment",
+      "software",
+      "uiux",
+      "operations",
+      "other",
+    ],
+  },
   eventSource: {
     input: "select",
     title: "How did you find the event?",
@@ -178,6 +195,7 @@ export const ATTRIBUTES = {
   grade: "",
   gender: "",
   resume: "",
+  interested: [],
   requirements: [],
   priorHackathons: [],
 };
