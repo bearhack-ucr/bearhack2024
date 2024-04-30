@@ -43,11 +43,7 @@ const DEV = {
 const PRODUCTION = {
   LIVE: {
     START: new Date("10/01/2023"),
-    END: new Date("April 28, 2024 9:00:00"),
-  },
-  POSTLIVE: {
-    START: new Date("April 28, 2024 9:00:00"),
-    END: new Date("10/10/2100"),
+    END: new Date("April 28, 2025 9:00:00"),
   },
   "/admin/participants": new Date("10/01/2023"),
   "/admin/teams": new Date("10/01/2023"),
