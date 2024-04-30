@@ -124,6 +124,7 @@ const Title = () => {
             link={"https://bearhack2024.devpost.com/project-gallery"}
           />
           <Link text={"Feedback"} link={"/form/feedback"} />
+          <Link text={"Lead Application"} link={"/form/lead"} />
         </div>
         <div className="w-4/5 m-auto">
           <HorizontalLine />
