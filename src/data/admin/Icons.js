@@ -10,7 +10,7 @@ import {
   FaBook,
   FaClock,
 } from "react-icons/fa";
-import { MdContactPage } from "react-icons/md";
+import { MdContactPage, MdPeopleAlt } from "react-icons/md";
 
 export const ICONS = {
   github: (
@@ -34,4 +34,5 @@ export const ICONS = {
   school: <FaSchool className="text-white mr-2 text-lg" />,
   eventSource: <MdContactPage className="text-white mr-2 text-lg" />,
   priorHackathons: <FaClock className="text-white mr-2 text-lg" />,
+  interested: <MdPeopleAlt className="text-white mr-2 text-lg" />,
 };
