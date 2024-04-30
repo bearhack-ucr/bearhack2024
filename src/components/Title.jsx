@@ -66,8 +66,8 @@ const Title = () => {
           className="animate-spinny"
         />
       </div>
-      <div className="flex flex-col z-1 p-10 lg:p-16 gap-2  border-bear-dark/50 rounded-3xl lg:bg-transparent z-10">
-        <div className=" xl:hidden  flex justify-center -mt-16">
+      <div className="flex flex-col z-1 p-10 lg:p-16 gap-2 border-bear-dark/50 rounded-3xl lg:bg-transparent z-10">
+        <div className="xl:hidden  flex justify-center -mt-16">
           <Image src={swirlTop} className="w-2/3" alt="swirl" />
         </div>
 
@@ -119,10 +119,11 @@ const Title = () => {
           </div>
         </div>
         <div className="flex flex-col gap-4 justify-end lg:flex-row px-8">
-          <Link text={"Register"} link={"/form/participant"} />
-          <Link text={"Mentor"} link={"/form/mentor"} />
-          <Link text={"Volunteer"} link={"/form/volunteer"} />
-          <Link text={"Sponsor"} link={"/form/sponsor"} />
+          <Link
+            text={"Winners"}
+            link={"https://bearhack2024.devpost.com/project-gallery"}
+          />
+          <Link text={"Feedback"} link={"/form/feedback"} />
         </div>
         <div className="w-4/5 m-auto">
           <HorizontalLine />

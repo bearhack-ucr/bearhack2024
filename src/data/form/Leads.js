@@ -8,7 +8,7 @@ export const FIELDS = {
     input: "description",
     width: 12,
     texts: [
-      `Welcome to ${data.name}. Thank you for considering to become a lead, we appreciate your enthusiasm to join ${data.name}. ${data.name} is a ${data.description} hackathon spanning ${data.length} on ${data.date}.`,
+      `Welcome to Bearhack 2025. Thank you for considering to become a lead, we appreciate your enthusiasm to join Bearhack 2025. Bearhack 2025 is a ${data.description} hackathon. We are excited to learn more about your background and have you on the team!`,
     ],
   },
   name: {
@@ -19,16 +19,6 @@ export const FIELDS = {
     maxLength: 50,
     width: 12,
     editable: false,
-    required: true,
-  },
-  preferredName: {
-    input: "input",
-    name: "preferredName",
-    type: "name",
-    title: "Preferred Name",
-    maxLength: 50,
-    width: 12,
-    editable: true,
     required: true,
   },
   email: {
@@ -163,7 +153,7 @@ export const FIELDS = {
   },
   requirements: {
     text: "Terms and Conditions",
-    input: "checkboxes",
+    input: "terms",
     width: 12,
     field: "requirements",
     required: true,

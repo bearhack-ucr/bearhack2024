@@ -3,7 +3,8 @@ import { useRef, useState } from "react";
 
 const Events = ({ events, totalDays }) => {
   const [selectedDay, setSelectedDay] = useState(
-    new Date() > new Date(events[0].start)
+    new Date() > new Date(events[0].start) &&
+      new Date() < new Date(events[events.length - 1].start)
       ? new Date().toLocaleString("en-US", {
           timeZone: "America/Los_Angeles",
           weekday: "long",
@@ -41,14 +42,14 @@ const Events = ({ events, totalDays }) => {
         <div className="hidden md:block">Location</div>
       </div>
       <div
-        className="w-4/5 lg:w-3/4 flex flex-col items-center p-4 gap-4 border border-white bg-gradient-to-r from-bear-page-gradient-1 to-bear-page-gradient-2 rounded-lg opacity-0 translate-y-1 animate-slide-in"
+        className="w-4/5 lg:w-3/4 flex flex-col items-center p-4 gap-4 border border-white/50 bg-gradient-to-r from-bear-page-gradient-1 to-bear-page-gradient-2 rounded-lg opacity-0 translate-y-1 animate-slide-in"
         ref={eventsRef}
       >
         {events
           .filter(({ day }) => day === selectedDay)
           .map(({ start, summary, description, type, location }, index) => (
             <div
-              className="w-full flex flex-col items-center gap-4"
+              className="w-full flex flex-col items-center gap-4 opacity-50"
               key={index}
             >
               {index > 0 && <div className="w-full h-px bg-white" />}
